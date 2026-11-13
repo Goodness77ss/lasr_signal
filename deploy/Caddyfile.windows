@@ -1,0 +1,17 @@
+# deploy/Caddyfile.windows
+# Caddy configuration for Windows.
+# Run with: caddy run --config deploy/Caddyfile.windows
+
+:5174 {
+    encode zstd gzip
+
+    handle_path /api/* {
+        reverse_proxy 127.0.0.1:3001
+    }
+
+    handle {
+        root * apps/web/dist
+        file_server
+        try_files {path} /index.html
+    }
+}

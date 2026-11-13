@@ -22,7 +22,7 @@ import {parseEquipmentSelection} from '../../../packages/sim/src/journey/equipme
 import {BrowserProvider,getAddress,type Eip1193Provider} from 'ethers';
 
 const root=document.querySelector<HTMLElement>('#app')!;
-if(import.meta.env.MODE!=='journey'&&import.meta.env.VITE_JOURNEY_ENABLED!=='true')root.textContent='Server Journey preview is disabled. Use npm run journey:dev.';
+if(import.meta.env.VITE_JOURNEY_ENABLED==='false')root.textContent='Server Journey preview is disabled.';
 else await start();
 async function start(){
  document.title='LAST SIGNAL | Server Journey preview';

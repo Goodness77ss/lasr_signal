@@ -1,8 +1,9 @@
 const root=document.querySelector<HTMLElement>('#app')!;
 root.textContent='Loading the front…';
-const survival=location.pathname.endsWith('/survival.html')||new URLSearchParams(location.search).get('mode')==='survival';
-const mode=new URLSearchParams(location.search).get('mode');
-const start=mode==='journey-server'?import('./journey-server.ts'):mode==='journey'?import('./journey.ts'):location.pathname.endsWith('/private.html')?import('./private.ts'):survival?import('./stations.ts'):['endless','classic'].includes(mode??'')?import('./main.ts'):import('./landing.ts');
+const params=new URLSearchParams(location.search);
+const survival=location.pathname.endsWith('/survival.html')||params.get('mode')==='survival';
+const mode=params.get('mode')??(location.pathname==='/'||location.pathname.endsWith('/index.html')?'journey-server':null);
+const start=mode==='journey-server'?import('./journey-server.ts'):mode==='journey'?import('./journey.ts'):location.pathname.endsWith('/private.html')?import('./private.ts'):survival?import('./stations.ts'):['endless','classic'].includes(mode??'')?import('./main.ts'):mode==='landing'?import('./landing.ts'):import('./journey-server.ts');
 void start.catch(error=>{
  console.error('Battlefield startup failed:',error instanceof Error?error.message:'Unknown startup error');
  root.replaceChildren();
