@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-11-10T10:56:47.120Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "stage": "COLLECTIBLE_FOUNDATION_ONLY",
+  "lifecycle": "Closed disposable chain; addresses are historical evidence only.",
+  "deployment": {
+    "version": "JOURNEY_GUNS_V1",
+    "chainId": 31337,
+    "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+    "currency": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+    "gameplaySigner": "0xFdcfE7456BEAd0035B628b33cd458BdECb824B74",
+    "rulesHash": "0x962980e5ba439e18eed3abc969dc85286291ef610471c6b04009deaa7facc4d7",
+    "codeHash": "0x881f834051c2969902d9c178786c60bbec800da3fb6cf1e1d467d950d6a9a138",
+    "currencyCodeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf"
+  }
+}

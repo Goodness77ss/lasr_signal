@@ -108,7 +108,7 @@ describe('authoritative private rooms',()=>{
   const {app}=await buildServer({database:':memory:',manual:true});try{
    const denied=await app.inject({method:'GET',url:'/room',headers:{origin:'https://evil.invalid'}});expect(denied.statusCode).toBe(403);
    const ws=await app.injectWS('/room',{headers:{origin:'http://127.0.0.1:5174'}});ws.on('error',()=>{});
-   const code=new Promise<number>(resolve=>ws.on('close',resolve));ws.send('x'.repeat(3000));expect(await code).toBe(1009);
+   const code=new Promise<number>(resolve=>ws.on('close',resolve));ws.send('x'.repeat(5000));expect(await code).toBe(1009);
   }finally{await app.close();}
  });
 });

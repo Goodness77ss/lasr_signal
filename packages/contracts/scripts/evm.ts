@@ -2,9 +2,13 @@ import {spawn,type ChildProcess} from 'node:child_process';
 import {createRequire} from 'node:module';
 import {resolve,dirname} from 'node:path';
 import {JsonRpcProvider} from 'ethers';
+import {createServer} from 'node:net';
 import {root} from './compile.ts';
 const require=createRequire(import.meta.url);
 export async function startEvm(port:number){
+ // Refuse an occupied port before spawning. An old node must never be
+ // mistaken for the disposable child whose deployment this call owns.
+ const probe=createServer();await new Promise<void>((done,reject)=>{probe.once('error',()=>reject(Error('Local EVM port '+port+' is occupied; choose a new port')));probe.listen(port,'127.0.0.1',()=>probe.close(error=>error?reject(error):done()));});
  const cli=resolve(dirname(require.resolve('hardhat')),'cli.js');
  let failure='';const child:ChildProcess=spawn(process.execPath,[cli,'node','--config',resolve(root,'hardhat.config.ts'),'--hostname','127.0.0.1','--port',String(port),'--network','local'],{cwd:root,windowsHide:true,stdio:['ignore','ignore','pipe']});
  child.stderr?.on('data',chunk=>{failure=(failure+String(chunk)).slice(-3000);});

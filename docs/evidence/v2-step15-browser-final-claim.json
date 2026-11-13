@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-02T18:07:03.212Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_INDEPENDENT_CLAIM",
+  "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+  "claim": {
+    "hash": "0x356f722490a3325c53f7752ba9ce72793ff49fed796c446de29c3f383eee5cac",
+    "status": 1,
+    "block": 147196457,
+    "canonical": true,
+    "confirmations": 411,
+    "amountWhole": 11
+  },
+  "walletMock": "116000000000000000000",
+  "claimable": "0",
+  "vaultCustody": "0",
+  "lockedLiability": "0",
+  "claimLiability": "0"
+}

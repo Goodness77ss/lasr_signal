@@ -1,0 +1,25 @@
+# Local soldier deployment leases
+
+Step 24 is VERIFIED for the local contract, durable reservation and backend service access boundary, 10 November 2026. J11 approves owner consent for the exact run and service, with transfer blocking for at most 3600 seconds. Full regression passed 352 application tests in 62 files, 29 local chain integration checks across leases, soldiers, asset compatibility and the existing weapon catalog, and the strict production build. The fresh proof records nine successful local transactions. The full forty step goal remains active.
+
+JourneySoldiers.startLease requires the current owner's transaction, token ID, run hash, service address and absolute expiry. An ERC721 approved operator cannot consent for the owner. The contract derives a unique lease identity from chain, collection, token, owner, run, service, expiry and increasing lease nonce. A token cannot reuse a prior run hash. Its transfer path blocks owner, approved operator, safe transfer and self transfer while the lease is active. A market that relies on a transfer cannot deliver the soldier during that period. Soldier listings themselves follow in Step 25.
+
+The named service can call releaseLease with the exact lease identity. A previous release cannot clear a newer lease. At the exact expiry timestamp, transfer becomes available without an unlock transaction. Anybody can separately clear an expired record. Expired leases can be replaced by a new owner approved run; there is no administrative extension or infinite lock. Start, release, expiry clearing and transfer invalidate outstanding progress vouchers through the existing progress nonce. Cosmetic history remains attached to the token. The bank bridge will sign against the current nonce in Step 29.
+
+SoldierCollections checks the registered chain, bytecode, immutable configuration, class builds, lease policy and duration limit. Lease verification checks the owner, exact run hash, service, lease ID, expiry and latest two blocks. Reads within an inspection use one pinned block. Release reconciliation also requires a confirmed chain observation. Reorganized or older observations fail. All chain verification remains local to chain 31337; no public collection is enabled.
+
+JourneyDeploymentJournal adds migration 6 with an exact asset key and retained per lease history. One SQLite writer transaction checks and reserves the entire team. Same token IDs from different collections remain distinct. Repeated team requests cannot grow a run beyond three soldiers, change its owner or service, replace an active lease, or reuse an expired or released identity. An identical valid reservation retry returns its recorded result. An unavailable or absent verifier grants no admission. Current rows are persisted observations, not a substitute for fresh chain authorization.
+
+The existing Journey service checks attached reservations before fresh commands, active ticks and active resume. Owned checks can wait for the chain without advancing unverified simulation time; overlapping tick checks are suppressed. A failed check closes the connection and retains the saved run. Pause and quit can still stop an attached run, and previously committed acknowledgements remain recoverable without reapplying their effect. Terminal history remains inspectable. Ordinary free practice has no chain dependency.
+
+This is the backend lease boundary. The current public practice roster remains free and development entries. There is no browser owned combat admission or automatic owned XP bridge yet. The service integration proof explicitly attaches a real local lease to a practice run to exercise its access guard. It does not represent those actors as an owned collectible roster. Complete owned roster, bank bridge and Armory interaction follow their respective later steps.
+
+Validation commands from the repository root:
+
+* `npx vitest run tests/journey-deployments.test.ts --maxWorkers=2`
+* `npx tsx --test packages/contracts/test/journey-leases.check.ts`
+* `npx tsx packages/contracts/scripts/journey-leases-proof.ts`
+
+The chain checks use disposable loopback port 18580; the proof uses 18581. Tests include an actual process exit with code 74 after a WAL reservation commit, reopening the database, denying a conflicting run and freeing the soldier after expiry independently of the stopped process. Other checks include operator consent rejection, one second beyond the duration maximum, exact expiry transfer, early release, release replay, lease induced stale progress, external transfer and return, confirmed admission and release, service commands, ticks and resume. No proof exports a private key, run credential or signature.
+
+Evidence files: evidence/journey-leases-proof.json and evidence/journey-leases-local-deployment.json. The proof closes its node and deletes only its newly created temporary database directory. Addresses and receipts are local historical evidence, not a live or public deployment. Existing Step 23 evidence records the earlier disposable implementation; its old code hash must not be used to register the new lease implementation.

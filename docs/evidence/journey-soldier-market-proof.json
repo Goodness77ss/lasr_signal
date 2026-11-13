@@ -1,0 +1,583 @@
+{
+  "generatedAt": "2026-11-10T10:41:02.305Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+    "mintAuthority": "0x885af57FCf7511A1477C38d23544f58264988c65",
+    "gameplaySigner": "0x939fd0c0199B3682bc5A21F4A26F168114C53F78",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0xf8fd17dc5f0e6183aece4c5f300950535457dac2f6d15ac2caca8d9efeefcdbf",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "exchange": {
+    "version": "JOURNEY_SOLDIER_MARKET_V1",
+    "chainId": 31337,
+    "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+    "market": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+    "currency": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+    "codeHash": "0x7ccb613e0cba8f45e9d8708d535c53e23f0dccb9dc6126f9f60fb2448f277ddd",
+    "currencyCodeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf"
+  },
+  "receipts": [
+    {
+      "label": "deploy disposable mock currency",
+      "hash": "0xd3e050426ae50024136e85f4db636cf364d4153df0edfee977b6a159ea199017",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "612654",
+      "logs": []
+    },
+    {
+      "label": "mock faucet for seller",
+      "hash": "0x7a2798908d6b24fe60dd4250fec2312c9c6c1d95b749687508476543356de1dc",
+      "block": 2,
+      "status": 1,
+      "gasUsed": "91975",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006af302c6"
+        }
+      ]
+    },
+    {
+      "label": "mock faucet for buyer",
+      "hash": "0x5b88a42170b275675db618c986e8f8a74035f8e784d872eee63b05782a63e1f3",
+      "block": 3,
+      "status": 1,
+      "gasUsed": "74875",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006af302c7"
+        }
+      ]
+    },
+    {
+      "label": "deploy approved local soldier collection",
+      "hash": "0xdad579098b977045516b491a01ca065ba7b13f9b9616331b912900a0771b67b4",
+      "block": 4,
+      "status": 1,
+      "gasUsed": "3813015",
+      "logs": []
+    },
+    {
+      "label": "deploy separate local fixed price exchange",
+      "hash": "0x97efa4fdcbbd35a22b780cce5f867cccb8d5c4bedf66a254a32286a4b93fd86b",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "1185813",
+      "logs": []
+    },
+    {
+      "label": "authorized development mint with no purchase price",
+      "hash": "0xa747a1e81ba4760928c038197ed44828afa3e5c9519db6d37cf02d1a5994f39f",
+      "block": 6,
+      "status": 1,
+      "gasUsed": "226026",
+      "logs": [
+        {
+          "address": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0xcd783a87cf697b2f810161ab72032ef89a3fb3246de5b2546203d352b5292f1f"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "accept authored signed cosmetic progress fixture",
+      "hash": "0x1e4868d170136e43ef56357f8752c6bab53937530036af81ca21138a9df8db4b",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "176315",
+      "logs": [
+        {
+          "address": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+          "topics": [
+            "0x5ee25a4df413d2552963e19e0013decf11ea792311851c999f9dcdd8eeafa426",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0x8033e942735ec57df803ace5b1ea1cf3b810517fbe943c16c6d7ec851ead876b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    },
+    {
+      "label": "Approve this soldier",
+      "hash": "0x907e366f9eb0bb0624b60d55a111c204ce17c4680fe61b2d3bee55db0f4fa38b",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "48708",
+      "logs": [
+        {
+          "address": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0x000000000000000000000000d8e83c9976adef7a0e043c026c0744d59ac8b3bb",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        }
+      ]
+    },
+    {
+      "label": "List soldier",
+      "hash": "0x33256a7ca0776bedadb0eb0d2314b04423b8f3beec0bcce774382e0f8742155d",
+      "block": 9,
+      "status": 1,
+      "gasUsed": "219953",
+      "logs": [
+        {
+          "address": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+          "topics": [
+            "0xb26df8126a1bfe57f8cc79c3e12947b24a21c028ca6801e16331e63333d66f96",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    },
+    {
+      "label": "set stale allowance fixture",
+      "hash": "0x43cf60b57f5ab0669e8f179f22244433157405db7601fc705a14fa16f6413853",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43",
+            "0x000000000000000000000000d8e83c9976adef7a0e043c026c0744d59ac8b3bb"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580001"
+        }
+      ]
+    },
+    {
+      "label": "Reset stale allowance",
+      "hash": "0x88be7078de294a23e06a78ddcaaa90e6161872ff5bd91986f4339d111609879a",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "24417",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43",
+            "0x000000000000000000000000d8e83c9976adef7a0e043c026c0744d59ac8b3bb"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "label": "Approve exact asking price",
+      "hash": "0x55500d146bde11e811a876742b20244f70fb450915d589ccfa289cc74466f5e2",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "46389",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43",
+            "0x000000000000000000000000d8e83c9976adef7a0e043c026c0744d59ac8b3bb"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000"
+        }
+      ]
+    },
+    {
+      "label": "Buy soldier",
+      "hash": "0xf89aeee159a296b92bd2e3f13ed37f47b2210842c9ed88607b37ff3f87d19937",
+      "block": 13,
+      "status": 1,
+      "gasUsed": "171713",
+      "logs": [
+        {
+          "address": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000"
+        },
+        {
+          "address": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+          "topics": [
+            "0xd54b56881e7d8e485ae13972347facc2cbdf328603b65c7af6c972cf81a53933",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000c4b4bf096c1bb545c68c856381d33e1b5173e7bf",
+            "0x000000000000000000000000d8555fd6d4546f2d634e61ff17c847dc19c89a43"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec58000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    }
+  ],
+  "listed": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "market": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+    "currency": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+    "seller": "0xc4b4Bf096c1BB545c68C856381D33e1b5173E7bF",
+    "price": "6000000000000000000",
+    "listingNonce": "1",
+    "progressRevision": "1",
+    "assetNonce": "1",
+    "buildHash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+    "cumulativeXp": "10",
+    "furthestCompleted": "0"
+  },
+  "publicQuote": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0x1a1608c3b418dae25f69575df1c2c7626c04f1f5:1",
+    "chainId": "31337",
+    "market": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+    "currency": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+    "seller": "0xc4b4Bf096c1BB545c68C856381D33e1b5173E7bF",
+    "price": "6000000000000000000",
+    "listingNonce": "1",
+    "progressRevision": "1",
+    "assetNonce": "1",
+    "buildHash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+    "cumulativeXp": "10",
+    "furthestCompleted": "0",
+    "observedBlock": "9",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "policy": "journey-soldier-fixed-price-1"
+  },
+  "reviewed": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "market": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+    "currency": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+    "seller": "0xc4b4Bf096c1BB545c68C856381D33e1b5173E7bF",
+    "price": "6000000000000000000",
+    "listingNonce": "1",
+    "progressRevision": "1",
+    "assetNonce": "1",
+    "buildHash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+    "cumulativeXp": "10",
+    "furthestCompleted": "0"
+  },
+  "before": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0x1a1608c3b418dae25f69575df1c2c7626c04f1f5:1",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "adapter": "JOURNEY_SOLDIERS_V1",
+    "owner": "0xc4b4Bf096c1BB545c68C856381D33e1b5173E7bF",
+    "uri": "data:application/json;base64,eyJuYW1lIjoiTWFyYSAvIEFuY2hvciAjMSIsImRlc2NyaXB0aW9uIjoiT3JpZ2luYWwgTEFTVCBTSUdOQUwgbG9jYWwgZGV2ZWxvcG1lbnQgc29sZGllci4gSW1tdXRhYmxlIGNsYXNzIGFuZCBwcm92ZW5hbmNlLiBWZXJpZmllZCBjb3NtZXRpYyBwcm9ncmVzcyBpcyBzZXBhcmF0ZSBmcm9tIGl0cyBidWlsZC4gT3duZWQgSm91cm5leSBkZXBsb3ltZW50IHJlcXVpcmVzIGEgc3VwcG9ydGVkIGFkYXB0ZXIgYW5kIHJ1biBsZWFzZS4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNell3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNMk1DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeGphWEpqYkdVZ1kzZzlJakkwTUNJZ1kzazlJakV4TlNJZ2NqMGlNelFpSUdacGJHdzlJaU5qTUdGa09EQWlMejQ4Y0dGMGFDQmtQU0pOTVRnNElERTJNR2d4TURSc01qQWdNVEU0U0RFMk9Ib2lJR1pwYkd3OUlpTTNaamhqTmpVaUx6NDhjR0YwYUNCa1BTSk5NVGMxSURFNE1HZ3hNekIyTVRWSU1UYzFlaUlnWm1sc2JEMGlJMkkxT1dFMk1pSXZQangwWlhoMElIZzlJakkwSWlCNVBTSXpPQ0lnWm1sc2JEMGlJMll3WkdaaU55SWdabTl1ZEMxbVlXMXBiSGs5SW0xdmJtOXpjR0ZqWlNJZ1ptOXVkQzF6YVhwbFBTSXhPQ0krVEVGVFZDQlRTVWRPUVV3Z1NrOVZVazVGV1NCVFQweEVTVVZTVXp3dmRHVjRkRDQ4ZEdWNGRDQjRQU0l5TkNJZ2VUMGlNekUxSWlCbWFXeHNQU0lqWmpCa1ptSTNJaUJtYjI1MExXWmhiV2xzZVQwaWJXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJakU0SWo1TllYSmhJQzhnUVc1amFHOXlJQ014UEM5MFpYaDBQangwWlhoMElIZzlJakkwSWlCNVBTSXpOREFpSUdacGJHdzlJaU5qTVdNM1lqWWlJR1p2Ym5RdFptRnRhV3g1UFNKdGIyNXZjM0JoWTJVaUlHWnZiblF0YzJsNlpUMGlNVEVpUGt4UFEwRk1JRVJGVmtWTVQxQk5SVTVVSUM4Z1RrOGdUVTlPUlZSQlVsa2dWa0ZNVlVVOEwzUmxlSFErUEM5emRtYysiLCJjbGFzc0lkIjowLCJidWlsZEhhc2giOiIweGZjODFkZmZlZDk0NzU5ZmM2N2MwMDgxMDMwNDkwYmVhOWI0ZTQ0OTZlZDAzNzU5YjYzNGExNzdmMGJmYWZjZmMiLCJwcm92ZW5hbmNlIjoiMHhjZDc4M2E4N2NmNjk3YjJmODEwMTYxYWI3MjAzMmVmODlhM2ZiMzI0NmRlNWIyNTQ2MjAzZDM1MmI1MjkyZjFmIiwiZ2FtZXBsYXlBdmFpbGFiaWxpdHkiOiJSRVFVSVJFU19BREFQVEVSX0FORF9SVU5fTEVBU0UiLCJwcm9ncmVzcyI6eyJwb2xpY3kiOiJqb3VybmV5LXByb2dyZXNzLTEiLCJydWxlc0hhc2giOiIweDUzZmY3MmY5NjI0YTI3OGI3OTE4YzJjMWE3ZjhjZWVkZDY1ZTVjMTcyY2QwMzYzZjIyZGRkMDFmNDFhOGYzNWEiLCJyZXZpc2lvbiI6IjEiLCJjdW11bGF0aXZlWHAiOiIxMCIsImhhc0NoZWNrcG9pbnQiOnRydWUsImZ1cnRoZXN0Q2hlY2twb2ludCI6IjAiLCJiYW5rU291cmNlIjoiMHg4MDMzZTk0MjczNWVjNTdkZjgwM2FjZTViMWVhMWNmM2I4MTA1MTdmYmU5NDNjMTZjNmQ3ZWM4NTFlYWQ4NzZiIn19",
+    "immutableBuild": {
+      "id": "journey-classes-1:mara",
+      "hash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+      "classId": "mara"
+    },
+    "provenance": "0xcd783a87cf697b2f810161ab72032ef89a3fb3246de5b2546203d352b5292f1f",
+    "capabilities": {
+      "inspect": true,
+      "equip": false,
+      "list": true,
+      "claim": false,
+      "consume": false,
+      "combatReady": false,
+      "journeyCombatReady": false
+    },
+    "combatMode": null,
+    "progress": {
+      "asset": {
+        "kind": "soldier",
+        "chainId": "31337",
+        "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+        "tokenId": "1"
+      },
+      "revision": "1",
+      "cumulativeXp": "10",
+      "furthestCompleted": "0",
+      "policy": "journey-progress-1",
+      "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+      "source": "0x8033e942735ec57df803ace5b1ea1cf3b810517fbe943c16c6d7ec851ead876b"
+    },
+    "progressNonce": "1",
+    "observedBlock": "7",
+    "leaseActive": false
+  },
+  "after": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0x1a1608c3b418dae25f69575df1c2c7626c04f1f5:1",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "adapter": "JOURNEY_SOLDIERS_V1",
+    "owner": "0xd8555FD6D4546F2D634e61ff17C847Dc19c89a43",
+    "uri": "data:application/json;base64,eyJuYW1lIjoiTWFyYSAvIEFuY2hvciAjMSIsImRlc2NyaXB0aW9uIjoiT3JpZ2luYWwgTEFTVCBTSUdOQUwgbG9jYWwgZGV2ZWxvcG1lbnQgc29sZGllci4gSW1tdXRhYmxlIGNsYXNzIGFuZCBwcm92ZW5hbmNlLiBWZXJpZmllZCBjb3NtZXRpYyBwcm9ncmVzcyBpcyBzZXBhcmF0ZSBmcm9tIGl0cyBidWlsZC4gT3duZWQgSm91cm5leSBkZXBsb3ltZW50IHJlcXVpcmVzIGEgc3VwcG9ydGVkIGFkYXB0ZXIgYW5kIHJ1biBsZWFzZS4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNell3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNMk1DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeGphWEpqYkdVZ1kzZzlJakkwTUNJZ1kzazlJakV4TlNJZ2NqMGlNelFpSUdacGJHdzlJaU5qTUdGa09EQWlMejQ4Y0dGMGFDQmtQU0pOTVRnNElERTJNR2d4TURSc01qQWdNVEU0U0RFMk9Ib2lJR1pwYkd3OUlpTTNaamhqTmpVaUx6NDhjR0YwYUNCa1BTSk5NVGMxSURFNE1HZ3hNekIyTVRWSU1UYzFlaUlnWm1sc2JEMGlJMkkxT1dFMk1pSXZQangwWlhoMElIZzlJakkwSWlCNVBTSXpPQ0lnWm1sc2JEMGlJMll3WkdaaU55SWdabTl1ZEMxbVlXMXBiSGs5SW0xdmJtOXpjR0ZqWlNJZ1ptOXVkQzF6YVhwbFBTSXhPQ0krVEVGVFZDQlRTVWRPUVV3Z1NrOVZVazVGV1NCVFQweEVTVVZTVXp3dmRHVjRkRDQ4ZEdWNGRDQjRQU0l5TkNJZ2VUMGlNekUxSWlCbWFXeHNQU0lqWmpCa1ptSTNJaUJtYjI1MExXWmhiV2xzZVQwaWJXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJakU0SWo1TllYSmhJQzhnUVc1amFHOXlJQ014UEM5MFpYaDBQangwWlhoMElIZzlJakkwSWlCNVBTSXpOREFpSUdacGJHdzlJaU5qTVdNM1lqWWlJR1p2Ym5RdFptRnRhV3g1UFNKdGIyNXZjM0JoWTJVaUlHWnZiblF0YzJsNlpUMGlNVEVpUGt4UFEwRk1JRVJGVmtWTVQxQk5SVTVVSUM4Z1RrOGdUVTlPUlZSQlVsa2dWa0ZNVlVVOEwzUmxlSFErUEM5emRtYysiLCJjbGFzc0lkIjowLCJidWlsZEhhc2giOiIweGZjODFkZmZlZDk0NzU5ZmM2N2MwMDgxMDMwNDkwYmVhOWI0ZTQ0OTZlZDAzNzU5YjYzNGExNzdmMGJmYWZjZmMiLCJwcm92ZW5hbmNlIjoiMHhjZDc4M2E4N2NmNjk3YjJmODEwMTYxYWI3MjAzMmVmODlhM2ZiMzI0NmRlNWIyNTQ2MjAzZDM1MmI1MjkyZjFmIiwiZ2FtZXBsYXlBdmFpbGFiaWxpdHkiOiJSRVFVSVJFU19BREFQVEVSX0FORF9SVU5fTEVBU0UiLCJwcm9ncmVzcyI6eyJwb2xpY3kiOiJqb3VybmV5LXByb2dyZXNzLTEiLCJydWxlc0hhc2giOiIweDUzZmY3MmY5NjI0YTI3OGI3OTE4YzJjMWE3ZjhjZWVkZDY1ZTVjMTcyY2QwMzYzZjIyZGRkMDFmNDFhOGYzNWEiLCJyZXZpc2lvbiI6IjEiLCJjdW11bGF0aXZlWHAiOiIxMCIsImhhc0NoZWNrcG9pbnQiOnRydWUsImZ1cnRoZXN0Q2hlY2twb2ludCI6IjAiLCJiYW5rU291cmNlIjoiMHg4MDMzZTk0MjczNWVjNTdkZjgwM2FjZTViMWVhMWNmM2I4MTA1MTdmYmU5NDNjMTZjNmQ3ZWM4NTFlYWQ4NzZiIn19",
+    "immutableBuild": {
+      "id": "journey-classes-1:mara",
+      "hash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+      "classId": "mara"
+    },
+    "provenance": "0xcd783a87cf697b2f810161ab72032ef89a3fb3246de5b2546203d352b5292f1f",
+    "capabilities": {
+      "inspect": true,
+      "equip": false,
+      "list": true,
+      "claim": false,
+      "consume": false,
+      "combatReady": false,
+      "journeyCombatReady": false
+    },
+    "combatMode": null,
+    "progress": {
+      "asset": {
+        "kind": "soldier",
+        "chainId": "31337",
+        "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+        "tokenId": "1"
+      },
+      "revision": "1",
+      "cumulativeXp": "10",
+      "furthestCompleted": "0",
+      "policy": "journey-progress-1",
+      "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+      "source": "0x8033e942735ec57df803ace5b1ea1cf3b810517fbe943c16c6d7ec851ead876b"
+    },
+    "progressNonce": "2",
+    "observedBlock": "14",
+    "leaseActive": false
+  },
+  "received": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "owner": "0xd8555FD6D4546F2D634e61ff17C847Dc19c89a43",
+    "progressRevision": "1",
+    "assetNonce": "2",
+    "buildHash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+    "cumulativeXp": "10",
+    "furthestCompleted": "0",
+    "leaseActive": false
+  },
+  "sellerView": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+      "tokenId": "1"
+    },
+    "owner": "0xd8555FD6D4546F2D634e61ff17C847Dc19c89a43",
+    "progressRevision": "1",
+    "assetNonce": "2",
+    "buildHash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+    "cumulativeXp": "10",
+    "furthestCompleted": "0",
+    "leaseActive": false
+  },
+  "balancesBefore": {
+    "seller": "100000000000000000000",
+    "buyer": "100000000000000000000"
+  },
+  "balancesAfter": {
+    "seller": "106000000000000000000",
+    "buyer": "94000000000000000000"
+  },
+  "sellerStates": [
+    {
+      "status": "REFRESHING",
+      "action": "Refresh soldier"
+    },
+    {
+      "status": "READY",
+      "action": "Refresh soldier"
+    },
+    {
+      "status": "REFRESHING",
+      "action": "List soldier"
+    },
+    {
+      "status": "AWAITING_WALLET",
+      "action": "Approve this soldier"
+    },
+    {
+      "status": "PENDING",
+      "action": "Approve this soldier",
+      "hash": "0x907e366f9eb0bb0624b60d55a111c204ce17c4680fe61b2d3bee55db0f4fa38b"
+    },
+    {
+      "status": "CONFIRMED",
+      "action": "Approve this soldier",
+      "hash": "0x907e366f9eb0bb0624b60d55a111c204ce17c4680fe61b2d3bee55db0f4fa38b"
+    },
+    {
+      "status": "AWAITING_WALLET",
+      "action": "List soldier"
+    },
+    {
+      "status": "PENDING",
+      "action": "List soldier",
+      "hash": "0x33256a7ca0776bedadb0eb0d2314b04423b8f3beec0bcce774382e0f8742155d"
+    },
+    {
+      "status": "CONFIRMED",
+      "action": "List soldier",
+      "hash": "0x33256a7ca0776bedadb0eb0d2314b04423b8f3beec0bcce774382e0f8742155d"
+    },
+    {
+      "status": "REFRESHING",
+      "action": "Refresh soldier"
+    },
+    {
+      "status": "READY",
+      "action": "Refresh soldier"
+    }
+  ],
+  "buyerStates": [
+    {
+      "status": "REFRESHING",
+      "action": "Review listing"
+    },
+    {
+      "status": "READY",
+      "action": "Review listing"
+    },
+    {
+      "status": "REFRESHING",
+      "action": "Buy soldier"
+    },
+    {
+      "status": "AWAITING_WALLET",
+      "action": "Reset stale allowance"
+    },
+    {
+      "status": "PENDING",
+      "action": "Reset stale allowance",
+      "hash": "0x88be7078de294a23e06a78ddcaaa90e6161872ff5bd91986f4339d111609879a"
+    },
+    {
+      "status": "CONFIRMED",
+      "action": "Reset stale allowance",
+      "hash": "0x88be7078de294a23e06a78ddcaaa90e6161872ff5bd91986f4339d111609879a"
+    },
+    {
+      "status": "AWAITING_WALLET",
+      "action": "Approve exact asking price"
+    },
+    {
+      "status": "PENDING",
+      "action": "Approve exact asking price",
+      "hash": "0x55500d146bde11e811a876742b20244f70fb450915d589ccfa289cc74466f5e2"
+    },
+    {
+      "status": "CONFIRMED",
+      "action": "Approve exact asking price",
+      "hash": "0x55500d146bde11e811a876742b20244f70fb450915d589ccfa289cc74466f5e2"
+    },
+    {
+      "status": "AWAITING_WALLET",
+      "action": "Buy soldier"
+    },
+    {
+      "status": "PENDING",
+      "action": "Buy soldier",
+      "hash": "0xf89aeee159a296b92bd2e3f13ed37f47b2210842c9ed88607b37ff3f87d19937"
+    },
+    {
+      "status": "CONFIRMED",
+      "action": "Buy soldier",
+      "hash": "0xf89aeee159a296b92bd2e3f13ed37f47b2210842c9ed88607b37ff3f87d19937"
+    }
+  ],
+  "finalAllowance": "0",
+  "checks": {
+    "exactSellerPayment": true,
+    "historyUnchanged": true,
+    "listingConsumed": true,
+    "staleAllowanceReset": true,
+    "bothWalletsSeeBuyerOwnership": true
+  },
+  "limits": "Actual local contracts, wallet transport and controller transactions, plus read only API inspection. The price is a seller chosen mock fixture. Progress is an authored signed fixture, not the gameplay bank bridge. No public deployment, human wallet interaction or real currency. Account achievements are separate and are not reassigned by a token sale."
+}

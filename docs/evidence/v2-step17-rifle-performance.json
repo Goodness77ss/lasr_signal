@@ -1,0 +1,543 @@
+{
+  "checkedAt": "2026-11-02T21:25:36.156Z",
+  "mode": "SERVER_WEAPON_LAB_AUTOMATED",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "viewport": [
+    1008,
+    675
+  ],
+  "renderSize": [
+    1240,
+    438
+  ],
+  "effects": true,
+  "reducedMotion": false,
+  "seconds": 14.999000000000002,
+  "frames": 879,
+  "fps": 58.60390692712847,
+  "p95FrameMs": 16.900000000001455,
+  "meanDrawCalls": 250.42093287827078,
+  "geometries": 239,
+  "textures": 7,
+  "usedJSHeapBytes": 53777765,
+  "renderer": "ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "note": "Visible requestAnimationFrame cadence. Includes rendering and application work. Not GPU timing, total memory, or a benchmark of other devices.",
+  "context": {
+    "weapon": "rifle",
+    "ammo": 0,
+    "reserve": 60,
+    "targetHp": 2200,
+    "mode": "SERVER_WEAPON_LAB",
+    "automated": true,
+    "authoredTarget": true,
+    "tickProfile": {
+      "samples": 128,
+      "p95Ms": 0.4835000000020955,
+      "peakMs": 2.6912000000011176
+    },
+    "ownedAsset": null,
+    "paused": false
+  },
+  "sceneSamples": [
+    {
+      "weapon": "rifle",
+      "ammo": 18,
+      "reserve": 80,
+      "targetHp": 2960,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 46,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 18,
+      "reserve": 80,
+      "targetHp": 2960,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 46,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 17,
+      "reserve": 80,
+      "targetHp": 2940,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 54,
+        "p95Ms": 0.7528999999922235,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 16,
+      "reserve": 80,
+      "targetHp": 2920,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 62,
+        "p95Ms": 0.7528999999922235,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 14,
+      "reserve": 80,
+      "targetHp": 2880,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 70,
+        "p95Ms": 0.7528999999922235,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 12,
+      "reserve": 80,
+      "targetHp": 2840,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 78,
+        "p95Ms": 0.7528999999922235,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 11,
+      "reserve": 80,
+      "targetHp": 2820,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 88,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 9,
+      "reserve": 80,
+      "targetHp": 2780,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 96,
+        "p95Ms": 0.7528999999922235,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 8,
+      "reserve": 80,
+      "targetHp": 2760,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 104,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 6,
+      "reserve": 80,
+      "targetHp": 2720,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 112,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 5,
+      "reserve": 80,
+      "targetHp": 2700,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 120,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 3,
+      "reserve": 80,
+      "targetHp": 2660,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.635999999998603,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 1,
+      "reserve": 80,
+      "targetHp": 2620,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 0,
+      "reserve": 80,
+      "targetHp": 2600,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 0,
+      "reserve": 80,
+      "targetHp": 2600,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 0,
+      "reserve": 80,
+      "targetHp": 2600,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.6424000000115484,
+        "peakMs": 6.375400000018999
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 20,
+      "reserve": 60,
+      "targetHp": 2600,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.5822000000043772,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 18,
+      "reserve": 60,
+      "targetHp": 2560,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.5797999999776948,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 17,
+      "reserve": 60,
+      "targetHp": 2540,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.537400000001071,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 16,
+      "reserve": 60,
+      "targetHp": 2520,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.537400000001071,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 15,
+      "reserve": 60,
+      "targetHp": 2500,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.5797999999776948,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 13,
+      "reserve": 60,
+      "targetHp": 2460,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.5797999999776948,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 12,
+      "reserve": 60,
+      "targetHp": 2440,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.5797999999776948,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 10,
+      "reserve": 60,
+      "targetHp": 2400,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.537400000001071,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 8,
+      "reserve": 60,
+      "targetHp": 2360,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.4835000000020955,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 7,
+      "reserve": 60,
+      "targetHp": 2340,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.4835000000020955,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 6,
+      "reserve": 60,
+      "targetHp": 2320,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.4835000000020955,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 5,
+      "reserve": 60,
+      "targetHp": 2300,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.537400000001071,
+        "peakMs": 2.6211999999941327
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 3,
+      "reserve": 60,
+      "targetHp": 2260,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.537400000001071,
+        "peakMs": 2.6912000000011176
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 2,
+      "reserve": 60,
+      "targetHp": 2240,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.4835000000020955,
+        "peakMs": 2.6912000000011176
+      },
+      "ownedAsset": null,
+      "paused": false
+    },
+    {
+      "weapon": "rifle",
+      "ammo": 1,
+      "reserve": 60,
+      "targetHp": 2220,
+      "mode": "SERVER_WEAPON_LAB",
+      "automated": true,
+      "authoredTarget": true,
+      "tickProfile": {
+        "samples": 128,
+        "p95Ms": 0.4835000000020955,
+        "peakMs": 2.6912000000011176
+      },
+      "ownedAsset": null,
+      "paused": false
+    }
+  ],
+  "visibilityState": "visible",
+  "documentHasFocus": true,
+  "cadenceWarning": null,
+  "presentationNote": "Page visibility alone does not prove that the host app is restored or that this preview tab is selected."
+}

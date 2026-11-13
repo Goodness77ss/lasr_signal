@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-11-02T17:04:11.948Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_ALLOCATION",
+  "hash": "0x7d135e161892fe49c2485b79932d9719d193bac9967346400d19607c820965fc",
+  "status": 0,
+  "block": 147165791,
+  "canonical": true,
+  "run": "0x0c343e7775aa1ab9cf1aecbaa3fc8201872336d238aa842febae9ddc0a8174c1",
+  "active": false,
+  "deadline": "0",
+  "deposit": "0",
+  "vaultCustody": "0"
+}

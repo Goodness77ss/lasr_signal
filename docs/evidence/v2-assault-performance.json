@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-11-01T20:26:42.759Z",
+  "mode": "SERVER_PRACTICE_V2",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "viewport": [
+    1280,
+    720
+  ],
+  "renderSize": [
+    1581,
+    517
+  ],
+  "effects": true,
+  "reducedMotion": false,
+  "seconds": 15.015500000000007,
+  "frames": 881,
+  "fps": 58.67270487163262,
+  "p95FrameMs": 16.80000000000291,
+  "meanDrawCalls": 596.8728717366629,
+  "geometries": 695,
+  "textures": 7,
+  "usedJSHeapBytes": 36875249,
+  "renderer": "ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "note": "Visible requestAnimationFrame cadence. Includes rendering and application work. Not GPU timing, total memory, or a benchmark of other devices.",
+  "context": {
+    "rulesVersion": "survival-2.1.0",
+    "rulesHash": "0x2c6fbcdeda5c220cd4befd6b65fd646005a476c5496bfd8d37819c7a2ed92da2",
+    "activeSeconds": 48.2,
+    "paused": false,
+    "pressure": {
+      "tier": 1,
+      "enemies": 2,
+      "cap": 3,
+      "delayed": 0,
+      "reason": "Assault 1 advancing on A",
+      "nextInSeconds": 0,
+      "assault": {
+        "id": "d08000121e38b624749fed8017330ac4:assault:1",
+        "station": "A",
+        "state": "active",
+        "attackers": 2,
+        "preparationSeconds": 0,
+        "engaged": true,
+        "routeFailure": false
+      }
+    },
+    "tickProfile": {
+      "samples": 256,
+      "p95Ms": 3.570800000001327,
+      "peakMs": 10.484700000000885,
+      "meanMs": 1.020802734375252,
+      "meanSnapshotBytes": 6085.3046875
+    }
+  }
+}

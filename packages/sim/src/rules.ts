@@ -39,6 +39,17 @@ export function legal(p: Point, side?: Side): boolean {
     && !MAP.obstacles.some(o => p.x >= o.x && p.x <= o.x + o.w && p.z >= o.z && p.z <= o.z + o.d)
     && (side === undefined || distance(p, HOMES[1 - side]) > RULES.homeRadius);
 }
+// Physical bodies use the same authored footprints as the rendered field props.
+export const ACTOR={radius:.26,eyeHeight:1.8,modelScale:1.1,fieldScale:1.5} as const;
+export type Solid={x:number;z:number;w:number;d:number;h:number};
+export const FIELD_SOLIDS:Solid[]=[...MAP.obstacles,
+ ...RELAYS.flatMap((r,i)=>[{x:r.x-.55,z:r.z+.125,w:1.1,d:.65,h:.9},{x:r.x+.57,z:r.z+.52,w:.06,d:.06,h:2.5},...(i===1?[-.8,1.7].map(x=>({x:r.x+x-.52,z:r.z-.67,w:.14,d:.14,h:3.2})):[]),...(i===2?[-.7,1.8].map(x=>({x:r.x+x-.87,z:r.z-.92,w:.84,d:.84,h:1.4})):[])]),
+ ...MAP.covers.map(c=>({x:c.x+c.facing*.7-.3,z:c.z-1.49,w:.6,d:3.1,h:.74})),
+ ...HOMES.flatMap(h=>[{x:h.x-.9,z:h.z+2.025,w:1.8,d:.95,h:.93},{x:h.x+(h.x>24?-1.3:1.3)-.8*.65/2,z:h.z+2.8-.65*.65/2,w:.8*.65,d:.65*.65,h:.65*.65},{x:h.x-.06,z:h.z+3.34,w:.12,d:.12,h:3}]),
+ ...MAP.obstacles.flatMap(o=>[{x:o.x+.6-.8*.65/2,z:o.z+o.d+.22-.65*.65/2,w:.8*.65,d:.65*.65,h:.65*.65},{x:o.x+1.3-.2,z:o.z+o.d+.22-.1625,w:.4,d:.325,h:.325},{x:o.x+o.w-.69,z:o.z+o.d-.02,w:.48,d:.48,h:.65}].map(s=>o.x>24?{...s,x:2*(o.x+o.w/2)-s.x-s.w}:s)),
+ ...[{x:3,z:4},{x:45,z:28}].map(p=>({x:p.x-1,z:p.z-.7,w:2,d:1.4,h:.8}))];
+export function walkable(p:Point,side?:Side,radius:number=ACTOR.radius):boolean{return legal(p,side)&&!FIELD_SOLIDS.some(o=>{const dx=p.x-Math.max(o.x,Math.min(o.x+o.w,p.x)),dz=p.z-Math.max(o.z,Math.min(o.z+o.d,p.z));return dx*dx+dz*dz<radius*radius;});}
+export function bodyStep(from:Point,to:Point,side:Side):Point{const count=Math.max(1,Math.ceil(distance(from,to)/.06));let at={...from};for(let i=1;i<=count;i++){const next={x:from.x+(to.x-from.x)*i/count,z:from.z+(to.z-from.z)*i/count};if(!walkable(next,side))break;at=next;}return {x:quantize(at.x),z:quantize(at.z)};}
 export function lineOfSight(a: Point, b: Point): boolean {
   const steps = Math.ceil(distance(a, b) * 8);
   for (let i = 1; i < steps; i++) {
@@ -46,9 +57,10 @@ export function lineOfSight(a: Point, b: Point): boolean {
   }
   return true;
 }
+const routeEdgeCache=new Map<string,boolean>();
 // Stable four neighbor breadth first search on an authored one unit grid.
 export function path(from: Point, to: Point, side: Side): Point[] | null {
-  if (!legal(to, side)) return null;
+  if(!walkable(to,side)){if(!legal(to,side))return null;const original=to;const nearby=[.4,.7,1].flatMap(r=>Array.from({length:8},(_,i)=>({x:original.x+Math.cos(i*Math.PI/4-Math.PI/2)*r,z:original.z+Math.sin(i*Math.PI/4-Math.PI/2)*r}))).find(p=>walkable(p,side));if(!nearby)return null;to=nearby;}
   const cell = (p: Point) => Math.floor(p.z) * 48 + Math.floor(p.x);
   const point = (n: number): Point => ({ x: n % 48 + .5, z: Math.floor(n / 48) + .5 });
   const start = cell(from), end = cell(to);
@@ -59,11 +71,15 @@ export function path(from: Point, to: Point, side: Side): Point[] | null {
     const p = point(current);
     for (const d of [{ x: 1, z: 0 }, { x: 0, z: 1 }, { x: -1, z: 0 }, { x: 0, z: -1 }]) {
       const next = { x: p.x + d.x, z: p.z + d.z }, id = cell(next);
-      if (legal(next, side) && !previous.has(id)) { previous.set(id, current); queue.push(id); }
+      const destination=id===end?to:next,origin=current===start?from:p;const length=distance(origin,destination),samples=Math.max(1,Math.ceil(length/.15));const key=side+':'+current+':'+id;const cached=current!==start&&id!==end?routeEdgeCache.get(key):undefined;
+      const clear=cached??Array.from({length:samples},(_,i)=>({x:origin.x+(destination.x-origin.x)*(i+1)/samples,z:origin.z+(destination.z-origin.z)*(i+1)/samples})).every(at=>walkable(at,side));if(current!==start&&id!==end&&cached===undefined)routeEdgeCache.set(key,clear);
+      if (!previous.has(id)&&clear) { previous.set(id, current); queue.push(id); }
     }
   }
   if (!previous.has(end)) return null;
   const result: Point[] = [to];
-  for (let c = end; c !== start; c = previous.get(c)!) result.unshift(point(c));
+  for (let c = end; c !== start; c = previous.get(c)!) if(c!==end)result.unshift(point(c));
   return result;
 }
+
+export function clearBodyPosition(p:Point,side:Side):Point{if(walkable(p,side))return p;for(let ring=1;ring<=12;ring++)for(let i=0;i<24;i++){const at={x:quantize(p.x+Math.cos(i*Math.PI/12)*ring*.2),z:quantize(p.z+Math.sin(i*Math.PI/12)*ring*.2)};if(walkable(at,side))return at;}return p;}

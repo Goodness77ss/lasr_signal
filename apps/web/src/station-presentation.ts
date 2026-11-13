@@ -1,0 +1,73 @@
+import {WEAPONS,RULES,MAP,squadMembers,type Observation,type GameEvent} from '@last-signal/sim';
+import type {Battlefield} from './scene.ts';
+import {BattleFeedback} from './battle-feedback.ts';
+
+type Snapshot={paused:boolean;countdown:number;observation:Observation;events:GameEvent[];fieldAllowance?:{credits:number};accounting?:{availableWhole:number;lockedWhole:number};rewardLedger?:{totalWhole:number};lifecycle?:{terminal?:{outcome:string;simulatedBankCreditWhole:number}|null}};
+type Controls={fire:()=>void;reload:()=>void;pickup:()=>void;swap:()=>void;pause:()=>void;resume:()=>void;getState:()=>{ready:boolean;paused:boolean;observation:Observation|null}};
+
+export class StationPresentation{
+ private feedback:BattleFeedback;private audio:AudioContext|null=null;private rain:GainNode|null=null;private sound=true;private soundEvent=0;private resultShown=false;private mapTick=-1;private freeLook=false;private captureRequested=false;private lookPointer:{x:number;y:number}|null=null;
+ private el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
+ constructor(private scene:Battlefield,private controls:Controls){
+  this.feedback=new BattleFeedback(this.el('battle-feedback'),(at,height)=>scene.screenPoint(at,height));
+  try{const saved=JSON.parse(localStorage.getItem('last-signal-settings')??'{}');scene.effectsEnabled=saved.effects??true;scene.reducedMotion=saved.motion??scene.reducedMotion;this.sound=saved.audio??true;}catch{}
+  for(const [id,value]of [['effects',scene.effectsEnabled],['motion',scene.reducedMotion],['audio',this.sound]]as const)this.el<HTMLInputElement>(id).checked=value;
+  for(const id of ['effects','motion','audio'])this.el<HTMLInputElement>(id).onchange=()=>{scene.effectsEnabled=this.el<HTMLInputElement>('effects').checked;scene.reducedMotion=this.el<HTMLInputElement>('motion').checked;this.sound=this.el<HTMLInputElement>('audio').checked;try{localStorage.setItem('last-signal-settings',JSON.stringify({effects:scene.effectsEnabled,motion:scene.reducedMotion,audio:this.sound}));}catch{}this.ambience();};
+  this.el('settings-button').onclick=()=>this.open('settings',true);this.el('help-button').onclick=()=>this.open('help',true);
+  for(const button of document.querySelectorAll<HTMLButtonElement>('[data-close]'))button.onclick=()=>this.el<HTMLDialogElement>(button.dataset.close!).close();
+  this.el('station-open-supplies').onclick=this.el('field-supplies').onclick=()=>this.open('supplies',true);
+  this.el('station-open-ledger').onclick=()=>this.open('ledger',true);this.el('station-open-bank').onclick=()=>this.open('station-bank',false);
+  this.el('shooter-hud').lastElementChild!.insertAdjacentHTML('beforeend','<button id="station-bank-shortcut">EXTRACT</button><button id="station-ledger-shortcut">LEDGER</button>');
+  this.el('station-bank-shortcut').onclick=()=>this.open('station-bank',false);this.el('station-ledger-shortcut').onclick=()=>this.open('ledger',true);
+  this.el('take-control').onclick=()=>this.captureMouse();this.el('aim-rifle').onclick=()=>{if(!controls.getState().paused)scene.view.aiming=!scene.view.aiming;};
+  this.el('release-control').onclick=()=>this.changeView('tactical');this.el('view-squad').onclick=()=>this.changeView('squad');
+  this.el('pickup-loot').onclick=controls.pickup;this.el('switch-weapon').onclick=controls.swap;
+  this.el('zoom-in').onclick=()=>scene.setZoom(.1);this.el('zoom-out').onclick=()=>scene.setZoom(-.1);this.el('reset-camera').onclick=()=>scene.resetCamera();
+  this.el('overlay').onclick=()=>{const active=this.el('overlay').classList.toggle('active');scene.setTactical(active);};
+  this.el('rematch').onclick=()=>{this.el<HTMLDialogElement>('result').close();this.el<HTMLButtonElement>('start').click();};
+  document.addEventListener('operation-menu-open',()=>{this.releaseMouse();const s=controls.getState();if(s.ready&&!s.paused&&!s.observation?.result)controls.pause();const note=document.getElementById('operation-leave-note');if(note)note.textContent='Opening Operations pauses practice. Quitting forfeits this round’s unclaimed rewards. Wallet funds and owned guns stay yours.';});
+  document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===scene.renderer.domElement;if(locked){this.freeLook=false;document.body.classList.add('mouse-captured');document.dispatchEvent(new Event('station-release-input'));}else this.releaseMouse();});
+  document.addEventListener('pointerlockerror',()=>this.fallbackLook());
+  document.addEventListener('mousemove',event=>{if(scene.viewMode!=='eyes'||controls.getState().paused||document.querySelector('dialog[open]'))return;if(document.pointerLockElement===scene.renderer.domElement)scene.view.rotate(event.movementX,event.movementY);else if(this.freeLook&&event.target===scene.renderer.domElement){if(this.lookPointer)scene.view.rotate(event.clientX-this.lookPointer.x,event.clientY-this.lookPointer.y);this.lookPointer={x:event.clientX,y:event.clientY};}else this.lookPointer=null;});
+  document.addEventListener('mouseup',event=>{if(event.button===2)scene.view.aiming=false;});
+  window.addEventListener('keydown',event=>{if(event.repeat||event.target instanceof HTMLInputElement||event.target instanceof HTMLTextAreaElement||document.querySelector('dialog[open]'))return;const key=event.key.toLowerCase();if(key==='escape')this.releaseMouse();if(key==='h'){event.preventDefault();this.open('supplies',true);}if(key==='x')controls.swap();if(key==='v')this.changeView(scene.viewMode==='eyes'?'tactical':scene.viewMode==='tactical'?'squad':'eyes');});
+  window.addEventListener('blur',()=>this.releaseMouse());
+  document.addEventListener('visibilitychange',()=>{this.ambience();if(document.hidden){this.releaseMouse();const state=controls.getState();if(state.ready&&!state.paused&&!state.observation?.result)controls.pause();}});
+  window.addEventListener('keydown',event=>{if(event.code==='Space'&&!document.querySelector('dialog[open]')&&!(event.target instanceof HTMLInputElement)){event.preventDefault();scene.setTactical(true);}});
+  window.addEventListener('keyup',event=>{if(event.code==='Space')scene.setTactical(this.el('overlay').classList.contains('active'));});
+  this.el('end').addEventListener('click',()=>this.el<HTMLDialogElement>('settings').close());
+  scene.renderer.domElement.addEventListener('webglcontextlost',()=>this.releaseMouse());
+ }
+ open(id:string,pause:boolean){this.releaseMouse();const state=this.controls.getState();if(pause&&state.ready&&!state.paused&&!state.observation?.result)this.controls.pause();this.el<HTMLDialogElement>(id).showModal();}
+ changeView(view:'squad'|'eyes'|'tactical'){this.releaseMouse();this.scene.setView(view);for(const [id,mode]of [['view-squad','squad'],['view-eyes','eyes'],['view-tactical','tactical']])this.el(id).classList.toggle('active',mode===view);this.el('camera-label').textContent=view==='eyes'?'EYE LEVEL':view==='squad'?'SQUAD CAMERA':'COMMAND VIEW';}
+ private captureMouse(){const state=this.controls.getState();if(!state.ready||state.paused||state.observation?.result){this.el('toast').textContent='Deploy or resume your survival run first.';return;}this.changeView('eyes');this.captureRequested=true;this.el('battlefield').focus({preventScroll:true});if(!this.scene.renderer.domElement.requestPointerLock){this.fallbackLook();return;}try{const request=this.scene.renderer.domElement.requestPointerLock();if(request)void request.catch(()=>this.fallbackLook());}catch{this.fallbackLook();}}
+ private fallbackLook(){if(!this.captureRequested||this.controls.getState().paused||document.querySelector('dialog[open]'))return;this.freeLook=true;this.lookPointer=null;document.body.classList.add('mouse-captured');this.el('shoot-status').textContent='MOVE MOUSE OVER THE BATTLEFIELD TO LOOK · LEFT FIRE · RIGHT AIM · ESC RELEASE';}
+ get handlesMouseLook(){return this.freeLook||document.pointerLockElement===this.scene.renderer.domElement;}
+ releaseMouse(){this.captureRequested=false;this.freeLook=false;this.lookPointer=null;document.dispatchEvent(new Event('station-release-input'));document.body.classList.remove('mouse-captured');this.scene.view.aiming=false;if(document.pointerLockElement===this.scene.renderer.domElement)document.exitPointerLock();}
+ disconnected(){this.releaseMouse();document.body.classList.remove('in-match');this.el('briefing').hidden=false;this.el('phase').textContent='CONNECTION CLOSED';this.el('station-ready-note').textContent='Reconnect to your saved run. Progress is verified by the server.';for(const id of ['fire-rifle','take-control','aim-rifle','reload-rifle','pickup-loot','switch-weapon','pause','end'])this.el<HTMLButtonElement>(id).disabled=true;}
+ reset(){this.releaseMouse();this.resultShown=false;this.soundEvent=0;this.feedback.reset();for(const dialog of document.querySelectorAll<HTMLDialogElement>('dialog[open]'))dialog.close();document.body.classList.add('in-match');this.el('briefing').hidden=true;if(this.sound){this.audio??=new AudioContext();void this.audio.resume();this.ambience();}}
+ private ambience(){if(!this.audio)return;if(!this.rain){const buffer=this.audio.createBuffer(1,this.audio.sampleRate*2,this.audio.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;const source=this.audio.createBufferSource(),filter=this.audio.createBiquadFilter();source.buffer=buffer;source.loop=true;filter.type='lowpass';filter.frequency.value=1100;this.rain=this.audio.createGain();source.connect(filter).connect(this.rain).connect(this.audio.destination);source.start();}this.rain.gain.value=this.sound&&!document.hidden ? .045 : 0;}
+ private gunSound(){if(!this.sound||!this.audio||document.hidden)return;const buffer=this.audio.createBuffer(1,Math.floor(this.audio.sampleRate*.11),this.audio.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=(Math.random()*2-1)*Math.exp(-i/(this.audio.sampleRate*.018));const source=this.audio.createBufferSource(),filter=this.audio.createBiquadFilter(),gain=this.audio.createGain();source.buffer=buffer;filter.type='lowpass';filter.frequency.value=1800;gain.gain.value=.16;source.connect(filter).connect(gain).connect(this.audio.destination);source.start();}
+ render(s:Snapshot){
+  document.body.classList.add('in-match');this.el('briefing').hidden=true;const o=s.observation,hero=o.squads.find(unit=>unit.id===o.hero?.squadId),hp=Math.max(0,Math.ceil(hero?.hp??0)),available=s.accounting?.availableWhole??0;
+  this.el('hero-health').textContent=`YOUR HEALTH · ${hp} / 100 · ${hero?squadMembers(hero):0}/3 MEN`;this.el('player-health-fill').style.width=hp+'%';
+  this.el('weapon-readout').textContent=hero?`${WEAPONS[hero.weapon].name.toUpperCase()} · ${hero.ammo} / ${hero.reserveAmmo}${hero.reloadUntil>o.tick?' · RELOADING':''}`:'CHARACTER DOWN';
+  const reload=this.el<HTMLProgressElement>('reload-progress');reload.hidden=!hero||hero.reloadUntil<=o.tick;reload.max=hero?WEAPONS[hero.weapon].reloadTicks:RULES.reloadTicks;reload.value=hero?Math.max(0,reload.max-(hero.reloadUntil-o.tick)):0;
+  this.el('token-readout').textContent=`RUN FUNDS · ${available} SIM`;this.el('budget').textContent=String(available);this.el('station-field-credit').textContent=(s.fieldAllowance?.credits??0)+' FIELD CREDITS';
+  this.el('station-team-note').textContent=hero?`${squadMembers(hero)}/3 MEN · ${s.paused?'PAUSED':hero.suppression>=60?'SUPPRESSED':'READY'} · ${s.accounting?.lockedWhole??0} SIM LOCKED`:'No living squad';
+  this.el('score-you').textContent=String(o.relays.filter(r=>r.owner===0).length);this.el('score-bot').textContent=String(o.squads.filter(unit=>unit.side===1).length);
+  this.el('timer').textContent=s.countdown?'DEPLOY '+Math.ceil(s.countdown/20):Math.floor(o.tick/1200)+':'+String(Math.floor(o.tick/20)%60).padStart(2,'0');this.el('phase').textContent=o.result?'RUN ENDED':s.paused?'SURVIVAL PAUSED':'CAPTURE · DEFEND · EXTRACT';
+  for(const [i,station]of o.relays.entries()){const marker=this.el('relay-status').children[i]as HTMLElement;marker.className=station.owner===0?'friendly':station.owner===1?'hostile':'';}
+  this.el('regen-status').textContent=hp>=100?'HEALTH FULL':s.paused?'RECOVERY PAUSED':hero&&o.tick-hero.lastHit<100?'AVOID DAMAGE TO RECOVER':'RECOVERING';
+  for(const id of ['fire-rifle','take-control','aim-rifle','reload-rifle','pickup-loot','switch-weapon'])this.el<HTMLButtonElement>(id).disabled=s.paused||!!o.result||s.countdown>0||!hero;
+  this.el<HTMLButtonElement>('switch-weapon').disabled=s.paused||!!o.result||!hero||hero.weapons.length<2;
+  this.el('shoot-status').textContent=s.paused?'PAUSED · PRESS P TO RESUME':hero?.reloadUntil&&hero.reloadUntil>o.tick?'RELOADING…':hero&&!hero.ammo?'EMPTY · PRESS R TO RELOAD':this.freeLook?'MOVE MOUSE TO LOOK · RELEASE WASD TO CHANGE HEADING · LEFT FIRE · RIGHT AIM · ESC RELEASE':'HOLD WASD TO KEEP HEADING · TAKE CONTROL TO LOOK · LEFT FIRE · RIGHT AIM · ESC RELEASE';
+  this.el('aim-status').textContent='YOU AIM AND FIRE · YOUR HELPERS FIRE AUTOMATICALLY';
+  this.drawMap(o);
+  for(const event of s.events)if(event.seq>this.soundEvent){if(event.kind==='PlayerShot'||event.kind==='ShotFired')this.gunSound();}this.soundEvent=s.events.at(-1)?.seq??this.soundEvent;
+  if(o.result&&!this.resultShown){this.resultShown=true;this.releaseMouse();for(const dialog of document.querySelectorAll<HTMLDialogElement>('dialog[open]'))dialog.close();this.el('result-title').textContent=s.lifecycle?.terminal?.outcome==='EXTRACTED'?'You made it back.':'Run complete.';this.el('result-reason').textContent=s.lifecycle?.terminal?.outcome??o.result.reason;this.el('result-stats').textContent=`${s.lifecycle?.terminal?.simulatedBankCreditWhole??available} simulated bank units. Practice only; no wallet payout.`;this.el<HTMLDialogElement>('result').showModal();}
+ }
+ private drawMap(o:Observation){const map=this.el<HTMLCanvasElement>('minimap'),ctx=map.getContext('2d')!;ctx.clearRect(0,0,192,128);ctx.fillStyle='#211f17';ctx.fillRect(0,0,192,128);for(const obstacle of MAP.obstacles){ctx.fillStyle='#736d50';ctx.fillRect(obstacle.x*4,obstacle.z*4,obstacle.w*4,obstacle.d*4);}for(const station of o.relays){ctx.fillStyle=station.owner===0?'#b3c69c':station.owner===1?'#d4a474':'#ddd3ad';ctx.font='10px monospace';ctx.fillText(station.id,station.x*4-3,station.z*4+3);}for(const unit of o.squads){ctx.fillStyle=unit.side===0?'#b3c69c':'#d4a474';ctx.beginPath();ctx.arc(unit.x*4,unit.z*4,unit.id===o.hero?.squadId?3:2,0,Math.PI*2);ctx.fill();}this.mapTick=o.tick;}
+ frame(o:Observation,events:GameEvent[],now:number){if(this.mapTick!==o.tick)this.drawMap(o);this.feedback.update(o,events,now);}
+ dispose(){this.releaseMouse();void this.audio?.close();}
+}

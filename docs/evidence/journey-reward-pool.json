@@ -1,0 +1,178 @@
+{
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "limits": "Actual J13 contract accounting with authored run outcomes. Gameplay worker integration not proved.",
+  "receipts": [
+    {
+      "label": "deploy",
+      "hash": "0x47d419069f50b410105667a714932cffec7886d420ba86e989614b5659bd4761",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "1035257",
+      "logs": []
+    },
+    {
+      "label": "approve exact pool funding",
+      "hash": "0x5a048f291f554d241cec1c64d2a5e8e5be567f3826ac4bd26b28f038d47c58f4",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0xdAFa0CDd0672e34DEbA5D2827BCf5288EB120C56",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b",
+            "0x000000000000000000000000694fc675f1f5c2da7ce7fe99b0ebe4506c1476f8"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001a055690d9db80000"
+        }
+      ]
+    },
+    {
+      "label": "fund development reward backing",
+      "hash": "0xc020cc10b1cd1cb9bac042b806feb5333fc5c0699400256a72e0d580668e341e",
+      "block": 9,
+      "status": 1,
+      "gasUsed": "61114",
+      "logs": [
+        {
+          "address": "0xdAFa0CDd0672e34DEbA5D2827BCf5288EB120C56",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b",
+            "0x000000000000000000000000694fc675f1f5c2da7ce7fe99b0ebe4506c1476f8"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001a055690d9db80000"
+        },
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x5af8184bef8e4b45eb9f6ed7734d04da38ced226495548f46e0c8ff8d7d9a524",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001a055690d9db80000"
+        }
+      ]
+    },
+    {
+      "label": "reserve first run",
+      "hash": "0xe3559064ed158718a37d3e9d1822b6980807183ecc8e71a01c92af2ce030a16c",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "82330",
+      "logs": [
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x3b34446c7dfff7d7e81c5f9384fa1843bf94d5b3a27afd6b01b537b605fe8042",
+            "0x7a4c435d9387bfc3de9fa702f83e8616d7e8c47c81cc04ecb45ff049fc65dad3",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000d02ab486cedc0000000000000000000000000000000000000000000000000000000000006af44769"
+        }
+      ]
+    },
+    {
+      "label": "reserve second run",
+      "hash": "0xbfe2ae3f8c9dca7b7713fe96541dff28c6722eb249711f75b71c9d6f05992ffc",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "65230",
+      "logs": [
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x3b34446c7dfff7d7e81c5f9384fa1843bf94d5b3a27afd6b01b537b605fe8042",
+            "0x50fde4ff09c2f99e66bb9f782e8711cde0542ec3ab1d05333a976aaffd17e64b",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000d02ab486cedc0000000000000000000000000000000000000000000000000000000000006af4476a"
+        }
+      ]
+    },
+    {
+      "label": "settle ten checkpoint credits",
+      "hash": "0x531e3f714840ca28ea19a042615d5377068e8f5e4f6fe25fbac71e67fd061c5d",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "103050",
+      "logs": [
+        {
+          "address": "0xdAFa0CDd0672e34DEbA5D2827BCf5288EB120C56",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000694fc675f1f5c2da7ce7fe99b0ebe4506c1476f8",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000008ac7230489e80000"
+        },
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x762cb09fd9b8fbc7183303e94e96032a6470d49ef549ebf1fc64d06da1796023",
+            "0x7a4c435d9387bfc3de9fa702f83e8616d7e8c47c81cc04ecb45ff049fc65dad3",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000008ac7230489e800000000000000000000000000000000000000000000000000004563918244f40000870c21ad1ffe277c18c18be08af0a0950bba81f07cef8e66de464083fb8f4a38"
+        }
+      ]
+    },
+    {
+      "label": "independent timeout without service",
+      "hash": "0x5d7ce02c985d18eaff280c90f5dd7ccd65076970ab4c88a6ba080bce5586f196",
+      "block": 14,
+      "status": 1,
+      "gasUsed": "31810",
+      "logs": [
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x8c12b92004a805fa6a8289b9035bbe92d999816e9d8feccb653ed32f1faab291",
+            "0x50fde4ff09c2f99e66bb9f782e8711cde0542ec3ab1d05333a976aaffd17e64b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000d02ab486cedc0000"
+        }
+      ]
+    },
+    {
+      "label": "new backed run",
+      "hash": "0x09ad802eba1b8b8e801c68c13ec4f3f0fb4428f1dd940f3f0c89e6b8250f2872",
+      "block": 15,
+      "status": 1,
+      "gasUsed": "82330",
+      "logs": [
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x3b34446c7dfff7d7e81c5f9384fa1843bf94d5b3a27afd6b01b537b605fe8042",
+            "0xdb2a102e0ae5e2def9515783d620b2dd12093ef762c7b0fbe22fe5c43dffc760",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000d02ab486cedc0000000000000000000000000000000000000000000000000000000000006af44c1c"
+        }
+      ]
+    },
+    {
+      "label": "forfeit unbanked reward only",
+      "hash": "0xf7c5c7445f2bf75956702a90d1c01ab22a3983f748c1377f8424faa63d77bec8",
+      "block": 16,
+      "status": 1,
+      "gasUsed": "58205",
+      "logs": [
+        {
+          "address": "0x694fC675F1f5c2Da7Ce7fE99B0Ebe4506C1476F8",
+          "topics": [
+            "0x762cb09fd9b8fbc7183303e94e96032a6470d49ef549ebf1fc64d06da1796023",
+            "0xdb2a102e0ae5e2def9515783d620b2dd12093ef762c7b0fbe22fe5c43dffc760",
+            "0x000000000000000000000000cae347b64854418b05d2f193ca8c5bf1a013919b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d02ab486cedc00000d54cbdd232b52b549377554044249e7df101d387b7edded16ac9d316488a2a0"
+        }
+      ]
+    }
+  ],
+  "funded": "30",
+  "paid": "10",
+  "remaining": "20",
+  "reserved": "0"
+}

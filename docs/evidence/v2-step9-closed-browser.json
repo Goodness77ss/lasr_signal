@@ -1,0 +1,25 @@
+{
+  "mode": "SERVER_PRACTICE_V2",
+  "browserAction": "Dedicated agent tab actually closed via browser control. No browser connection was reopened.",
+  "checkedAt": "2026-11-02T01:00:05.330Z",
+  "before": {
+    "run": "3f9cc042ab83867abf197b93ceb04bbf",
+    "checkedAt": "2026-11-02T00:58:42.646Z",
+    "rules": "survival-2.6.0",
+    "activeTick": 416,
+    "terminal": null
+  },
+  "after": {
+    "rules": "survival-2.6.0",
+    "activeTick": 473,
+    "terminal": {
+      "outcome": "DISCONNECT",
+      "tick": 473,
+      "at": 1793581186944,
+      "simulatedBankCreditWhole": 0
+    },
+    "mission": null,
+    "failedStake": 0
+  },
+  "note": "Actual durable local practice outcome, not a chain settlement receipt. The initial sample preceded the actual close; gameplay stopped at tick 473 on disconnect."
+}

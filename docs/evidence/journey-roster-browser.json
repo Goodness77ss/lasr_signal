@@ -1,0 +1,19 @@
+{
+  "case": "leader-only",
+  "roster": {
+    "version": "journey-roster-1",
+    "catalogueVersion": "journey-practice-roster-1",
+    "members": [
+      {
+        "actorId": 1,
+        "id": "starter:1",
+        "revision": 1,
+        "classId": "starter-rifle",
+        "source": "free-starter",
+        "weapon": "service-rifle",
+        "loadout": "signature"
+      }
+    ],
+    "hash": "cf8a9d85c3d8dd6ab215a3b466a349f02211d989ea0ddf68b1136fe7eac24555"
+  }
+}

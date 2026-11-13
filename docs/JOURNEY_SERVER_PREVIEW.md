@@ -1,0 +1,42 @@
+# Journey server preview
+
+Step 26 remains IN PROGRESS. The browser source now has a dedicated server Journey view at `/?mode=journey-server`. It sends actions to the existing durable Journey service and uses its visible observations in the shared scene. It does not call local gameplay creation, movement, firing, rewards or simulation stepping. The ordinary local practice view remains available at `/?mode=journey`.
+
+The connection controller checks protocol, rules and generator, validates the pinned rules, roster and equipment hashes, rejects changed pin or equipment identity and backwards sections or ticks, and retains one exact pending command. An acknowledged command is completed only after its following snapshot. Reconnect uses the same run credential and retries the exact pending packet, including its original command ID and sequence. It does not infer spending from the browser button or a timeout. Pause state comes from an acknowledgement or resume response. The run identity, credential and pending public entry choices are saved in this tab's session storage before sending admission; wallet signatures and the login session are excluded from those pending choices. Wallet login sessions remain in the separate existing session storage entry.
+
+Initial admission recovery now uses an optional admission identity with a cryptographically random 128 bit run ID and 256 bit credential. Existing callers without this field retain server generated credentials. Migration eight writes the entry fingerprint in the same transaction as the run, progress attribution, reward allowance and gun reservation. The fingerprint binds requested protocol, rules, generator, roster, exact equipment and authenticated owner. Only the credential hash is stored by the server. The entry fingerprint excludes the expiring wallet login token, allowing the same owner to authenticate again and recover with a fresh session.
+
+If admission or its reply is lost, the saved pending entry retries the same identity. Before creating anything, the service checks for its existing admission and verifies the credential and entry fingerprint. It repeats that check after asynchronous preparation and handles a competing insert by recovering the matching committed run. A duplicate returns the existing run's current snapshot and last sequence, without resetting progress or reserving a gun again. Changed choices, a wrong credential, an unauthenticated equipment request or changed ownership cannot recover that admission. Once the browser receives the run identity, it replaces its saved pending entry with the ordinary resume credential.
+
+The scene accepts a public observation without reconstructing enemy spawns, private awareness, tactical memory or the internal event ring. Units absent from the latest observation are removed from the scene. Shared world and class helpers now accept only the fields they read. The local practice renderer still accepts the existing complete run. Server audio derives fresh shots only from actors currently present in the observation; newly visible actors establish a baseline rather than replaying their earlier shots.
+
+The preview includes free or development leaders, zero to two free helpers, one optional owned local gun on the leader, firing, reload, movement, crouch, jump, vault, class ability, pickup, checkpoint continuation, practice banking and quit. A server configured with the local gun adapter reports its exact collection and wallet login chain. The client inspects that collection and token before requesting admission; the service independently verifies ownership and build. Browser presentation readiness and shop readiness remain false. This is not yet the final Armory or NFT soldier roster integration.
+
+## Local launch
+
+From the repository root, use two PowerShell terminals. To receive the two authored development guns in your own testing wallet, set its public address before starting the service. Do not enter a private key.
+
+```powershell
+$env:JOURNEY_DEV_OWNER = '0xYourPublicTestingWalletAddress'
+npm run journey:local
+```
+
+Replace the example with a valid public wallet address. If omitted, both guns belong to the disposable unlocked development account, not your wallet. The script starts a new local chain on port 18586, deploys a separate gun collection, issues two explicitly authored fixtures and serves Journey on port 3001. It creates a unique SQLite database and public deployment manifest under the ignored `.runtime/journey-development` directory. It never exports the gameplay signer or a wallet signature. Local test chain configuration is explicit; public operation and funded survival startup are disabled in this process. Exit with Ctrl+C to close the service and disposable node. These addresses are no longer live after that node closes.
+
+```powershell
+npm run journey:dev
+```
+
+Open `http://127.0.0.1:5180/?mode=journey-server`. Free practice needs no wallet. For owned equipment, select the local chain 31337 in your wallet with RPC `http://127.0.0.1:18586`, use SIGN IN FOR LOCAL EQUIPMENT, then enter token 1 for marksman or token 2 for support. Signing in is an authentication message, not a token transaction. Wallet prompts remain under the owner's control. Account or network changes disconnect the equipment view and require a new login. No automatic network addition, key import, token purchase or public deployment is performed.
+
+## Verification and limits
+
+All 381 application tests in 69 files passed. Strict typecheck, the standard production build and the Journey enabled production build passed. The enabled build includes the server preview code; the standard build preserves the existing feature gate. Connection integration checks use actual sockets and deliberate response loss after server commit. Command reconnect returns the original acknowledgement with exactly one ammunition charge, keeps a defensive snapshot copy, preserves pause on resume and then quits through the service. The initial admission case recreates the browser controller from its saved pending entry, recovers one run, fires once and confirms that another retry of the old entry retains the spent ammunition.
+
+Equipment service checks verify one reservation under concurrent identical admission requests, transactional rollback of the admission fingerprint, rejection of changed credentials and intent, and recovery after SQLite reopen. A real child process exits with code 74 at the first session reply, after the equipment admission transaction has committed; the parent opens its database and recovers one run, one reservation and unchanged five round ammunition. That crash case uses an explicit trusted ownership fixture. The separate disposable EVM suite passes nine cases. Its new browser connection case loses the first admission reply for each actual gun build, obtains a fresh signed wallet session, recovers the same run and fires through the same browser transport controller. It confirms two runs and two allocations for two guns, without duplicate admission. This executes the browser controller in Node, not a rendered browser or wallet extension.
+
+Audio lifecycle checks use an explicitly mocked Web Audio context. They verify one sound per fresh trigger, duplicate observation rejection, a maximum of eight active voices, buffer reuse, mute and hidden page cleanup, section reset, shotgun pellet coalescing and disposal during an asynchronous unlock. Deterministic sample checks verify distinct bounded waveforms with decaying tails. These are not audible browser listening evidence.
+
+`npm run journey:local -- --check` exercises actual disposable deployment, two authored NFT claims, configured local service startup, advertised equipment admission and both inspection routes, then closes the service and node. It does not render a browser or prove wallet extension signing. Existing actual local chain checks separately cover owned marksman and support admission, fire replay, resume and transfer revocation through native sockets.
+
+Computer Use ended the prior browser attempt because it could not reliably determine Chrome's current URL for policy enforcement. No browser automation bypass or rendered browser success is claimed. Remaining verification includes the enabled server page, both owned gun figures, first person handling and reload, audible playback and mute, reconnect and transfer revocation from that page. The final Armory, NFT soldier admission and real gameplay reward bridges remain later plan gates.

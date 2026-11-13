@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-11-10T10:11:44.349Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "lifecycle": "Closed disposable node; evidence addresses only.",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+    "mintAuthority": "0x750eA50E0d0D8999F8421E4184329F1a943cC58B",
+    "gameplaySigner": "0x0f426B6011A92B400E52CBbd6f1bB16a6C073550",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0xe04845f46b6a5272087e32ca760310a87f05e5ab4e5fc7985249eafcaa0c0949",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "leasePolicy": "journey-owner-run-lock-1",
+  "maxLeaseSeconds": 3600,
+  "ownerDecision": "J11",
+  "deploymentReceipt": {
+    "label": "deploy approved local collection with one hour leases",
+    "hash": "0x9e0dd4042ee4634e6029880e40e99b3d2aeae2248312810ff2e66f9e6a9ccb81",
+    "block": 1,
+    "status": 1,
+    "gasUsed": "3813015",
+    "logs": []
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-02T18:01:56.816Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_AUTOMATED_COMBAT_REVIEW",
+  "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+  "phase": "active",
+  "tick": 2713,
+  "paused": true,
+  "stationWhole": 8,
+  "bonusWhole": 3,
+  "failedWhole": 0,
+  "spentWhole": 0,
+  "mission": "SUCCEEDED",
+  "consentHashes": [
+    "0x2e386abdd9d89a58652dec301b6eccebc80b00996dcf9d8955eeaddde20d5344"
+  ],
+  "settlementPrepared": false,
+  "disconnectedAt": null
+}

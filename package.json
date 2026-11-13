@@ -8,6 +8,17 @@
     "packages/*"
   ],
   "scripts": {
+    "submission:pack": "node scripts/package-submission.mjs",
+    "journey:database": "tsx scripts/journey-database.ts",
+    "journey:release": "node scripts/journey-release.mjs",
+    "journey:demo": "node scripts/journey-demo.mjs",
+    "journey:local": "tsx packages/contracts/scripts/journey-development.ts",
+    "journey:dev": "npm run dev -w @last-signal/web -- --mode journey --port 5180 --strictPort",
+    "survival:weapons:test": "tsx --test --test-concurrency=1 packages/contracts/test/weapon-collection.check.ts packages/contracts/test/weapon-catalog.check.ts packages/contracts/test/weapon-recovery.check.ts",
+    "survival:vault:test": "tsx --test packages/contracts/test/survival-vault.check.ts",
+    "survival:vault:proof": "tsx packages/contracts/scripts/survival-vault-proof.ts",
+    "survival:treasury:test": "tsx --test packages/contracts/test/survival-treasury.check.ts",
+    "survival:treasury:proof": "tsx packages/contracts/scripts/survival-treasury-proof.ts",
     "dev": "npm run dev -w @last-signal/web",
     "server": "npm run dev -w @last-signal/server",
     "build": "npm run typecheck && npm run build -w @last-signal/web",
@@ -25,7 +36,13 @@
     "armory:test": "tsx --test --test-concurrency=1 packages/contracts/test/armory.check.ts packages/contracts/test/salvage.check.ts",
     "armory:deploy": "tsx packages/contracts/scripts/armory-deploy.ts",
     "armory:proof": "tsx packages/contracts/scripts/armory-proof.ts",
-    "armory:verify": "tsx packages/contracts/scripts/armory-verify.ts"
+    "armory:verify": "tsx packages/contracts/scripts/armory-verify.ts",
+    "survival:worker:test": "tsx --test packages/contracts/test/survival-worker.check.ts",
+    "survival:worker:proof": "tsx packages/contracts/scripts/survival-worker-proof.ts",
+    "survival:accounting:test": "tsx --test packages/contracts/test/survival-accounting.check.ts packages/contracts/test/survival-recovery.check.ts",
+    "survival:testnet:deploy": "tsx packages/contracts/scripts/survival-testnet-deploy.ts",
+    "survival:testnet:fund": "tsx packages/contracts/scripts/survival-testnet-fund.ts",
+    "survival:testnet:proof": "tsx packages/contracts/scripts/survival-testnet-proof.ts"
   },
   "devDependencies": {
     "typescript": "7.0.2",
@@ -37,3 +54,4 @@
     "node": ">=24.0.0"
   }
 }
+

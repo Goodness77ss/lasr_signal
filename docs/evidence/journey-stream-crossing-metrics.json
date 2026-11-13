@@ -1,0 +1,39 @@
+{
+  "environment": "LOCAL_PRACTICE_AUTOMATED_BOT_REVIEW",
+  "capturedAt": "2026-11-03T14:00:38.839Z",
+  "samples": [
+    {
+      "stage": "initial",
+      "actors": 6,
+      "cachedSections": 2,
+      "geometries": 412,
+      "textures": 3
+    },
+    {
+      "stage": "after-eight-crossings",
+      "metrics": {
+        "engine": "three.js r187",
+        "journeyActors": "6",
+        "journeyCachedSections": "3",
+        "journeyDrawCalls": "701",
+        "journeyGeometries": "416",
+        "journeySection": "journey-sections-1:1:8",
+        "journeyTextures": "3"
+      }
+    },
+    {
+      "stage": "terminal-after-nine-crossings",
+      "metrics": {
+        "engine": "three.js r187",
+        "journeyActors": "6",
+        "journeyCachedSections": "3",
+        "journeyDrawCalls": "590",
+        "journeyGeometries": "417",
+        "journeySection": "journey-sections-1:1:9",
+        "journeyTextures": "3"
+      }
+    }
+  ],
+  "outcome": "Leader exhausted ammunition and died in section ordinal 9. No refill or health alteration. Credits forfeited normally.",
+  "limits": "Representative local browser resource check. Not human playtest, multiplayer, persistence or FPS evidence."
+}

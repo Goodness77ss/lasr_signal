@@ -1,0 +1,47 @@
+{
+  "environment": "LOCAL_BROWSER_PRACTICE",
+  "picked": {
+    "version": "journey-rewards-1",
+    "checkpointEarned": 0,
+    "dropCreated": 5,
+    "dropPicked": 5,
+    "provisionalLoot": 5,
+    "bankedLoot": 0,
+    "forfeitedLoot": 0,
+    "drops": [
+      {
+        "id": "journey-sections-1:5:0:enemy:6",
+        "section": "journey-sections-1:5:0",
+        "encounter": "journey-sections-1:5:0:checkpoint",
+        "enemyId": 6,
+        "x": 52.01466166159544,
+        "z": 23.438676488904537,
+        "credits": 5,
+        "state": "PICKED"
+      }
+    ]
+  },
+  "banked": {
+    "version": "journey-rewards-1",
+    "checkpointEarned": 10,
+    "dropCreated": 5,
+    "dropPicked": 5,
+    "provisionalLoot": 0,
+    "bankedLoot": 5,
+    "forfeitedLoot": 0,
+    "drops": [
+      {
+        "id": "journey-sections-1:5:0:enemy:6",
+        "section": "journey-sections-1:5:0",
+        "encounter": "journey-sections-1:5:0:checkpoint",
+        "enemyId": 6,
+        "x": 52.01466166159544,
+        "z": 23.438676488904537,
+        "credits": 5,
+        "state": "BANKED"
+      }
+    ]
+  },
+  "bankedCredits": "15",
+  "state": "BANKED"
+}

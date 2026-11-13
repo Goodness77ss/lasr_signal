@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+<title id="title">Journey support gun</title><desc id="desc">Original prototype illustration of a support gun with a box magazine and bipod.</desc>
+<rect width="640" height="220" fill="#1b2924"/><path d="M30 175H610M30 45H610" stroke="#bac4a0" opacity=".15"/>
+<g transform="translate(40 64)"><path d="M16 58L132 40 323 40 334 61 157 64 82 104 12 108Z" fill="#88603d" stroke="#b88b57" stroke-width="3"/>
+<path d="M135 30H343V53H135Z" fill="#69786e"/><path d="M332 34H531V46H332Z" fill="#93a08e"/><path d="M521 30H552V50H521Z" fill="#48594f"/>
+<path d="M219 54H282V119H219Z" fill="#536557" stroke="#8e9d7e" stroke-width="3"/><path d="M234 61V111M249 61V111M264 61V111" stroke="#869371" stroke-width="3"/>
+<path d="M451 49L427 128M458 49L487 128" stroke="#a0ad91" stroke-width="6"/><path d="M415 129H436M478 129H499" stroke="#c1b789" stroke-width="5"/>
+<path d="M168 63Q168 90 200 77L203 63" fill="none" stroke="#74836c" stroke-width="5"/><path d="M339 34V22H353" fill="none" stroke="#c6b889" stroke-width="5"/>
+</g><text x="30" y="31" fill="#d1bd8b" font-family="monospace" font-size="12" letter-spacing="3">SUPPORT / JOURNEY</text><text x="30" y="202" fill="#9cae9f" font-family="monospace" font-size="10">ORIGINAL PROCEDURAL PROTOTYPE ILLUSTRATION</text></svg>

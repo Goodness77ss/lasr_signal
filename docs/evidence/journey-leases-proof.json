@@ -1,0 +1,265 @@
+{
+  "generatedAt": "2026-11-10T10:11:44.349Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+    "mintAuthority": "0x750eA50E0d0D8999F8421E4184329F1a943cC58B",
+    "gameplaySigner": "0x0f426B6011A92B400E52CBbd6f1bB16a6C073550",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0xe04845f46b6a5272087e32ca760310a87f05e5ab4e5fc7985249eafcaa0c0949",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "maxLeaseSeconds": 3600,
+  "receipts": [
+    {
+      "label": "deploy approved local collection with one hour leases",
+      "hash": "0x9e0dd4042ee4634e6029880e40e99b3d2aeae2248312810ff2e66f9e6a9ccb81",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "3813015",
+      "logs": []
+    },
+    {
+      "label": "mint local Mara",
+      "hash": "0xf5fbb92c6406d10f8455e518b8507a01099f0af4e71b760164c8491abe29356e",
+      "block": 2,
+      "status": 1,
+      "gasUsed": "226026",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d7",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d7",
+            "0xb458d7e533de08fee76b97542e9c01daf991014a1a9c8ec393e169c5472c96f1"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "owner consents exact run e524ce6e3c5a07cc635e970fc01737a4",
+      "hash": "0x865d3f91723d08296baac5d7e3de05706079963ea682971869ef6abe4e121ee5",
+      "block": 3,
+      "status": 1,
+      "gasUsed": "210682",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xa48a714777017d7e0155c9aaeba6007a76f2432ba4c8facb3b8d4cda5015d258",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x77221b627633f5864c64021f2f694125c0bea320fe592a6d718c9eff3878a802",
+            "0x57b7eb8fbb8f33e49fc504b577805d5f9ba43e6f9d09e09b67d533d3c9d02663"
+          ],
+          "data": "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d70000000000000000000000001eaf182b4f2344e1a39e9dd0b8b4b5c76c70a518000000000000000000000000000000000000000000000000000000006af2fbeb0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    },
+    {
+      "label": "run service releases early",
+      "hash": "0x632ab52f865ea4de354b481f0eacfff602eba5aae477dba0b33d4131f7112b6d",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "48202",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0x36ac71776ad3332aef4912d463feb07538c4a6418c5c490709aecb11a352d4fd",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x77221b627633f5864c64021f2f694125c0bea320fe592a6d718c9eff3878a802"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "label": "owner consents exact run expiry-proof",
+      "hash": "0xe1de69626d4fef3ee3634f5997d9f1d5cb271c318718367cb2e30e4f18fc7e47",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "176482",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xa48a714777017d7e0155c9aaeba6007a76f2432ba4c8facb3b8d4cda5015d258",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x880e9f1c4fc24e5c6d80399db612035c7940570b5b01b63f558b645622b736b6",
+            "0x4d11f94b45dfdbbac52d3d5ef6ede9fb37b6b5b67f8225bea9d53b271a8664a5"
+          ],
+          "data": "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d70000000000000000000000001eaf182b4f2344e1a39e9dd0b8b4b5c76c70a518000000000000000000000000000000000000000000000000000000006af2ee430000000000000000000000000000000000000000000000000000000000000002"
+        }
+      ]
+    },
+    {
+      "label": "transfer at exact expiry without service or unlock transaction",
+      "hash": "0x8ae403f6e531f1c5c67bec171f174b4b32e54e7ed51d7951ac53ce04757b467b",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "99843",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0x36ac71776ad3332aef4912d463feb07538c4a6418c5c490709aecb11a352d4fd",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x880e9f1c4fc24e5c6d80399db612035c7940570b5b01b63f558b645622b736b6"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        },
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d7",
+            "0x0000000000000000000000003c362f028b3293ce3dcdb4aa1cd36f41f56bedb7",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        }
+      ]
+    },
+    {
+      "label": "return ownership without reviving old run",
+      "hash": "0x946813702f2dacf32ed565b32d73264c8f23c31c86bce7c88a6cfd5feed54eaa",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "97916",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000003c362f028b3293ce3dcdb4aa1cd36f41f56bedb7",
+            "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d7",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        }
+      ]
+    },
+    {
+      "label": "owner consents exact run independent-unlock-proof",
+      "hash": "0xffaf899b5bff10bcd0eff71376df9458def101961b76773a05bb9cff99800853",
+      "block": 14,
+      "status": 1,
+      "gasUsed": "176482",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0xa48a714777017d7e0155c9aaeba6007a76f2432ba4c8facb3b8d4cda5015d258",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x4ef8e4714f7126b492b78551c3f790283f631dbdcdad05f45f9cdc52be3885cd",
+            "0x8f4ca967ae24d27e6bf4d9d340c5cd3c3b9dc9ab8eaab15c03c6e32cfd37a30b"
+          ],
+          "data": "0x000000000000000000000000ef06929b721e9f4648483606c5c3d4307ae634d70000000000000000000000001eaf182b4f2344e1a39e9dd0b8b4b5c76c70a518000000000000000000000000000000000000000000000000000000006af2eeaa0000000000000000000000000000000000000000000000000000000000000003"
+        }
+      ]
+    },
+    {
+      "label": "unrelated wallet clears expired lease",
+      "hash": "0xb8719b575ff4a0525a3a38aa9fa4fee1033f12f374aefccf4e858d8f849267be",
+      "block": 17,
+      "status": 1,
+      "gasUsed": "48112",
+      "logs": [
+        {
+          "address": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+          "topics": [
+            "0x36ac71776ad3332aef4912d463feb07538c4a6418c5c490709aecb11a352d4fd",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x4ef8e4714f7126b492b78551c3f790283f631dbdcdad05f45f9cdc52be3885cd"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    }
+  ],
+  "reserved": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+      "tokenId": "1"
+    },
+    "runId": "e524ce6e3c5a07cc635e970fc01737a4",
+    "owner": "0xef06929b721e9F4648483606c5C3D4307AE634D7",
+    "service": "0x1EAf182b4F2344e1a39E9Dd0B8b4b5C76c70A518",
+    "leaseId": "0x77221b627633f5864c64021f2f694125c0bea320fe592a6d718c9eff3878a802",
+    "expiresAt": "1794309099",
+    "chainTimestamp": "1794305501",
+    "blockNumber": "4",
+    "blockHash": "0x4a27c70cf109dface53614efb9b44200edd23de1ca30220110fa7674c5b37484",
+    "key": "eip155:31337:0xf7fffe43f9b1ab3a99de1dcf848de4d266b7fca8:1",
+    "state": "ACTIVE"
+  },
+  "released": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+      "tokenId": "1"
+    },
+    "runId": "e524ce6e3c5a07cc635e970fc01737a4",
+    "owner": "0xef06929b721e9F4648483606c5C3D4307AE634D7",
+    "service": "0x1EAf182b4F2344e1a39E9Dd0B8b4b5C76c70A518",
+    "leaseId": "0x77221b627633f5864c64021f2f694125c0bea320fe592a6d718c9eff3878a802",
+    "expiresAt": "1794309099",
+    "chainTimestamp": "1794305503",
+    "blockNumber": "6",
+    "blockHash": "0xf6cd5f470c6e7633bd62408caf1f7c70bc059f0ec8878d4b81fa34c6fa36f5c9",
+    "key": "eip155:31337:0xf7fffe43f9b1ab3a99de1dcf848de4d266b7fca8:1",
+    "state": "RELEASED"
+  },
+  "expired": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0xf7FFFE43F9b1ab3a99DE1dCf848De4D266b7fca8",
+      "tokenId": "1"
+    },
+    "runId": "expiry-proof",
+    "owner": "0xef06929b721e9F4648483606c5C3D4307AE634D7",
+    "service": "0x1EAf182b4F2344e1a39E9Dd0B8b4b5C76c70A518",
+    "leaseId": "0x880e9f1c4fc24e5c6d80399db612035c7940570b5b01b63f558b645622b736b6",
+    "expiresAt": "1794305603",
+    "chainTimestamp": "1794305604",
+    "blockNumber": "11",
+    "blockHash": "0x48692291edd76d7d028a1b8e067ba30db85f7637549c6ba95d6825a051692b7e",
+    "key": "eip155:31337:0xf7fffe43f9b1ab3a99de1dcf848de4d266b7fca8:1",
+    "state": "EXPIRED"
+  },
+  "finalOwner": "0xef06929b721e9F4648483606c5C3D4307AE634D7",
+  "leaseActive": false,
+  "tickBeforeRelease": 1,
+  "tickAfterRelease": 1,
+  "checks": {
+    "secondRunRejected": true,
+    "transferWhileActiveRejected": true,
+    "postReleaseCommandRejected": true,
+    "originalAcknowledgementRetried": true,
+    "diskRecoveryEqual": true,
+    "staleReleaseRejected": true,
+    "exactExpiryTransfer": true,
+    "returnedOwnerCannotReviveOldLease": true,
+    "independentExpiredClear": true
+  },
+  "limits": "Actual local contract and service access guard proof. The practice run uses an explicit attached lease fixture, not an owned combat roster or banked XP bridge. No human wallet interaction, public deployment or money. The disposable node is closed after this proof."
+}

@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-11-10T10:41:02.305Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "lifecycle": "Disposable node closed after proof; historical addresses only.",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+    "mintAuthority": "0x885af57FCf7511A1477C38d23544f58264988c65",
+    "gameplaySigner": "0x939fd0c0199B3682bc5A21F4A26F168114C53F78",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0xf8fd17dc5f0e6183aece4c5f300950535457dac2f6d15ac2caca8d9efeefcdbf",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "exchange": {
+    "version": "JOURNEY_SOLDIER_MARKET_V1",
+    "chainId": 31337,
+    "collection": "0x1a1608C3B418daE25f69575dF1C2c7626C04F1f5",
+    "market": "0xd8E83C9976aDeF7A0E043c026c0744D59AC8B3BB",
+    "currency": "0x15BA39127060aF308521be066cB11A2d90ed07C2",
+    "codeHash": "0x7ccb613e0cba8f45e9d8708d535c53e23f0dccb9dc6126f9f60fb2448f277ddd",
+    "currencyCodeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf"
+  },
+  "deploymentReceipts": [
+    {
+      "label": "deploy disposable mock currency",
+      "hash": "0xd3e050426ae50024136e85f4db636cf364d4153df0edfee977b6a159ea199017",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "612654",
+      "logs": []
+    },
+    {
+      "label": "deploy approved local soldier collection",
+      "hash": "0xdad579098b977045516b491a01ca065ba7b13f9b9616331b912900a0771b67b4",
+      "block": 4,
+      "status": 1,
+      "gasUsed": "3813015",
+      "logs": []
+    },
+    {
+      "label": "deploy separate local fixed price exchange",
+      "hash": "0x97efa4fdcbbd35a22b780cce5f867cccb8d5c4bedf66a254a32286a4b93fd86b",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "1185813",
+      "logs": []
+    }
+  ]
+}

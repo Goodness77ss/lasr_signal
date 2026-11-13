@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-11-02T21:36:07.438Z",
+  "mode": "PUBLIC_TESTNET_READ_ONLY",
+  "performsBrowserWalletProof": false,
+  "browserWalletEvidence": "v2-step15-browser-final-claim.json and v2-step15-actual-browser-closed.json",
+  "reads": [
+    {
+      "rpc": "https://rpc.testnet.chain.robinhood.com",
+      "passed": true,
+      "chainId": 46630,
+      "head": 147295108,
+      "codeMatches": {
+        "token": true,
+        "treasury": true,
+        "vault": true,
+        "welcomeGrant": true
+      },
+      "amounts": {
+        "unit": "18 decimal mock token base units",
+        "rewardFree": "81000000000000000000",
+        "lockedLiability": "0",
+        "claimLiability": "0",
+        "vaultCustody": "0",
+        "welcomeRemaining": "0"
+      },
+      "custodyCoversLiabilities": true
+    },
+    {
+      "rpc": "https://robinhood-testnet.drpc.org",
+      "passed": true,
+      "chainId": 46630,
+      "head": 147295115,
+      "codeMatches": {
+        "token": true,
+        "treasury": true,
+        "vault": true,
+        "welcomeGrant": true
+      },
+      "amounts": {
+        "unit": "18 decimal mock token base units",
+        "rewardFree": "81000000000000000000",
+        "lockedLiability": "0",
+        "claimLiability": "0",
+        "vaultCustody": "0",
+        "welcomeRemaining": "0"
+      },
+      "custodyCoversLiabilities": true
+    }
+  ]
+}

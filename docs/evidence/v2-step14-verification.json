@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-11-02T03:22:41.849Z",
+  "mode": "LOCAL_VERIFICATION_ONLY",
+  "accounting": {
+    "mixedSamples": 24,
+    "seed": "0x1a57c0de",
+    "historyAuthorizations": 256,
+    "competingWallets": 7,
+    "acceptedCompetingReservations": 6,
+    "competingReservationUnits": 180,
+    "revertedOverCapacityTransactions": 1,
+    "tests": "Three accounting cases have passing evidence across the recorded full and focused runs. Property snapshots are reverted and are not a public receipt history."
+  },
+  "recoveryCases": 8,
+  "applicationCases": 161,
+  "legacy": {
+    "escrow": 26,
+    "armoryAndSalvage": 8,
+    "walletServerLocalIntegration": 2
+  },
+  "strictBuild": "PASS",
+  "proofs": [
+    {
+      "file": "docs/evidence/v2-step12-local-vault.json",
+      "sha256": "0a33642b29623b63570e0d9a0b711ede6d8ef8339f34be421d3989c7b0762829",
+      "mode": "DISPOSABLE_LOCAL_CHAIN",
+      "receiptCount": 35,
+      "allObservedReceiptStatuses": 1
+    },
+    {
+      "file": "docs/evidence/v2-step13-local-worker.json",
+      "sha256": "835497561786e9d8fff91d1f5398cba89565285b3e086e04fab5407d9e676c04",
+      "mode": "DISPOSABLE_LOCAL_CHAIN_AUTHORED_GAMEPLAY_FIXTURE",
+      "receiptCount": 20,
+      "allObservedReceiptStatuses": 1
+    }
+  ],
+  "limitations": [
+    "Not an external audit, public deployment or public worker availability claim.",
+    "Step 10 human and foreground performance checks remain deferred by the owner.",
+    "Full active service outage abort or hard timeout returns the full current deposit and can cancel unfinalized failures.",
+    "Published settlement status can enter recovery if a later chain reorganization removes its confirmation."
+  ]
+}

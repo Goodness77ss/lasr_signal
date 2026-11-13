@@ -1,0 +1,10 @@
+{
+  "mode": "LOCAL_SERVER_PRACTICE_ONLY",
+  "accepted": true,
+  "outcome": "SURRENDER",
+  "stationRewards": 5,
+  "forfeited": 5,
+  "bankCredit": 0,
+  "locked": 0,
+  "loot": []
+}

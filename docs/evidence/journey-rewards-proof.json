@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-11-10T08:32:23.549Z",
+  "environment": "LOCAL_SIMULATION_DURABLE_REWARD_PROOF",
+  "policy": {
+    "version": "journey-rewards-1",
+    "veteranEverySections": 3,
+    "veteranId": 6,
+    "veteranHealth": 120,
+    "dropCredits": 5,
+    "pickupRadius": 2,
+    "maxCheckpointCredits": 100,
+    "maxDropCredits": 50,
+    "bank": "TERMINAL",
+    "deadline": "NONE",
+    "value": "SIMULATED_CREDITS"
+  },
+  "state": "BANKED",
+  "tick": 305,
+  "rulesHash": "53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+  "rewards": {
+    "version": "journey-rewards-1",
+    "checkpointEarned": 10,
+    "dropCreated": 5,
+    "dropPicked": 5,
+    "provisionalLoot": 0,
+    "bankedLoot": 5,
+    "forfeitedLoot": 0,
+    "drops": [
+      {
+        "id": "journey-sections-1:5:0:enemy:6",
+        "section": "journey-sections-1:5:0",
+        "encounter": "journey-sections-1:5:0:checkpoint",
+        "enemyId": 6,
+        "x": 52.01466166159544,
+        "y": 0,
+        "z": 23.438676488904537,
+        "credits": 5,
+        "state": "BANKED"
+      }
+    ]
+  },
+  "ledger": {
+    "environment": "LOCAL_SERVER_PRACTICE",
+    "value": "SIMULATED_CREDITS",
+    "allowance": {
+      "policy": "journey-rewards-1",
+      "checkpoint_earned": 10,
+      "drop_created": 5,
+      "drop_picked": 5
+    },
+    "terminal": {
+      "state": "BANKED",
+      "checkpoint_credits": 10,
+      "loot_credits": 5,
+      "total_credits": 15,
+      "tick": 305
+    }
+  },
+  "progress": {
+    "policy": "journey-progress-1",
+    "cosmetic": true,
+    "provisional": false,
+    "bankedRun": true,
+    "onchainVoucher": false,
+    "members": [
+      {
+        "actorId": 1,
+        "policy": "journey-progress-1",
+        "rulesHash": "53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      },
+      {
+        "actorId": 2,
+        "policy": "journey-progress-1",
+        "rulesHash": "53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      },
+      {
+        "actorId": 3,
+        "policy": "journey-progress-1",
+        "rulesHash": "53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      }
+    ],
+    "account": {
+      "policy": "journey-progress-1",
+      "rulesHash": "53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+      "xp": "30",
+      "furthestCompleted": "0",
+      "awards": 3,
+      "completedSources": 1
+    }
+  },
+  "sources": [
+    {
+      "source": "journey-sections-1:5:0:checkpoint",
+      "kind": "CHECKPOINT",
+      "section": "journey-sections-1:5:0",
+      "encounter": "journey-sections-1:5:0:checkpoint",
+      "enemy_id": null,
+      "amount": 10,
+      "state": "BANKED"
+    },
+    {
+      "source": "journey-sections-1:5:0:enemy:6",
+      "kind": "ENEMY_DROP",
+      "section": "journey-sections-1:5:0",
+      "encounter": "journey-sections-1:5:0:checkpoint",
+      "enemy_id": 6,
+      "amount": 5,
+      "state": "BANKED"
+    }
+  ],
+  "reopenedDatabaseEqual": true,
+  "bankReplayEqual": true,
+  "limits": "Ordinary deterministic simulation and disposable SQLite. No browser, public multiplayer, owned inventory, wallet transfer or chain claim."
+}

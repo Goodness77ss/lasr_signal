@@ -1,0 +1,193 @@
+{
+  "checkedAt": "2026-11-02T03:47:04.390Z",
+  "mode": "PUBLIC_TESTNET_SDK_AUTOMATED_SERVER_COMBAT",
+  "chainId": 46630,
+  "manifest": {
+    "version": "survival-2.7.0",
+    "chainId": 46630,
+    "rpc": "https://rpc.testnet.chain.robinhood.com",
+    "token": "0x510414cA08A84473f8c8FCa77a198eaD4d7cE9d9",
+    "treasury": "0xfcd0568a5934de1b064c7F913537c25Fe1d5f915",
+    "vault": "0x947d3B128Cd17D545cE6A92E7c073a99C267459f",
+    "welcomeGrant": "0xB36A77b3D4666B0f6EdfD39B1d2bAf9A40020E64",
+    "gameplaySigner": "0xC9DfDb8D50aD23B25EAFC63a40B525F372A7495d",
+    "gasWallet": "0xc7A3728ca3DB02DC2729C374Fe78a2b937f277be",
+    "deployer": "0x019BF89f9A51b3FdF447df279bb0a493959295bc",
+    "rulesHash": "0x177a2b04e128db7f4b241dd2acc83c7a7d6cc7e4dd239570c401287685af1334",
+    "deploymentBlock": 146837549,
+    "codeHashes": {
+      "token": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf",
+      "treasury": "0x85e9e5ae6b237a5539c698f3999cec4cc156a33a43791ac68d994a49f32ac3d4",
+      "vault": "0x2d6104dd682084ca8774c531f524348b55943b2f09173c729e6c0e78a018a4f3",
+      "welcomeGrant": "0xbb8628281f3659ca2c0a499387b7960261efbf1260cd4b4f89e9641c17ec04ad"
+    },
+    "confirmations": 2,
+    "publicOperation": false,
+    "browserWalletProof": false,
+    "campaign": "0xd8c6be4aacac932c85ae49f33ee22ca70cbbee134a36fd3192a64e9316534838"
+  },
+  "runId": "0xa3f7d4919b5bb0ad67d00643e47588a46a6ef74478bf80cdae57980845ce4bdb",
+  "player": "0xD61053d633e39CdcEfFe41A3bfEf6a621B5D70D3",
+  "initialPlayerMock": "82000000000000000000",
+  "ledgerSamples": [
+    {
+      "at": "2026-11-02T03:45:36.839Z",
+      "stage": "OFFER",
+      "tick": 2378,
+      "accounting": {
+        "depositWhole": 40,
+        "bonusWhole": 0,
+        "spentWhole": 0,
+        "failedWhole": 0,
+        "lockedWhole": 0,
+        "shieldAt": 0,
+        "recruitAt": 0,
+        "stationWhole": 8,
+        "availableWhole": 48,
+        "asset": "RUN_TWIF",
+        "mode": "LOCAL_BLOCKCHAIN",
+        "walletClaimable": null
+      },
+      "mission": {
+        "id": "0xa3f7d4919b5bb0ad67d00643e47588a46a6ef74478bf80cdae57980845ce4bdb:mission:1",
+        "cycle": 1,
+        "station": "A",
+        "assault": "0xa3f7d4919b5bb0ad67d00643e47588a46a6ef74478bf80cdae57980845ce4bdb:assault:3",
+        "status": "OFFER",
+        "offered": 2374,
+        "offerUntil": 2774,
+        "accepted": null,
+        "until": null,
+        "holdFrom": null,
+        "stake": 5,
+        "bonus": 3,
+        "reason": "Optional Hold the Signal: retain thirty seconds after assault arrival and defeat all marked attackers within sixty seconds"
+      }
+    },
+    {
+      "at": "2026-11-02T03:45:44.809Z",
+      "stage": "ACCEPTED",
+      "tick": 2383,
+      "accounting": {
+        "depositWhole": 40,
+        "bonusWhole": 0,
+        "spentWhole": 0,
+        "failedWhole": 0,
+        "lockedWhole": 5,
+        "shieldAt": 0,
+        "recruitAt": 0,
+        "stationWhole": 8,
+        "availableWhole": 43,
+        "asset": "RUN_TWIF",
+        "mode": "LOCAL_BLOCKCHAIN",
+        "walletClaimable": null
+      }
+    }
+  ],
+  "closing": {
+    "tick": 2383,
+    "accounting": {
+      "depositWhole": 40,
+      "bonusWhole": 0,
+      "spentWhole": 0,
+      "failedWhole": 5,
+      "lockedWhole": 0,
+      "shieldAt": 0,
+      "recruitAt": 0,
+      "stationWhole": 8,
+      "availableWhole": 43,
+      "asset": "RUN_TWIF",
+      "mode": "LOCAL_BLOCKCHAIN",
+      "walletClaimable": null
+    },
+    "outcome": "DISCONNECT",
+    "job": {
+      "key": "46630:0x947d3b128cd17d545ce6a92e7c073a99c267459f:0xa3f7d4919b5bb0ad67d00643e47588a46a6ef74478bf80cdae57980845ce4bdb:1:0",
+      "state": "settled",
+      "reason": "Canonical finalization confirmed",
+      "digest": "0x3e6106643ee6049dc167c737b7d6838b02c9dfdc5cff347e91d817629f1a2ecd",
+      "hashes": [
+        "0x290c8e7db91dc3820b1de4cdd2e25206167a70263f96ca1f0a70e7bab7dc663e"
+      ],
+      "updated": 1793591212767
+    }
+  },
+  "settlements": [
+    {
+      "hash": "0x290c8e7db91dc3820b1de4cdd2e25206167a70263f96ca1f0a70e7bab7dc663e",
+      "block": 146844361,
+      "blockHash": "0xfc569f69f1c7d889c5f0ba117fab74018628f4334a975935feacce4ead86e8a8",
+      "status": 1,
+      "gasUsed": "377465",
+      "credit": "43000000000000000000",
+      "burn": "0",
+      "recycled": "5000000000000000000",
+      "authorization": "0x3e6106643ee6049dc167c737b7d6838b02c9dfdc5cff347e91d817629f1a2ecd"
+    }
+  ],
+  "playerReceipts": [
+    {
+      "label": "SDK player claims one finite welcome campaign grant",
+      "hash": "0x8945babe1e01db28f7ee33a15597711b43cf6a345c77194b2d2978daf8320bd0",
+      "block": 146842726,
+      "blockHash": "0xd6036741268a2864a272e52873e56f0cdb424c3df15d46704970d21730dfdc8c",
+      "status": 1,
+      "gasUsed": "110823"
+    },
+    {
+      "label": "SDK player approves exactly forty mock units",
+      "hash": "0xf9bea09e9a0dd36d02e37e6b715c831c0cb8684597b77fa7243c741ffa377abd",
+      "block": 146842778,
+      "blockHash": "0xa1b138dfb9bca74f4aa70f4a4e1b7e017c0dc81ce40db4a3e98ec60be7b4e6ea",
+      "status": 1,
+      "gasUsed": "46401"
+    },
+    {
+      "label": "SDK player explicitly opens bounded survival allocation",
+      "hash": "0x8fa9b2c26aec1083c025b595b090020b69e8aa48b865a3e677eec9daa12500bd",
+      "block": 146842814,
+      "blockHash": "0x56c2fa28a2d078858c12f0c51f37a90a4da20cf736f3cef29a9d81d779cc10f3",
+      "status": 1,
+      "gasUsed": "444915"
+    },
+    {
+      "label": "SDK player explicitly consents to offered mission stake",
+      "hash": "0x0882356a126c7e17f367574178718e5e1c519b7bf51a98bf8e35408b8f45d5d3",
+      "block": 146843944,
+      "blockHash": "0xd2386b6eb17776815f54574679b35881222ce314dd4a533cd5f7dac6c1348d54",
+      "status": 1,
+      "gasUsed": "128896"
+    },
+    {
+      "label": "SDK player independently claims confirmed survival credit",
+      "hash": "0xd115b75445e52e19ad9a32f3c89facc2c319e17f5bf10b7ed80bbf4f63e9f316",
+      "block": 146844437,
+      "blockHash": "0xea9697e4794dc4b28a62004485b9019e843ac866ca0170ecea5fdf33816f432a",
+      "status": 1,
+      "gasUsed": "46337"
+    }
+  ],
+  "automaticSubmission": {
+    "closedClient": "SDK_WEBSOCKET",
+    "extraPlayerTransactionsBeforeSettlement": 0,
+    "workerTransactions": 1
+  },
+  "final": {
+    "playerMock": "185000000000000000000",
+    "vaultMock": "0",
+    "vaultLiability": "0",
+    "playerClaimable": "0",
+    "treasuryMock": "97000000000000000000",
+    "treasuryReserved": "0",
+    "totalSupplyObserved": "361000000000000000000"
+  },
+  "limitations": [
+    "SDK controlled dedicated test wallet and automated ordinary server commands. No browser wallet signing is represented.",
+    "Combat used the normal running server and authenticated WebSocket. No checkpoint editing or authored reward fixture was used.",
+    "The browser wallet path, human playtest, foreground performance and public hosting remain unverified.",
+    "Only original valueless mock tWIF and free test ETH were used. Two L2 blocks are soft confirmations."
+  ],
+  "notes": [
+    "The captured nested accounting label incorrectly said LOCAL_BLOCKCHAIN. Actual chain 46630, companion identity and public receipts were verified. The label was corrected to use the verified transport mode before the browser preview review."
+  ]
+}

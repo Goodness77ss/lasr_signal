@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-11-10T08:28:07.585Z",
+  "environment": "LOCAL_SIMULATION_DURABLE_JOURNAL_PROOF",
+  "policy": {
+    "version": "journey-progress-1",
+    "minimumTicks": 20,
+    "checkpointXp": 10,
+    "checkpointCap": 10,
+    "presenceRadius": 10,
+    "minimumMovement": 0.001
+  },
+  "tick": 304,
+  "state": "CHECKPOINT_REACHED",
+  "seed": 5,
+  "section": "journey-sections-1:5:0",
+  "simulationRules": "journey-practice-0.12.0",
+  "rulesHash": "11cc81d1b764315b38c579cd2b8b3518c63fe42d95b78513c751a666071d2041",
+  "rosterHash": "aa9ebf911629504e577e25bbb9c52fa28ffbaa07bd4b461d59d4a5a1e2d57728",
+  "summary": {
+    "policy": "journey-progress-1",
+    "cosmetic": true,
+    "provisional": true,
+    "bankedRun": false,
+    "onchainVoucher": false,
+    "members": [
+      {
+        "actorId": 1,
+        "policy": "journey-progress-1",
+        "rulesHash": "11cc81d1b764315b38c579cd2b8b3518c63fe42d95b78513c751a666071d2041",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      },
+      {
+        "actorId": 2,
+        "policy": "journey-progress-1",
+        "rulesHash": "11cc81d1b764315b38c579cd2b8b3518c63fe42d95b78513c751a666071d2041",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      },
+      {
+        "actorId": 3,
+        "policy": "journey-progress-1",
+        "rulesHash": "11cc81d1b764315b38c579cd2b8b3518c63fe42d95b78513c751a666071d2041",
+        "xp": "10",
+        "furthestCompleted": "0",
+        "awards": 1
+      }
+    ],
+    "account": {
+      "policy": "journey-progress-1",
+      "rulesHash": "11cc81d1b764315b38c579cd2b8b3518c63fe42d95b78513c751a666071d2041",
+      "xp": "30",
+      "furthestCompleted": "0",
+      "awards": 3,
+      "completedSources": 1
+    }
+  },
+  "participation": [
+    {
+      "section": "journey-sections-1:5:0",
+      "actor_id": 1,
+      "ticks": 20
+    },
+    {
+      "section": "journey-sections-1:5:0",
+      "actor_id": 2,
+      "ticks": 20
+    },
+    {
+      "section": "journey-sections-1:5:0",
+      "actor_id": 3,
+      "ticks": 20
+    }
+  ],
+  "awards": [
+    {
+      "source": "journey-sections-1:5:0:checkpoint",
+      "actor_id": 1,
+      "identity_kind": "free-entitlement",
+      "identity_key": "proof:starter:1",
+      "checkpoint": "0",
+      "xp": 10
+    },
+    {
+      "source": "journey-sections-1:5:0:checkpoint",
+      "actor_id": 2,
+      "identity_kind": "free-entitlement",
+      "identity_key": "proof:starter:2",
+      "checkpoint": "0",
+      "xp": 10
+    },
+    {
+      "source": "journey-sections-1:5:0:checkpoint",
+      "actor_id": 3,
+      "identity_kind": "free-entitlement",
+      "identity_key": "proof:starter:3",
+      "checkpoint": "0",
+      "xp": 10
+    }
+  ],
+  "independentReplayEqual": true,
+  "reopenedDatabaseEqual": true,
+  "limits": "Ordinary deterministic simulation and disposable SQLite stores. No browser, public multiplayer, wallet ownership, token transfer or chain voucher is claimed."
+}

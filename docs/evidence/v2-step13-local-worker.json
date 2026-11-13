@@ -1,0 +1,487 @@
+{
+  "checkedAt": "2026-11-02T03:08:28.260Z",
+  "mode": "DISPOSABLE_LOCAL_CHAIN_AUTHORED_GAMEPLAY_FIXTURE",
+  "chainId": 31337,
+  "compiler": "0.8.38+commit.1835d247.Emscripten.clang",
+  "contracts": {
+    "chain": "31337",
+    "vault": "0x3e4535F0CE239Ae92d658B03961FEed72443EE06",
+    "token": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+    "treasury": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+    "signer": "0xC4A9587Cd96D9C166fDCa5B068e525F721357aEE",
+    "deployment": "0x5B424764CE2027EbA00BcEba20A79d70128413ba",
+    "rulesHash": "0x177a2b04e128db7f4b241dd2acc83c7a7d6cc7e4dd239570c401287685af1334",
+    "fromBlock": 0,
+    "vaultCodeHash": "0xad011246d459a6d496e5fe077a9b6fda8416456b36186d8715ac8d121bf594e6",
+    "tokenCodeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf",
+    "treasuryCodeHash": "0xedf07f47c394f8c498e755dd1940a12b6919483a07158a4869c7d27c52367a11"
+  },
+  "roles": {
+    "deployment": "0x5B424764CE2027EbA00BcEba20A79d70128413ba",
+    "gameplay": "0xC4A9587Cd96D9C166fDCa5B068e525F721357aEE",
+    "submissionGas": "0xc83dD79099049dc03cC0c5eEC0192613b8C77bFB",
+    "player": "0x0086FAfa247bF92E2A4707af138eF8ff0F718668"
+  },
+  "browserEvents": [
+    {
+      "kind": "ACTUAL_BROWSER_WEBSOCKET_CONNECTED",
+      "at": "2026-11-02T03:07:16.982Z"
+    },
+    {
+      "kind": "ACTUAL_BROWSER_WEBSOCKET_CLOSED",
+      "at": "2026-11-02T03:07:22.831Z"
+    }
+  ],
+  "mission": {
+    "stake": "5",
+    "status": "FAILED",
+    "reason": "DISCONNECT"
+  },
+  "clockAdvance": {
+    "activeFixtureSeconds": 90,
+    "departureWallSeconds": 60,
+    "chainAdvancedSeparately": true
+  },
+  "recovery": {
+    "childExitedAfterActualBroadcast": 17,
+    "restartedChildExit": 0,
+    "gasTransactions": 1,
+    "extraPlayerTransactionsForSettlement": 0
+  },
+  "settlement": {
+    "key": "31337:0x3e4535f0ce239ae92d658b03961feed72443ee06:0x3a7c724d6bf3b940fe3374e9ab45e74c0a506100996cd5ae90f00acd8b06e6df:1:0",
+    "state": "settled",
+    "reason": "Canonical finalization confirmed",
+    "digest": "0x0301031a28b508b64483590113cd804e8bbd7535bfefe850315a77eb76c12061",
+    "hashes": [
+      "0xf64ebbf87d1c2ec75b4707aaef63c0fd5e52e9de9829045032c034936d9c84b2"
+    ],
+    "updated": 1793588907959
+  },
+  "settledPlayerClaim": "35000000000000000000",
+  "final": {
+    "vault": "0",
+    "player": "95000000000000000000",
+    "treasury": "205000000000000000000",
+    "supply": "300000000000000000000"
+  },
+  "receipts": [
+    {
+      "label": "deploy token",
+      "hash": "0x5d2bf6771f9799dff76d952644e4bd4da159488118f093a2f0ca5ecdd8c3811e",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "612654",
+      "logs": []
+    },
+    {
+      "label": "deploy escrow",
+      "hash": "0x0fa8c41b747f012830290329b9f27b1cf469ecd3ff6c08eae19585dc6ecbe173",
+      "block": 2,
+      "status": 1,
+      "gasUsed": "1970637",
+      "logs": []
+    },
+    {
+      "label": "faucet A",
+      "hash": "0x3a9ebbf25b19f01f507d660556dcceb17bae47d087025dea43bc871842f28e4f",
+      "block": 3,
+      "status": 1,
+      "gasUsed": "91975",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006ae80c51"
+        }
+      ]
+    },
+    {
+      "label": "faucet B",
+      "hash": "0x07e56fee55f907ae45b4fd3302d4432eb8cebf62d94bebbbf8c9d01b15e8a697",
+      "block": 4,
+      "status": 1,
+      "gasUsed": "74875",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006ae80c52"
+        }
+      ]
+    },
+    {
+      "label": "approve A exactly 100",
+      "hash": "0x9b132f9efd60203e9cbedc737b05dd091dcd627642c4b20b51d8c27793a07386",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668",
+            "0x0000000000000000000000006e9b9647f7add946b6c6649bd1f07dd54dfaf249"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "approve B exactly 100",
+      "hash": "0xd59b74a3d9d9f7082371eb238c180a7f76715bfc0c73609adaf5bfa33a2ebeb8",
+      "block": 6,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b",
+            "0x0000000000000000000000006e9b9647f7add946b6c6649bd1f07dd54dfaf249"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "deploy finite treasury",
+      "hash": "0xa6d2954cdc0c126ad173bd0e4549befb8f240a4a4f5ab82c315b4e297f8a70aa",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "974086",
+      "logs": []
+    },
+    {
+      "label": "deploy actual local SurvivalRunVault",
+      "hash": "0x9a5c9d916fca5f9e4643cb8df5b3385cca96a843314e5d054a361868ecddf4e2",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "3844241",
+      "logs": []
+    },
+    {
+      "label": "bind actual local vault",
+      "hash": "0x1151bab7db6f22de0fc468fe2ab318ae09158a4afee540150ee91309b7fa39cb",
+      "block": 9,
+      "status": 1,
+      "gasUsed": "48764",
+      "logs": [
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0x56874bd86360c59c5a3f65f0a0e9fa1c407bdd51b6578cb8d36cd621e849fed0",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06"
+          ],
+          "data": "0x"
+        }
+      ]
+    },
+    {
+      "label": "public mock faucet for local reward pool",
+      "hash": "0xe84be75e77b804da194fe42cd2b9c39f73e4ea88da187cef1c9e8d7029762a37",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "74875",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000005b424764ce2027eba00bceba20a79d70128413ba"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x0000000000000000000000005b424764ce2027eba00bceba20a79d70128413ba"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006ae80c58"
+        }
+      ]
+    },
+    {
+      "label": "approve exactly one hundred",
+      "hash": "0x091f2ea2e4a00b55d11ef3d65c9915f202ac95b4b8e92a83cd72d2774da4d677",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000005b424764ce2027eba00bceba20a79d70128413ba",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "fund reward pool",
+      "hash": "0xf0c448f24822b5e3951a9cb44b974b190fea990bbc24d854a0f533b1f517a59f",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "78856",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000005b424764ce2027eba00bceba20a79d70128413ba",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0xe06f77ec2b38674da62a6ab62da330b2159c735d3111ec511b428dc9326df1c3",
+            "0x0000000000000000000000005b424764ce2027eba00bceba20a79d70128413ba"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d631000000000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "label": "approve exactly one hundred",
+      "hash": "0x963bb449408428ae8ad1204dc790fd091da253487ba0858474435da3ea8f3f02",
+      "block": 13,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "fund reward pool",
+      "hash": "0xc77756eaea0cd29aff42886557311404d6cd92e6a00a26aaf345c1af8f7abc59",
+      "block": 14,
+      "status": 1,
+      "gasUsed": "45645",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0xe06f77ec2b38674da62a6ab62da330b2159c735d3111ec511b428dc9326df1c3",
+            "0x000000000000000000000000e29c0f135c6e2a4edf2ee10b592093f2215f913b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d631000000000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ]
+    },
+    {
+      "label": "free local test gas for separate worker wallet",
+      "hash": "0xc0bff8b6428f435438303a4db491634cc8dea90b37fcbe13d6fb17ecfaa03607",
+      "block": 15,
+      "status": 1,
+      "gasUsed": "21000",
+      "logs": []
+    },
+    {
+      "label": "exact player vault approval",
+      "hash": "0x9e0186f64c415c62b63960a127ad0042b33dccd2d74165602fa0b78b5a30ea6c",
+      "block": 16,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000022b1c8c1227a00000"
+        }
+      ]
+    },
+    {
+      "label": "player explicitly opens server issued allocation",
+      "hash": "0x37c4c268a25e7c25b5f8f9e59b5529b9c2ba79e903b3e7ffc9132e0a00473a4f",
+      "block": 17,
+      "status": 1,
+      "gasUsed": "444891",
+      "logs": [
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0x016063da56d78b6963a5f4acf562b70a414e6aa0ca73eacae9ea68c962a93fae",
+            "0x9a9b2b7c1e8ee2a89873b2bb8db3d280d9ebe7dae4ffb46244f944db55ef924d",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001a055690d9db80000"
+        },
+        {
+          "address": "0x3e4535F0CE239Ae92d658B03961FEed72443EE06",
+          "topics": [
+            "0x60040d6ccc7b032e536cbc121eed0eeb6fdae31351f8d3ab04cf52f894b1d6a4",
+            "0x3a7c724d6bf3b940fe3374e9ab45e74c0a506100996cd5ae90f00acd8b06e6df",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000022b1c8c1227a000000000000000000000000000000000000000000000000000014d1120d7b160000000000000000000000000000000000000000000000000000053444835ec580000000000000000000000000000000000000000000000000000000000006ae801d30000000000000000000000000000000000000000000000000000000000000000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000022b1c8c1227a00000"
+        }
+      ]
+    },
+    {
+      "label": "explicit SDK player consent to authored local mission",
+      "hash": "0x21313d2f88ca5e409fc5ea35686062e2b19bb8a58ca562213a0a7fa08392f4c2",
+      "block": 20,
+      "status": 1,
+      "gasUsed": "108900",
+      "logs": [
+        {
+          "address": "0x3e4535F0CE239Ae92d658B03961FEed72443EE06",
+          "topics": [
+            "0x3b5e5ac0960bca0ce685e8c7e44d0fbbac33d26a77c1010413912d7e57795890",
+            "0x3a7c724d6bf3b940fe3374e9ab45e74c0a506100996cd5ae90f00acd8b06e6df",
+            "0x9f593aa4b759535aee32c405d9b90b7573c5241aa3acad61b555630e54d70ce9"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004563918244f40000"
+        }
+      ]
+    },
+    {
+      "label": "automatic worker settlement after actual browser closure",
+      "hash": "0xf64ebbf87d1c2ec75b4707aaef63c0fd5e52e9de9829045032c034936d9c84b2",
+      "block": 23,
+      "status": 1,
+      "gasUsed": "260130",
+      "logs": [
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0x461dc02513380b552c1c7e42377606be7a1c06610e50589fc4664dd29bf47fc0",
+            "0x9a9b2b7c1e8ee2a89873b2bb8db3d280d9ebe7dae4ffb46244f944db55ef924d",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001a055690d9db80000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000004563918244f40000"
+        },
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06",
+            "0x00000000000000000000000087a8390c2878d416bdfb2fd8cde1dce03a5ec0ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000004563918244f40000"
+        },
+        {
+          "address": "0x87a8390c2878d416bDfb2Fd8CdE1DCe03A5Ec0aC",
+          "topics": [
+            "0xe06f77ec2b38674da62a6ab62da330b2159c735d3111ec511b428dc9326df1c3",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000004563918244f400000000000000000000000000000000000000000000000000000000000000000001"
+        },
+        {
+          "address": "0x3e4535F0CE239Ae92d658B03961FEed72443EE06",
+          "topics": [
+            "0x649510029d6f68049c1a382e132c2c07f08f03e246f6fc4a8fb1ed631bbdeac5",
+            "0x3a7c724d6bf3b940fe3374e9ab45e74c0a506100996cd5ae90f00acd8b06e6df",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000001e5b8fa8fe2ac000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004563918244f400000000000000000000000000000000000000000000000000000000000000000000fc289e9c0b18dc726d60b18a13178bd1907740cbd83e0ec90118c03b720794b50301031a28b508b64483590113cd804e8bbd7535bfefe850315a77eb76c12061"
+        }
+      ]
+    },
+    {
+      "label": "independent SDK player pull claim after worker recovery",
+      "hash": "0x07454fec6bddef30fd8189bc4a40a6c16bb16eb3600aa76118a8ef90d3bb8182",
+      "block": 25,
+      "status": 1,
+      "gasUsed": "46337",
+      "logs": [
+        {
+          "address": "0x55B23A6E0c1314741A2E7C0E8403cf365DBefcef",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000003e4535f0ce239ae92d658b03961feed72443ee06",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001e5b8fa8fe2ac0000"
+        },
+        {
+          "address": "0x3e4535F0CE239Ae92d658B03961FEed72443EE06",
+          "topics": [
+            "0xd8138f8a3f377c5259ca548e70e4c2de94f129f5a11036a15b69513cba2b426a",
+            "0x0000000000000000000000000086fafa247bf92e2a4707af138ef8ff0f718668"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000001e5b8fa8fe2ac0000"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Authored server gameplay fixture, not a natural human playthrough.",
+    "Entry, mission consent and final claim used SDK local wallets. This does not prove browser wallet signing.",
+    "The proof browser connected and closed over the production funded WebSocket route. Settlement and process restart occurred after closure.",
+    "Both chain time and departure wall time were advanced explicitly for the isolated recovery scenario.",
+    "No public testnet, public hosting, public worker uptime or foreground performance is claimed."
+  ]
+}

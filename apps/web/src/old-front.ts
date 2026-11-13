@@ -28,7 +28,7 @@ export class OldFront {
     for(const parts of groups.values()){
       const first=parts[0],geometry=first.mesh.geometry.clone();
       const batch=new T.InstancedMesh(geometry,first.mesh.material,parts.length);batch.castShadow=true;batch.receiveShadow=true;
-      parts.forEach(({mesh},i)=>{batch.setMatrixAt(i,mesh.matrixWorld);mesh.removeFromParent();mesh.geometry.dispose();});
+      parts.forEach(({mesh},i)=>{batch.setMatrixAt(i,new T.Matrix4().copy(this.scene.matrixWorld).invert().multiply(mesh.matrixWorld));mesh.removeFromParent();mesh.geometry.dispose();});
       batch.instanceMatrix.needsUpdate=true;batch.computeBoundingSphere();this.scene.add(batch);
     }
     this.staticParts=[];
@@ -139,7 +139,7 @@ export class OldFront {
   }
   private dressing(){
     HOMES.forEach((h,i)=>{
-      this.box(1.5,.8,.8,h.x,.4,h.z+2.5,this.timber);this.crate(h.x+1.3,h.z+2.8,.65);
+      this.box(1.5,.8,.8,h.x,.4,h.z+2.5,this.timber);this.crate(h.x+(i===0?1.3:-1.3),h.z+2.8,.65);
       this.box(1.8,.08,.95,h.x,.85,h.z+2.5,this.darkWood);
       this.lantern(h.x-.5,1.1,h.z+2.5,true);
       const paper=this.material(0xcabb90,.98);this.box(.5,.008,.4,h.x+.2,.91,h.z+2.4,paper);
@@ -148,10 +148,11 @@ export class OldFront {
       const flag=new T.Mesh(new T.PlaneGeometry(1.1,.6,12,5),this.material(i===0?0x9baf87:0xa77754,.92));(flag.material as T.MeshStandardMaterial).side=T.DoubleSide;flag.position.set(h.x+.55,2.6,h.z+3.4);this.scene.add(flag);this.flags.push(flag);
     });
     for(const [i,o] of MAP.obstacles.entries()){
-      this.crate(o.x+.6,o.z+o.d+.22,.65);this.crate(o.x+1.3,o.z+o.d+.22,.5);
-      this.cylinder(.22,.65,o.x+o.w-.45,.33,o.z+o.d+.22,this.timber);
-      for(const y of [.14,.51])this.cylinder(.232,.035,o.x+o.w-.45,y,o.z+o.d+.22,this.iron);
-      if(i<4)this.lantern(o.x+o.w-.6,1.6,o.z+o.d+.2);
+      const px=(x:number)=>o.x>24?2*(o.x+o.w/2)-x:x;
+      this.crate(px(o.x+.6),o.z+o.d+.22,.65);this.crate(px(o.x+1.3),o.z+o.d+.22,.5);
+      this.cylinder(.22,.65,px(o.x+o.w-.45),.33,o.z+o.d+.22,this.timber);
+      for(const y of [.14,.51])this.cylinder(.232,.035,px(o.x+o.w-.45),y,o.z+o.d+.22,this.iron);
+      if(i<4)this.lantern(px(o.x+o.w-.6),1.6,o.z+o.d+.2);
     }
     // Wire lies beyond the legal map edge. It is not a concealed collision or damage rule.
     for(const z of [-.7,32.7])for(let x=0;x<49;x+=3){

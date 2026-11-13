@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-11-02T01:29:35.619Z",
+  "mode": "SERVER_PRACTICE_V2",
+  "actor": "Coding agent using visible controls. Not a human playtest.",
+  "beforeLoss": "HP 100 · AMMO 19 / 80 · 14s · 0 SIM AVAILABLE · 20 FIELD CR",
+  "afterBlockedInputs": "HP 100 · AMMO 19 / 80 · 14s · 0 SIM AVAILABLE · 20 FIELD CR",
+  "afterRestoration": "HP 100 · AMMO 19 / 80 · 14s · 0 SIM AVAILABLE · 20 FIELD CR",
+  "afterExplicitResumeAndFire": "HP 100 · AMMO 18 / 80 · 25s · 0 SIM AVAILABLE · 20 FIELD CR",
+  "pausedStatsUnchanged": true,
+  "notes": "Stats use rounded displayed active seconds. Forced graphics loss is an intentional browser recovery test, not a device FPS sample."
+}

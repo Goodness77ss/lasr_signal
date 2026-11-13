@@ -1,0 +1,50 @@
+{
+  "observedAt": "2026-11-02T16:24:30.429Z",
+  "mode": "LOCAL_SERVICE_WITH_PUBLIC_TESTNET",
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "service": "LAST SIGNAL",
+      "version": "0.1.0",
+      "revision": "development",
+      "uptimeSeconds": 45362,
+      "mode": "PRIVATE_UNFUNDED",
+      "multiplayer": true,
+      "publicOperation": false,
+      "public": false,
+      "rules": "practice-5-endless-front",
+      "map": "compound-1",
+      "protocol": "private-1",
+      "persistence": "SQLite",
+      "wallet": true,
+      "testnetConfigured": true
+    }
+  },
+  "config": {
+    "status": 200,
+    "body": {
+      "enabled": true,
+      "mode": "PUBLIC_TESTNET",
+      "chainId": "46630",
+      "vault": "0x947d3B128Cd17D545cE6A92E7c073a99C267459f",
+      "currency": "0x510414cA08A84473f8c8FCa77a198eaD4d7cE9d9",
+      "rulesHash": "0x177a2b04e128db7f4b241dd2acc83c7a7d6cc7e4dd239570c401287685af1334",
+      "rulesVersion": "survival-2.7.0",
+      "settlementWorker": {
+        "fundedEntry": true,
+        "reason": "ok",
+        "checkedAt": 1793636668139
+      },
+      "invalidCheckpoints": 0,
+      "browserWalletProof": false
+    }
+  },
+  "settlementJobCounts": [
+    {
+      "state": "settled",
+      "count": 1
+    }
+  ],
+  "browserProof": false
+}

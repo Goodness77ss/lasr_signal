@@ -1,4 +1,5 @@
 import * as T from 'three';
+import {ACTOR} from '@last-signal/sim';
 
 export function periodRifle(view=false):T.Group {
   const gun=new T.Group();gun.name='weapon';
@@ -27,7 +28,7 @@ export function periodRifle(view=false):T.Group {
 
 // Original articulated geometry. Three figures illustrate one authoritative squad.
 export function createSoldier(side: number, index: number): T.Group {
-  const root = new T.Group();
+  const root = new T.Group();root.scale.setScalar(ACTOR.modelScale);
   root.position.set((index - 1) * .95, 0, index === 1 ? .45 : -.55);
   const cloth = new T.MeshStandardMaterial({ color: side === 0 ? 0x7b7850 : 0x73786e, roughness: .97 });
   const armor = new T.MeshStandardMaterial({ color: 0x4d3926, roughness: .85, metalness: .02 });
@@ -77,13 +78,13 @@ export function createSoldier(side: number, index: number): T.Group {
   return root;
 }
 
-export function animateSoldier(root: T.Object3D, time: number, moving: boolean, crouch: boolean, firing: number, reduced: boolean) {
+export function animateSoldier(root: T.Object3D, time: number, moving: boolean, crouch: boolean, firing: number, reduced: boolean, elevation=0) {
   const index = root.userData.index as number;
   const phase=time*10+index*.8, stride=moving&&!reduced?Math.sin(phase):0;
   const rig=root.getObjectByName('rig')!;
   rig.position.y=crouch?-.26:0;
   rig.rotation.x=(moving?.1:0)+(firing>0&&!reduced?-firing*.055:0);
-  root.position.y=reduced?0:moving?Math.abs(Math.sin(phase))*.045:Math.sin(time*1.8+index)*.008;
+  root.position.y=elevation+(reduced?0:moving?Math.abs(Math.sin(phase))*.045:Math.sin(time*1.8+index)*.008);
   for (const [name,sign] of [['legL',1],['legR',-1]] as const) {
     const leg=rig.getObjectByName(name)!; leg.rotation.x=stride*.65*sign+(crouch?-.55:0);
     leg.getObjectByName('shin')!.rotation.x=Math.max(0,-stride*sign)*.8+(crouch?1.1:0);

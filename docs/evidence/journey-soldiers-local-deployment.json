@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-11-10T09:48:32.132Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "lifecycle": "Node closed after proof. Addresses are evidence, not a running deployment.",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+    "mintAuthority": "0x6d9cc525ecC93D65FD2B557f4304A386EfD82e01",
+    "gameplaySigner": "0x841dBf2aC09Cf0C060EdF4769f745dBc6742BEcC",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0x53b48a89d64289752b5bf7dc71748fbe82de6a6e7a4bef1ab11fe75685c3cbed",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "classBuilds": [
+    {
+      "id": "journey-classes-1:mara",
+      "hash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+      "classId": "mara"
+    },
+    {
+      "id": "journey-classes-1:kestrel",
+      "hash": "0x87a54816f144da0147c8c35865e6764f69b20bc85429fd12d69509c3ccea0acc",
+      "classId": "kestrel"
+    },
+    {
+      "id": "journey-classes-1:rook",
+      "hash": "0xf0125850699884d40c68c45c79f87cb3a155767cdd9729ec1d52a273c7c29545",
+      "classId": "rook"
+    },
+    {
+      "id": "journey-classes-1:imani",
+      "hash": "0x6f172d29e9da41d3564946ca6fe721cca65cb6f02335c29dee75d33857b37400",
+      "classId": "imani"
+    },
+    {
+      "id": "journey-classes-1:flint",
+      "hash": "0xa6859c7a30ef1ec5c4017ebd105ed577c983b29101c8fcdffd067bb236530f12",
+      "classId": "flint"
+    },
+    {
+      "id": "journey-classes-1:vale",
+      "hash": "0xc2aebc443293866a453219b0f0c4eaf9faaa8974f5ec7c7a24a8b51c84588645",
+      "classId": "vale"
+    },
+    {
+      "id": "journey-classes-1:beck",
+      "hash": "0x3e429271d035cbbc024ffadf3e8fb6c548a2a4613f63595e7eadeeb80449c9a5",
+      "classId": "beck"
+    }
+  ],
+  "mintPolicy": "Owner approved local authorized development mint only; no purchase price or public supply policy.",
+  "deploymentReceipt": {
+    "label": "deploy approved local collection: 70 total, 10 per class",
+    "hash": "0x04c245315db2db30126d9ffa6076b7b9422a2e39443299e7bfedea14ac65c8f6",
+    "block": 1,
+    "status": 1,
+    "gasUsed": "3325275",
+    "logs": []
+  }
+}

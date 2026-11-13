@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-11-02T01:19:06.133Z",
+  "mode": "SERVER_PRACTICE_V2",
+  "automatedCombat": false,
+  "run": "39d2c479ba4bfd831829b4f9be4292be",
+  "rulesVersion": "survival-2.6.0",
+  "rulesHash": "0x398df438b4714e021dc8193a1d2dfc391f22448bea77192a540358c4c7e8393e",
+  "activeSeconds": 53.65,
+  "result": null,
+  "accounting": {
+    "asset": "RUN_TWIF",
+    "mode": "SIMULATED_ONLY",
+    "deposit": 0,
+    "station": 5,
+    "bonus": 0,
+    "spent": 5,
+    "failed": 0,
+    "locked": 0,
+    "available": 0,
+    "walletClaim": null
+  },
+  "fieldCredits": 15,
+  "rewards": [
+    {
+      "run": "39d2c479ba4bfd831829b4f9be4292be",
+      "cycle": 1,
+      "station": "A",
+      "kind": "CAPTURE",
+      "amountWhole": 5,
+      "tick": 409,
+      "source": "capture:409"
+    }
+  ],
+  "orders": [
+    {
+      "asset": "FIELD_CREDITS",
+      "item": "BASIC_AMMO",
+      "quoted": 5,
+      "charged": 5,
+      "applied": 1,
+      "reason": "20 spare rounds applied for 5 field credits",
+      "tick": 1073
+    },
+    {
+      "asset": "RUN_TWIF",
+      "item": "AMMO",
+      "quoted": 5,
+      "charged": 5,
+      "applied": 1,
+      "reason": "AMMO applied once for 5 simulated run units",
+      "tick": 1073
+    }
+  ],
+  "mission": {
+    "current": null,
+    "history": []
+  },
+  "lifecycle": {
+    "channel": null,
+    "disconnectedAt": null,
+    "reason": "Fallback extraction at the western bank. Eight safe active seconds. New loot is lost on death or departure. Previously owned NFTs remain owned.",
+    "loot": [],
+    "terminal": null
+  },
+  "chain": {
+    "funded": false,
+    "settlementWorker": false,
+    "transactionHash": null,
+    "nftMinted": false
+  }
+}

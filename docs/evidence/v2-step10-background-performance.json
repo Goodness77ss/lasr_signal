@@ -1,0 +1,132 @@
+{
+  "checkedAt": "2026-11-02T01:10:47.188Z",
+  "mode": "SERVER_PRACTICE_V2",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "viewport": [
+    1280,
+    720
+  ],
+  "renderSize": [
+    1581,
+    467
+  ],
+  "effects": true,
+  "reducedMotion": false,
+  "seconds": 14.51520000000001,
+  "frames": 21,
+  "fps": 1.4467592592592582,
+  "p95FrameMs": 1016.5999999999767,
+  "meanDrawCalls": 669.7619047619048,
+  "geometries": 806,
+  "textures": 7,
+  "usedJSHeapBytes": 38611886,
+  "renderer": "ANGLE (Intel, Intel(R) HD Graphics 520 (0x00001916) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "note": "Visible requestAnimationFrame cadence. Includes rendering and application work. Not GPU timing, total memory, or a benchmark of other devices.",
+  "context": {
+    "hud": "ACTIVE 50s | HP 47 | ammo 20/80 | 5 SIM available | lock 0 | field 20 | mission none | active",
+    "missionStatus": null,
+    "available": 5,
+    "result": null,
+    "rulesVersion": "survival-2.6.0",
+    "rulesHash": "0x398df438b4714e021dc8193a1d2dfc391f22448bea77192a540358c4c7e8393e",
+    "activeSeconds": 50.3,
+    "paused": false,
+    "pressure": {
+      "tier": 1,
+      "enemies": 2,
+      "cap": 3,
+      "delayed": 0,
+      "reason": "Assault 1 advancing on A",
+      "nextInSeconds": 0,
+      "assault": {
+        "id": "7ba741cea25f8743c10c29a329d9fe08:assault:1",
+        "station": "A",
+        "state": "active",
+        "attackers": 2,
+        "preparationSeconds": 0,
+        "engaged": true,
+        "routeFailure": false
+      }
+    },
+    "tickProfile": {
+      "samples": 256,
+      "p95Ms": 6.364199999952689,
+      "peakMs": 51.23259999998845,
+      "meanMs": 3.8550781250005457,
+      "meanSnapshotBytes": 8554.078125
+    },
+    "automatedCombat": false
+  },
+  "sceneSamples": [
+    {
+      "hud": "ACTIVE 38s | HP 75 | ammo 20/80 | 5 SIM available | lock 0 | field 20 | mission none | active",
+      "missionStatus": null,
+      "available": 5,
+      "result": null,
+      "rulesVersion": "survival-2.6.0",
+      "rulesHash": "0x398df438b4714e021dc8193a1d2dfc391f22448bea77192a540358c4c7e8393e",
+      "activeSeconds": 38,
+      "paused": false,
+      "pressure": {
+        "tier": 1,
+        "enemies": 3,
+        "cap": 3,
+        "delayed": 0,
+        "reason": "Assault 1 advancing on A",
+        "nextInSeconds": 0,
+        "assault": {
+          "id": "7ba741cea25f8743c10c29a329d9fe08:assault:1",
+          "station": "A",
+          "state": "active",
+          "attackers": 2,
+          "preparationSeconds": 0,
+          "engaged": true,
+          "routeFailure": false
+        }
+      },
+      "tickProfile": {
+        "samples": 256,
+        "p95Ms": 8.733499999972992,
+        "peakMs": 25.92180000001099,
+        "meanMs": 3.480197656248947,
+        "meanSnapshotBytes": 4450.4140625
+      },
+      "automatedCombat": false
+    },
+    {
+      "hud": "ACTIVE 38s | HP 75 | ammo 20/80 | 5 SIM available | lock 0 | field 20 | mission none | active",
+      "missionStatus": null,
+      "available": 5,
+      "result": null,
+      "rulesVersion": "survival-2.6.0",
+      "rulesHash": "0x398df438b4714e021dc8193a1d2dfc391f22448bea77192a540358c4c7e8393e",
+      "activeSeconds": 38.7,
+      "paused": false,
+      "pressure": {
+        "tier": 1,
+        "enemies": 3,
+        "cap": 3,
+        "delayed": 0,
+        "reason": "Assault 1 advancing on A",
+        "nextInSeconds": 0,
+        "assault": {
+          "id": "7ba741cea25f8743c10c29a329d9fe08:assault:1",
+          "station": "A",
+          "state": "active",
+          "attackers": 2,
+          "preparationSeconds": 0,
+          "engaged": true,
+          "routeFailure": false
+        }
+      },
+      "tickProfile": {
+        "samples": 256,
+        "p95Ms": 8.733499999972992,
+        "peakMs": 25.92180000001099,
+        "meanMs": 3.4986437499983367,
+        "meanSnapshotBytes": 4589.4921875
+      },
+      "automatedCombat": false
+    }
+  ]
+}

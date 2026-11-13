@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-11-02T17:59:26.179Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_MISSION_CONSENT",
+  "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+  "hash": "0x2e386abdd9d89a58652dec301b6eccebc80b00996dcf9d8955eeaddde20d5344",
+  "block": 147192615,
+  "canonical": true,
+  "stakeWhole": 5,
+  "stationWholeAtConsent": 8,
+  "depositWhole": 0,
+  "bonusFundsOwnStake": false
+}

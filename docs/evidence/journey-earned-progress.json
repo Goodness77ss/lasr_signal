@@ -1,0 +1,12 @@
+{
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "limits": "Actual ordinary review bot encounter and participation, owner SDK submission and chain confirmation. No rendered browser or human playtest.",
+  "tick": 304,
+  "xp": "10",
+  "bankSource": "0x2e12f0d352af5df7cd406fffb96570b08238f651956b4415f6486492c4cfb507",
+  "transactionHash": "0x5e3840d86fe16df9217a7ed929696150d9d16700cd14d9a09ac9c7211f02543b",
+  "collection": "0xf03F45B4EDFbEBe4308dc03E16Cf405E78D8C209",
+  "tokenId": "1",
+  "saleTransactionHash": "0x65717d1df9ff172f10891de05d9fd851b68e73b46b7ce0df576ddae256e5dce1",
+  "retainedXpAfterSaleAndRestart": "10"
+}

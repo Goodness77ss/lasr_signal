@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+<title id="title">Journey marksman rifle</title><desc id="desc">Original prototype illustration of a long wooden rifle with a raised scope.</desc>
+<rect width="640" height="220" fill="#1b2924"/><path d="M30 175H610M30 45H610" stroke="#bac4a0" opacity=".15"/>
+<g transform="translate(40 72) rotate(-4 280 40)"><path d="M18 54L132 38 320 39 337 58 157 62 83 103 12 109Z" fill="#986b43" stroke="#c09662" stroke-width="3"/>
+<path d="M137 30H345V50H137Z" fill="#61716a"/><path d="M334 34H535V44H334Z" fill="#88948a"/><path d="M525 30H558V48H525Z" fill="#48594f"/>
+<path d="M190 4H303V22H190Z" fill="#9fae9a"/><path d="M180 0H198V26H180ZM297 0H317V26H297Z" fill="#52675d"/><path d="M209 22V34M281 22V34" stroke="#b2bba3" stroke-width="6"/>
+<path d="M169 61Q169 92 201 76L204 61" fill="none" stroke="#697b6d" stroke-width="5"/><path d="M185 61V74" stroke="#bfa47c" stroke-width="4"/>
+<path d="M318 42L325 20 337 20" fill="none" stroke="#d1bb85" stroke-width="5"/>
+</g><text x="30" y="31" fill="#d1bd8b" font-family="monospace" font-size="12" letter-spacing="3">MARKSMAN / JOURNEY</text><text x="30" y="202" fill="#9cae9f" font-family="monospace" font-size="10">ORIGINAL PROCEDURAL PROTOTYPE ILLUSTRATION</text></svg>

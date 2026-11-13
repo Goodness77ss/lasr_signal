@@ -1,0 +1,622 @@
+{
+  "generatedAt": "2026-11-10T09:48:32.132Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "deployment": {
+    "version": "JOURNEY_SOLDIERS_V1",
+    "chainId": 31337,
+    "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+    "mintAuthority": "0x6d9cc525ecC93D65FD2B557f4304A386EfD82e01",
+    "gameplaySigner": "0x841dBf2aC09Cf0C060EdF4769f745dBc6742BEcC",
+    "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+    "codeHash": "0x53b48a89d64289752b5bf7dc71748fbe82de6a6e7a4bef1ab11fe75685c3cbed",
+    "classSupplyCap": 10,
+    "maxSupply": 70
+  },
+  "receipts": [
+    {
+      "label": "deploy approved local collection: 70 total, 10 per class",
+      "hash": "0x04c245315db2db30126d9ffa6076b7b9422a2e39443299e7bfedea14ac65c8f6",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "3325275",
+      "logs": []
+    },
+    {
+      "label": "authorized mint mara",
+      "hash": "0x797eec3a2e6f30ffc77421835c263dba6b7ca7cb28790a1b6f8033dcc74617d4",
+      "block": 2,
+      "status": 1,
+      "gasUsed": "225781",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x1304b0398ad58fc42d2ca9e45921d18057b66bcc5debe83cf6d90d3f13f61510"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint kestrel",
+      "hash": "0x852f99cdd4c2b5965a838c72bf98c74aa7bfab18f5855943b9c1802406e3da43",
+      "block": 3,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000002"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000002",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x6148425656e0fd96bb52587544a3bbc5e16bc7ed27980613fce83adbdd4016bd"
+          ],
+          "data": "0x000000000000000000000000000000000000000000000000000000000000000187a54816f144da0147c8c35865e6764f69b20bc85429fd12d69509c3ccea0acc"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint rook",
+      "hash": "0xa52ddb171ce2ef111256405ec595ba7470fa2b999e2504dd6eece5a8a2283845",
+      "block": 4,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000003"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000003",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xf6da432e7ab00c2b358b308b2bdcc2a34f751a1d3e70d71c7cd0f29f462920de"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000002f0125850699884d40c68c45c79f87cb3a155767cdd9729ec1d52a273c7c29545"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint imani",
+      "hash": "0xdb13473ef88812e1d0a6f0ece48a1d32b1b198f2ce5c5919ba67bb7890bb6fc2",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000004"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000004",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x5b19f675aac91538923aeec722a847e6885bbc53fa3fd784b496af63bf992fe2"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000000000000000000036f172d29e9da41d3564946ca6fe721cca65cb6f02335c29dee75d33857b37400"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint flint",
+      "hash": "0x5f1bd45d62e92324fd46d9fa36e3b0c9d8cdd1519eab594190cf8dd7314629ad",
+      "block": 6,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000005"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000005",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xbb5aa424e109f31451e73a98d3640d3cab2c78eadf78d69d778c6fd4203a1b4a"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000004a6859c7a30ef1ec5c4017ebd105ed577c983b29101c8fcdffd067bb236530f12"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint vale",
+      "hash": "0x19aec1c9cda3baf628698283a20eeda15a719aab9f654273265abf31f31c7fa8",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000006"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000006",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x914824205d282ea05ba1ebcfc0d4b79287ae1d295495d68b9b226e90b96814fb"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000005c2aebc443293866a453219b0f0c4eaf9faaa8974f5ec7c7a24a8b51c84588645"
+        }
+      ]
+    },
+    {
+      "label": "authorized mint beck",
+      "hash": "0x7a8a3e36b05ab82a93ae270044c11837b3a86a913eb790c4e27f8d02207345dc",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "251293",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000007"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000007",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xb72daa0eaa28ece16139cf9caf1b411f74b6518e9a97eb17c5c76b273367b530"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000000000000000000063e429271d035cbbc024ffadf3e8fb6c548a2a4613f63595e7eadeeb80449c9a5"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 2",
+      "hash": "0xd51a8056f5b456472358bd28d4e351d7b9a09464b261de6af1667dd394b0ed43",
+      "block": 9,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000008"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000008",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xaf5acbe197e977b06e8d2d539fee28806534e3d7cfccf44baef53fcf74e854ac"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 3",
+      "hash": "0xc653b0385fefe70bc42b84a3b523455af2fad3dfd9e952e97c9c25782799c18a",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000009"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000009",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x5575a5db275d0697849bcc44bdac15b818ef1cde2f8c52d66b77eb1e28bb2f1a"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 4",
+      "hash": "0x8e18e1b24cfa266b9b59d6db37f90ed1cd3a88ba93d4c25b74362e5feedf6d95",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000a"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000a",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x2c5db46e7b9cf1d5f2cf840b1a8ffd9e5ed36badee14349a9e0728499d883497"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 5",
+      "hash": "0x8ad5a0495ab4b92f20bc7f88e963b6dfe65934964c84f3c48000f22a689e9342",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000b"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000b",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x3b1ec19ac1cef6c47b81e5a02e6ff1be247317d58146ee939772be5aeddbd2bb"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 6",
+      "hash": "0xcf64184ccd192b8273a86ce742c8bf8134616ebc5c1820f0a9b6395b6db53e8f",
+      "block": 13,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000c"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000c",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0659576a9796fe56417160680f078d7a871ac0992907887c9dc855a02fdbbce1"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 7",
+      "hash": "0x81a25804d6cfd6651582e352a9d288d347c648cac46f398407ba8dfdcf326ea7",
+      "block": 14,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000d"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000d",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xcb491b36f205181b7b47a8201d79072d277b98e5e539a6a7f2e9a5f3076d176b"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 8",
+      "hash": "0x17dbaf7038293ba1f2307df2c0e77b68d4365bd68b412fac9ac845a97425f19a",
+      "block": 15,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000e"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000e",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x05b86cc5a6d08d18ad76511d2b799ea59efbd1de4d711ff1d9475217b4298524"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 9",
+      "hash": "0x5854482cdc529a3978e6cc60e6bc80a740a48653f19f749bf8904202a458d969",
+      "block": 16,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000000000000000000000000000000000000000000f"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x000000000000000000000000000000000000000000000000000000000000000f",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x297f87fdf3ba876448d6b8831f6a2e4b627a7573792c6eaa1380d40a67f6d32c"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "authorized Mara instance 10",
+      "hash": "0xe0caf7ffd2b8640dfd5cb181bc79b8a0eddb480b43861ad55138d43eb4c6f3f5",
+      "block": 17,
+      "status": 1,
+      "gasUsed": "214281",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x0000000000000000000000000000000000000000000000000000000000000010"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x073d929101be989edab824a56bc0ab111c45e0a7a596ef8d2fac95d427d8526f",
+            "0x0000000000000000000000000000000000000000000000000000000000000010",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0xc49ce5f48a395e12b4c3fccd0ffa0de9ab68d90bb907d92f88ba30ad267b6645"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000000fc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc"
+        }
+      ]
+    },
+    {
+      "label": "accept designated signer authored progress fixture",
+      "hash": "0x5b4bb1a6138e40aeedfe52f9f528ad996d90893e21143c64c0b0372edc82082b",
+      "block": 19,
+      "status": 1,
+      "gasUsed": "176235",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0x5ee25a4df413d2552963e19e0013decf11ea792311851c999f9dcdd8eeafa426",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x6b21f6a5faad89570eec23ebe9e2b50a12522a40ffbc8bfab1c7fc733e999465"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    },
+    {
+      "label": "transfer progressed soldier to second local wallet",
+      "hash": "0xa01aa253e058b332195181129d18f10374fe3d549831c92102a79b678b8c8a6f",
+      "block": 20,
+      "status": 1,
+      "gasUsed": "96617",
+      "logs": [
+        {
+          "address": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000dfda0b0b19a4b8bc7afc7351e83a3cacb26c5c4e",
+            "0x000000000000000000000000dc9b80096bab1d6ec821b88d9cb28114e7de8cc8",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        }
+      ]
+    }
+  ],
+  "minted": "16",
+  "classZeroMinted": "10",
+  "eleventhClassZeroRejected": true,
+  "unauthorizedMintRejected": true,
+  "replayRejected": true,
+  "before": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0xa68b58041e1c42261a9eca66d1ff8407ec4ef82e:1",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "adapter": "JOURNEY_SOLDIERS_V1",
+    "owner": "0xDFDA0b0B19a4B8BC7Afc7351E83a3cacB26C5c4e",
+    "uri": "data:application/json;base64,eyJuYW1lIjoiTWFyYSAvIEFuY2hvciAjMSIsImRlc2NyaXB0aW9uIjoiT3JpZ2luYWwgTEFTVCBTSUdOQUwgbG9jYWwgZGV2ZWxvcG1lbnQgc29sZGllci4gSW1tdXRhYmxlIGNsYXNzIGFuZCBwcm92ZW5hbmNlLiBWZXJpZmllZCBjb3NtZXRpYyBwcm9ncmVzcyBpcyBzZXBhcmF0ZSBmcm9tIGl0cyBidWlsZC4gT3duZWQgSm91cm5leSBkZXBsb3ltZW50IHJlcXVpcmVzIGEgc3VwcG9ydGVkIGFkYXB0ZXIgYW5kIHJ1biBsZWFzZS4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNell3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNMk1DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeGphWEpqYkdVZ1kzZzlJakkwTUNJZ1kzazlJakV4TlNJZ2NqMGlNelFpSUdacGJHdzlJaU5qTUdGa09EQWlMejQ4Y0dGMGFDQmtQU0pOTVRnNElERTJNR2d4TURSc01qQWdNVEU0U0RFMk9Ib2lJR1pwYkd3OUlpTTNaamhqTmpVaUx6NDhjR0YwYUNCa1BTSk5NVGMxSURFNE1HZ3hNekIyTVRWSU1UYzFlaUlnWm1sc2JEMGlJMkkxT1dFMk1pSXZQangwWlhoMElIZzlJakkwSWlCNVBTSXpPQ0lnWm1sc2JEMGlJMll3WkdaaU55SWdabTl1ZEMxbVlXMXBiSGs5SW0xdmJtOXpjR0ZqWlNJZ1ptOXVkQzF6YVhwbFBTSXhPQ0krVEVGVFZDQlRTVWRPUVV3Z1NrOVZVazVGV1NCVFQweEVTVVZTVXp3dmRHVjRkRDQ4ZEdWNGRDQjRQU0l5TkNJZ2VUMGlNekUxSWlCbWFXeHNQU0lqWmpCa1ptSTNJaUJtYjI1MExXWmhiV2xzZVQwaWJXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJakU0SWo1TllYSmhJQzhnUVc1amFHOXlJQ014UEM5MFpYaDBQangwWlhoMElIZzlJakkwSWlCNVBTSXpOREFpSUdacGJHdzlJaU5qTVdNM1lqWWlJR1p2Ym5RdFptRnRhV3g1UFNKdGIyNXZjM0JoWTJVaUlHWnZiblF0YzJsNlpUMGlNVEVpUGt4UFEwRk1JRVJGVmtWTVQxQk5SVTVVSUM4Z1RrOGdUVTlPUlZSQlVsa2dWa0ZNVlVVOEwzUmxlSFErUEM5emRtYysiLCJjbGFzc0lkIjowLCJidWlsZEhhc2giOiIweGZjODFkZmZlZDk0NzU5ZmM2N2MwMDgxMDMwNDkwYmVhOWI0ZTQ0OTZlZDAzNzU5YjYzNGExNzdmMGJmYWZjZmMiLCJwcm92ZW5hbmNlIjoiMHgxMzA0YjAzOThhZDU4ZmM0MmQyY2E5ZTQ1OTIxZDE4MDU3YjY2YmNjNWRlYmU4M2NmNmQ5MGQzZjEzZjYxNTEwIiwiZ2FtZXBsYXlBdmFpbGFiaWxpdHkiOiJSRVFVSVJFU19BREFQVEVSX0FORF9SVU5fTEVBU0UiLCJwcm9ncmVzcyI6eyJwb2xpY3kiOiJqb3VybmV5LXByb2dyZXNzLTEiLCJydWxlc0hhc2giOiIweDUzZmY3MmY5NjI0YTI3OGI3OTE4YzJjMWE3ZjhjZWVkZDY1ZTVjMTcyY2QwMzYzZjIyZGRkMDFmNDFhOGYzNWEiLCJyZXZpc2lvbiI6IjAiLCJjdW11bGF0aXZlWHAiOiIwIiwiaGFzQ2hlY2twb2ludCI6ZmFsc2UsImZ1cnRoZXN0Q2hlY2twb2ludCI6IjAiLCJiYW5rU291cmNlIjoiMHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIn19",
+    "immutableBuild": {
+      "id": "journey-classes-1:mara",
+      "hash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+      "classId": "mara"
+    },
+    "provenance": "0x1304b0398ad58fc42d2ca9e45921d18057b66bcc5debe83cf6d90d3f13f61510",
+    "capabilities": {
+      "inspect": true,
+      "equip": false,
+      "list": false,
+      "claim": false,
+      "consume": false,
+      "combatReady": false,
+      "journeyCombatReady": false
+    },
+    "combatMode": null,
+    "progress": {
+      "asset": {
+        "kind": "soldier",
+        "chainId": "31337",
+        "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+        "tokenId": "1"
+      },
+      "revision": "0",
+      "cumulativeXp": "0",
+      "furthestCompleted": null,
+      "policy": "journey-progress-1",
+      "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+      "source": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "progressNonce": "0"
+  },
+  "after": {
+    "asset": {
+      "kind": "soldier",
+      "chainId": "31337",
+      "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0xa68b58041e1c42261a9eca66d1ff8407ec4ef82e:1",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "adapter": "JOURNEY_SOLDIERS_V1",
+    "owner": "0xDc9b80096Bab1d6Ec821b88D9cb28114E7DE8Cc8",
+    "uri": "data:application/json;base64,eyJuYW1lIjoiTWFyYSAvIEFuY2hvciAjMSIsImRlc2NyaXB0aW9uIjoiT3JpZ2luYWwgTEFTVCBTSUdOQUwgbG9jYWwgZGV2ZWxvcG1lbnQgc29sZGllci4gSW1tdXRhYmxlIGNsYXNzIGFuZCBwcm92ZW5hbmNlLiBWZXJpZmllZCBjb3NtZXRpYyBwcm9ncmVzcyBpcyBzZXBhcmF0ZSBmcm9tIGl0cyBidWlsZC4gT3duZWQgSm91cm5leSBkZXBsb3ltZW50IHJlcXVpcmVzIGEgc3VwcG9ydGVkIGFkYXB0ZXIgYW5kIHJ1biBsZWFzZS4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNell3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNMk1DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeGphWEpqYkdVZ1kzZzlJakkwTUNJZ1kzazlJakV4TlNJZ2NqMGlNelFpSUdacGJHdzlJaU5qTUdGa09EQWlMejQ4Y0dGMGFDQmtQU0pOTVRnNElERTJNR2d4TURSc01qQWdNVEU0U0RFMk9Ib2lJR1pwYkd3OUlpTTNaamhqTmpVaUx6NDhjR0YwYUNCa1BTSk5NVGMxSURFNE1HZ3hNekIyTVRWSU1UYzFlaUlnWm1sc2JEMGlJMkkxT1dFMk1pSXZQangwWlhoMElIZzlJakkwSWlCNVBTSXpPQ0lnWm1sc2JEMGlJMll3WkdaaU55SWdabTl1ZEMxbVlXMXBiSGs5SW0xdmJtOXpjR0ZqWlNJZ1ptOXVkQzF6YVhwbFBTSXhPQ0krVEVGVFZDQlRTVWRPUVV3Z1NrOVZVazVGV1NCVFQweEVTVVZTVXp3dmRHVjRkRDQ4ZEdWNGRDQjRQU0l5TkNJZ2VUMGlNekUxSWlCbWFXeHNQU0lqWmpCa1ptSTNJaUJtYjI1MExXWmhiV2xzZVQwaWJXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJakU0SWo1TllYSmhJQzhnUVc1amFHOXlJQ014UEM5MFpYaDBQangwWlhoMElIZzlJakkwSWlCNVBTSXpOREFpSUdacGJHdzlJaU5qTVdNM1lqWWlJR1p2Ym5RdFptRnRhV3g1UFNKdGIyNXZjM0JoWTJVaUlHWnZiblF0YzJsNlpUMGlNVEVpUGt4UFEwRk1JRVJGVmtWTVQxQk5SVTVVSUM4Z1RrOGdUVTlPUlZSQlVsa2dWa0ZNVlVVOEwzUmxlSFErUEM5emRtYysiLCJjbGFzc0lkIjowLCJidWlsZEhhc2giOiIweGZjODFkZmZlZDk0NzU5ZmM2N2MwMDgxMDMwNDkwYmVhOWI0ZTQ0OTZlZDAzNzU5YjYzNGExNzdmMGJmYWZjZmMiLCJwcm92ZW5hbmNlIjoiMHgxMzA0YjAzOThhZDU4ZmM0MmQyY2E5ZTQ1OTIxZDE4MDU3YjY2YmNjNWRlYmU4M2NmNmQ5MGQzZjEzZjYxNTEwIiwiZ2FtZXBsYXlBdmFpbGFiaWxpdHkiOiJSRVFVSVJFU19BREFQVEVSX0FORF9SVU5fTEVBU0UiLCJwcm9ncmVzcyI6eyJwb2xpY3kiOiJqb3VybmV5LXByb2dyZXNzLTEiLCJydWxlc0hhc2giOiIweDUzZmY3MmY5NjI0YTI3OGI3OTE4YzJjMWE3ZjhjZWVkZDY1ZTVjMTcyY2QwMzYzZjIyZGRkMDFmNDFhOGYzNWEiLCJyZXZpc2lvbiI6IjEiLCJjdW11bGF0aXZlWHAiOiIxMCIsImhhc0NoZWNrcG9pbnQiOnRydWUsImZ1cnRoZXN0Q2hlY2twb2ludCI6IjAiLCJiYW5rU291cmNlIjoiMHg2YjIxZjZhNWZhYWQ4OTU3MGVlYzIzZWJlOWUyYjUwYTEyNTIyYTQwZmZiYzhiZmFiMWM3ZmM3MzNlOTk5NDY1In19",
+    "immutableBuild": {
+      "id": "journey-classes-1:mara",
+      "hash": "0xfc81dffed94759fc67c0081030490bea9b4e4496ed03759b634a177f0bfafcfc",
+      "classId": "mara"
+    },
+    "provenance": "0x1304b0398ad58fc42d2ca9e45921d18057b66bcc5debe83cf6d90d3f13f61510",
+    "capabilities": {
+      "inspect": true,
+      "equip": false,
+      "list": false,
+      "claim": false,
+      "consume": false,
+      "combatReady": false,
+      "journeyCombatReady": false
+    },
+    "combatMode": null,
+    "progress": {
+      "asset": {
+        "kind": "soldier",
+        "chainId": "31337",
+        "collection": "0xA68b58041e1C42261A9eCA66D1FF8407Ec4Ef82e",
+        "tokenId": "1"
+      },
+      "revision": "1",
+      "cumulativeXp": "10",
+      "furthestCompleted": "0",
+      "policy": "journey-progress-1",
+      "rulesHash": "0x53ff72f9624a278b7918c2c1a7f8ceedd65e5c172cd0363f22ddd01f41a8f35a",
+      "source": "0x6b21f6a5faad89570eec23ebe9e2b50a12522a40ffbc8bfab1c7fc733e999465"
+    },
+    "progressNonce": "2"
+  },
+  "progressSource": "Authored designated signer fixture. Not an automatic simulation journal to chain bank.",
+  "limits": "Disposable local wallets and real local ERC721 transactions. No public deployment, purchase, owned combat admission, lease or marketplace. Signatures and keys are not exported."
+}

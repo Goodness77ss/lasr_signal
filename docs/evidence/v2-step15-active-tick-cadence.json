@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-11-02T17:57:19.286Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_AUTOMATED_COMBAT_REVIEW",
+  "samples": [
+    {
+      "at": 1793642219264,
+      "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+      "tick": 1197,
+      "paused": false,
+      "phase": "active",
+      "mission": "NONE",
+      "station": 8
+    },
+    {
+      "at": 1793642239286,
+      "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+      "tick": 1535,
+      "paused": false,
+      "phase": "active",
+      "mission": "NONE",
+      "station": 8
+    }
+  ],
+  "wallSeconds": 20.022,
+  "activeTicksPerWallSecond": 16.881430426530816,
+  "notRenderingFps": true
+}

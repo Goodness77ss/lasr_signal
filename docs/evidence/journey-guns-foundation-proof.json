@@ -1,0 +1,441 @@
+{
+  "generatedAt": "2026-11-10T10:56:47.120Z",
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "stage": "COLLECTIBLE_FOUNDATION_ONLY",
+  "deployment": {
+    "version": "JOURNEY_GUNS_V1",
+    "chainId": 31337,
+    "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+    "currency": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+    "gameplaySigner": "0xFdcfE7456BEAd0035B628b33cd458BdECb824B74",
+    "rulesHash": "0x962980e5ba439e18eed3abc969dc85286291ef610471c6b04009deaa7facc4d7",
+    "codeHash": "0x881f834051c2969902d9c178786c60bbec800da3fb6cf1e1d467d950d6a9a138",
+    "currencyCodeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf"
+  },
+  "receipts": [
+    {
+      "label": "deploy token",
+      "hash": "0x8adc1c3c2ac8e0fc3d3adb1dc893a0582c7e951a87cfb4b8b9f69603729b5056",
+      "block": 1,
+      "status": 1,
+      "gasUsed": "612654",
+      "logs": []
+    },
+    {
+      "label": "deploy escrow",
+      "hash": "0x3b2b54cbc1c71b105546ca5162ce329c952f59b3797fb8d172b9c1b22eb65925",
+      "block": 2,
+      "status": 1,
+      "gasUsed": "1970637",
+      "logs": []
+    },
+    {
+      "label": "faucet A",
+      "hash": "0x536d18a69ed4a07cf670d889e30f552e5ae5c3835bed77b22c7e8a08bbb6661c",
+      "block": 3,
+      "status": 1,
+      "gasUsed": "91975",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006af3067d"
+        }
+      ]
+    },
+    {
+      "label": "faucet B",
+      "hash": "0xeb6088250f71cf9fa4d12d418edf1a7bf302b2ec29aefd5d1926455aea073d16",
+      "block": 4,
+      "status": 1,
+      "gasUsed": "74875",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        },
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0x214e597359607d253d273b990ec10788316369f1c0a60fd7d46d8ad75beb7f8e",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000000000000000000000000000000000006af3067e"
+        }
+      ]
+    },
+    {
+      "label": "approve A exactly 100",
+      "hash": "0x50c881ec53a60f1c0313171fb6e8977ef255c6e733569dfaf9c0d4d81f4cf34e",
+      "block": 5,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x0000000000000000000000009164944b3bac541f592fac08d465f4c482541dde"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "approve B exactly 100",
+      "hash": "0x269f87af15f66b585208cbd63325d37956c04b792b0f0cd7d1fd2c927b535044",
+      "block": 6,
+      "status": 1,
+      "gasUsed": "46401",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421",
+            "0x0000000000000000000000009164944b3bac541f592fac08d465f4c482541dde"
+          ],
+          "data": "0x0000000000000000000000000000000000000000000000056bc75e2d63100000"
+        }
+      ]
+    },
+    {
+      "label": "deploy separate local Journey gun collection",
+      "hash": "0xc004ba8edb473d83bd6cefe1bb10d5e00146f3d8d24b3ce3fbd3167cc4c35445",
+      "block": 7,
+      "status": 1,
+      "gasUsed": "3269751",
+      "logs": []
+    },
+    {
+      "label": "claim two authored exact build fixtures",
+      "hash": "0xc1af143e9473de7a9f5fb3116cd9bf03f0cd42e2abb4b4291a90c46f2aba1410",
+      "block": 8,
+      "status": 1,
+      "gasUsed": "475735",
+      "logs": [
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0x352786141c3af89126310f348075e83cff3fe64ed44c02e939f4259415d55b32",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x12a1ce07f28dd39344cfb03191b29fdfddba3b194a7bf3ca22b3f60e985d70d0"
+          ],
+          "data": "0x2caf605d94735ced0c91ed0a5bad6914e81be8ef88674a99acac9dd583c924360000000000000000000000000000000000000000000000000000000000000000b68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da"
+        },
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x0000000000000000000000000000000000000000000000000000000000000002"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0x352786141c3af89126310f348075e83cff3fe64ed44c02e939f4259415d55b32",
+            "0x0000000000000000000000000000000000000000000000000000000000000002",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0xa7fc3438f802ac46cd98abbbbd950ee0d2b42f6451e15c76007d5058e3d2bde0"
+          ],
+          "data": "0x2caf605d94735ced0c91ed0a5bad6914e81be8ef88674a99acac9dd583c92436000000000000000000000000000000000000000000000000000000000000000178ce8a816917103214c4b1cb8c2d483b65734f1ed8eb5aaf507922cd642c294d"
+        }
+      ]
+    },
+    {
+      "label": "seller chooses local fixture price",
+      "hash": "0x856c6f20e1aecb7be9ffe80f0dcb631982a6514224ee962023bb8de6e1e77ff9",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "145155",
+      "logs": [
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0xd7eb6c092c858d26e425a8d4fc17852b5eb5a9db953ecce308e7607f245ff10c",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000b68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    },
+    {
+      "label": "approve exact mock asking price",
+      "hash": "0xf5ef7be1804332165f1a912c881f79382611f8aedfc4f686dd84c8caddaf7502",
+      "block": 11,
+      "status": 1,
+      "gasUsed": "46389",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421",
+            "0x00000000000000000000000054d96327de36dd555d1452348e21f0eeb36ca0db"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000"
+        }
+      ]
+    },
+    {
+      "label": "buy exact marksman collectible",
+      "hash": "0x501af5e2f96064b823c5962e381c1d486cbc1ee053ba8a45a2dfbdde85b5f0f7",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "133569",
+      "logs": [
+        {
+          "address": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000"
+        },
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421",
+            "0x0000000000000000000000000000000000000000000000000000000000000001"
+          ],
+          "data": "0x"
+        },
+        {
+          "address": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+          "topics": [
+            "0x65fc95f847d6d0a5c0a27e37658305fc70b56fcbd861a179a9e3bbea98f67f1a",
+            "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "0x0000000000000000000000009be06f0f03eace8b6b61672468160de02e4449ca",
+            "0x000000000000000000000000eff72ff1f8602dc0a315fd65b37eb2aaf4990421"
+          ],
+          "data": "0x00000000000000000000000000000000000000000000000053444835ec580000b68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da0000000000000000000000000000000000000000000000000000000000000001"
+        }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "id": "journey-weapons-1:marksman-rifle",
+      "hash": "0xb68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da",
+      "build": {
+        "id": "marksman-rifle",
+        "name": "Marksman rifle",
+        "damage": 48,
+        "interval": 18,
+        "range": 44,
+        "magazine": 5,
+        "reserve": 25,
+        "reloadTicks": 44,
+        "pellets": 1,
+        "spread": 0
+      }
+    },
+    {
+      "id": "journey-weapons-1:support-gun",
+      "hash": "0x78ce8a816917103214c4b1cb8c2d483b65734f1ed8eb5aaf507922cd642c294d",
+      "build": {
+        "id": "support-gun",
+        "name": "Support gun",
+        "damage": 10,
+        "interval": 2,
+        "range": 30,
+        "magazine": 60,
+        "reserve": 120,
+        "reloadTicks": 60,
+        "pellets": 1,
+        "spread": 0
+      }
+    }
+  ],
+  "before": [
+    {
+      "asset": {
+        "kind": "gun",
+        "chainId": "31337",
+        "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+        "tokenId": "1"
+      },
+      "key": "eip155:31337:0x54d96327de36dd555d1452348e21f0eeb36ca0db:1",
+      "environment": "LOCAL_BLOCKCHAIN",
+      "adapter": "JOURNEY_GUNS_V1",
+      "owner": "0x9BE06f0f03eace8b6b61672468160de02E4449CA",
+      "uri": "data:application/json;base64,eyJuYW1lIjoiTWFya3NtYW4gcmlmbGUgIzEiLCJkZXNjcmlwdGlvbiI6Ik9yaWdpbmFsIExBU1QgU0lHTkFMIGxvY2FsIGNvbGxlY3RpYmxlLiBHYW1lcGxheSByZXF1aXJlcyB0aGUgZXhhY3Qgc3VwcG9ydGVkIGJ1aWxkIGFuZCBjdXJyZW50IG93bmVyc2hpcC4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNekF3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNd01DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeHdZWFJvSUdROUlrMDBPQ0F4TnpCb01UTXliREk0TFRJMGFESXhPSFl4TkVneU1qRnNMVE15SURNd1NEUTRlaUlnWm1sc2JEMGlJMkU1T0dJMVlpSXZQanh3WVhSb0lHUTlJazB4T1RZZ01UTTBhREl6TUhZNFNERTVObm9pSUdacGJHdzlJaU5pT1dKallqQWlMejQ4Y21WamRDQjRQU0l5TWpRaUlIazlJakV4TWlJZ2QybGtkR2c5SWpjeUlpQm9aV2xuYUhROUlqRTBJaUJtYVd4c1BTSWpZamxpWTJJd0lpOCtQSFJsZUhRZ2VEMGlNalFpSUhrOUlqTTRJaUJtYVd4c1BTSWpaakJrWm1JM0lpQm1iMjUwTFdaaGJXbHNlVDBpYlc5dWIzTndZV05sSWlCbWIyNTBMWE5wZW1VOUlqSXdJajVNUVZOVUlGTkpSMDVCVENCS1QxVlNUa1ZaSUVkVlRsTThMM1JsZUhRK1BIUmxlSFFnZUQwaU1qUWlJSGs5SWpJME5pSWdabWxzYkQwaUkyWXdaR1ppTnlJZ1ptOXVkQzFtWVcxcGJIazlJbTF2Ym05emNHRmpaU0lnWm05dWRDMXphWHBsUFNJeU1DSStUV0Z5YTNOdFlXNGdjbWxtYkdVOEwzUmxlSFErUEhSbGVIUWdlRDBpTWpRaUlIazlJakkzTmlJZ1ptbHNiRDBpSTJNeFl6ZGlOaUlnWm05dWRDMW1ZVzFwYkhrOUltMXZibTl6Y0dGalpTSWdabTl1ZEMxemFYcGxQU0l4TWlJK1RFOURRVXdnUkVWV1JVeFBVRTFGVGxRZ0x5Qk9UeUJOVDA1RlZFRlNXU0JXUVV4VlJUd3ZkR1Y0ZEQ0OEwzTjJaejQ9Iiwia2luZCI6MCwiYnVpbGRIYXNoIjoiMHhiNjhlMGFmNWFlYjIxY2IxZDU2M2IyYzkwZWI3YjI1OWY4NjYzODE3YmIwNWVkMzNhMjk1ZmZiZTlmYjQ2MWRhIiwicHJvdmVuYW5jZSI6IjB4MTJhMWNlMDdmMjhkZDM5MzQ0Y2ZiMDMxOTFiMjlmZGZkZGJhM2IxOTRhN2JmM2NhMjJiM2Y2MGU5ODVkNzBkMCIsInNvdXJjZVJ1biI6IjB4MmNhZjYwNWQ5NDczNWNlZDBjOTFlZDBhNWJhZDY5MTRlODFiZThlZjg4Njc0YTk5YWNhYzlkZDU4M2M5MjQzNiJ9",
+      "immutableBuild": {
+        "id": "journey-weapons-1:marksman-rifle",
+        "hash": "0xb68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da",
+        "build": {
+          "id": "marksman-rifle",
+          "name": "Marksman rifle",
+          "damage": 48,
+          "interval": 18,
+          "range": 44,
+          "magazine": 5,
+          "reserve": 25,
+          "reloadTicks": 44,
+          "pellets": 1,
+          "spread": 0
+        }
+      },
+      "kind": 0,
+      "provenance": "0x12a1ce07f28dd39344cfb03191b29fdfddba3b194a7bf3ca22b3f60e985d70d0",
+      "sourceRun": "0x2caf605d94735ced0c91ed0a5bad6914e81be8ef88674a99acac9dd583c92436",
+      "capabilities": {
+        "inspect": true,
+        "equip": false,
+        "list": true,
+        "claim": false,
+        "consume": false,
+        "combatReady": false,
+        "journeyCombatReady": false
+      },
+      "combatMode": null,
+      "progress": null,
+      "observedBlock": "9"
+    },
+    {
+      "asset": {
+        "kind": "gun",
+        "chainId": "31337",
+        "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+        "tokenId": "2"
+      },
+      "key": "eip155:31337:0x54d96327de36dd555d1452348e21f0eeb36ca0db:2",
+      "environment": "LOCAL_BLOCKCHAIN",
+      "adapter": "JOURNEY_GUNS_V1",
+      "owner": "0x9BE06f0f03eace8b6b61672468160de02E4449CA",
+      "uri": "data:application/json;base64,eyJuYW1lIjoiU3VwcG9ydCBndW4gIzIiLCJkZXNjcmlwdGlvbiI6Ik9yaWdpbmFsIExBU1QgU0lHTkFMIGxvY2FsIGNvbGxlY3RpYmxlLiBHYW1lcGxheSByZXF1aXJlcyB0aGUgZXhhY3Qgc3VwcG9ydGVkIGJ1aWxkIGFuZCBjdXJyZW50IG93bmVyc2hpcC4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNekF3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNd01DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeHdZWFJvSUdROUlrMDBPQ0F4TnpCb01UTXliREk0TFRJMGFESXhPSFl4TkVneU1qRnNMVE15SURNd1NEUTRlaUlnWm1sc2JEMGlJMkU1T0dJMVlpSXZQanh3WVhSb0lHUTlJazB4T1RZZ01UTTBhREl6TUhZNFNERTVObm9pSUdacGJHdzlJaU5pT1dKallqQWlMejQ4Y21WamRDQjRQU0l5TWpjaUlIazlJakUyTXlJZ2QybGtkR2c5SWpNd0lpQm9aV2xuYUhROUlqUXdJaUJtYVd4c1BTSWpOMkk0TWpZeUlpOCtQSFJsZUhRZ2VEMGlNalFpSUhrOUlqTTRJaUJtYVd4c1BTSWpaakJrWm1JM0lpQm1iMjUwTFdaaGJXbHNlVDBpYlc5dWIzTndZV05sSWlCbWIyNTBMWE5wZW1VOUlqSXdJajVNUVZOVUlGTkpSMDVCVENCS1QxVlNUa1ZaSUVkVlRsTThMM1JsZUhRK1BIUmxlSFFnZUQwaU1qUWlJSGs5SWpJME5pSWdabWxzYkQwaUkyWXdaR1ppTnlJZ1ptOXVkQzFtWVcxcGJIazlJbTF2Ym05emNHRmpaU0lnWm05dWRDMXphWHBsUFNJeU1DSStVM1Z3Y0c5eWRDQm5kVzQ4TDNSbGVIUStQSFJsZUhRZ2VEMGlNalFpSUhrOUlqSTNOaUlnWm1sc2JEMGlJMk14WXpkaU5pSWdabTl1ZEMxbVlXMXBiSGs5SW0xdmJtOXpjR0ZqWlNJZ1ptOXVkQzF6YVhwbFBTSXhNaUkrVEU5RFFVd2dSRVZXUlV4UFVFMUZUbFFnTHlCT1R5Qk5UMDVGVkVGU1dTQldRVXhWUlR3dmRHVjRkRDQ4TDNOMlp6ND0iLCJraW5kIjoxLCJidWlsZEhhc2giOiIweDc4Y2U4YTgxNjkxNzEwMzIxNGM0YjFjYjhjMmQ0ODNiNjU3MzRmMWVkOGViNWFhZjUwNzkyMmNkNjQyYzI5NGQiLCJwcm92ZW5hbmNlIjoiMHhhN2ZjMzQzOGY4MDJhYzQ2Y2Q5OGFiYmJiZDk1MGVlMGQyYjQyZjY0NTFlMTVjNzYwMDdkNTA1OGUzZDJiZGUwIiwic291cmNlUnVuIjoiMHgyY2FmNjA1ZDk0NzM1Y2VkMGM5MWVkMGE1YmFkNjkxNGU4MWJlOGVmODg2NzRhOTlhY2FjOWRkNTgzYzkyNDM2In0=",
+      "immutableBuild": {
+        "id": "journey-weapons-1:support-gun",
+        "hash": "0x78ce8a816917103214c4b1cb8c2d483b65734f1ed8eb5aaf507922cd642c294d",
+        "build": {
+          "id": "support-gun",
+          "name": "Support gun",
+          "damage": 10,
+          "interval": 2,
+          "range": 30,
+          "magazine": 60,
+          "reserve": 120,
+          "reloadTicks": 60,
+          "pellets": 1,
+          "spread": 0
+        }
+      },
+      "kind": 1,
+      "provenance": "0xa7fc3438f802ac46cd98abbbbd950ee0d2b42f6451e15c76007d5058e3d2bde0",
+      "sourceRun": "0x2caf605d94735ced0c91ed0a5bad6914e81be8ef88674a99acac9dd583c92436",
+      "capabilities": {
+        "inspect": true,
+        "equip": false,
+        "list": true,
+        "claim": false,
+        "consume": false,
+        "combatReady": false,
+        "journeyCombatReady": false
+      },
+      "combatMode": null,
+      "progress": null,
+      "observedBlock": "9"
+    }
+  ],
+  "quote": {
+    "asset": {
+      "kind": "gun",
+      "chainId": "31337",
+      "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0x54d96327de36dd555d1452348e21f0eeb36ca0db:1",
+    "seller": "0x9BE06f0f03eace8b6b61672468160de02E4449CA",
+    "price": "6000000000000000000",
+    "currency": "0xe86c449C8D91d563AA0DB15D346609f5402b1977",
+    "route": "JOURNEY_EXPECTED_BUILD",
+    "expectedBuildHash": "0xb68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da",
+    "expectedNonce": "1",
+    "observedBlock": "10"
+  },
+  "after": {
+    "asset": {
+      "kind": "gun",
+      "chainId": "31337",
+      "collection": "0x54D96327de36DD555d1452348E21F0eEb36ca0DB",
+      "tokenId": "1"
+    },
+    "key": "eip155:31337:0x54d96327de36dd555d1452348e21f0eeb36ca0db:1",
+    "environment": "LOCAL_BLOCKCHAIN",
+    "adapter": "JOURNEY_GUNS_V1",
+    "owner": "0xefF72ff1F8602Dc0a315fD65B37EB2aAf4990421",
+    "uri": "data:application/json;base64,eyJuYW1lIjoiTWFya3NtYW4gcmlmbGUgIzEiLCJkZXNjcmlwdGlvbiI6Ik9yaWdpbmFsIExBU1QgU0lHTkFMIGxvY2FsIGNvbGxlY3RpYmxlLiBHYW1lcGxheSByZXF1aXJlcyB0aGUgZXhhY3Qgc3VwcG9ydGVkIGJ1aWxkIGFuZCBjdXJyZW50IG93bmVyc2hpcC4gTm8gbW9uZXRhcnkgdmFsdWUuIiwiaW1hZ2UiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBME9EQWdNekF3SWo0OGNtVmpkQ0IzYVdSMGFEMGlORGd3SWlCb1pXbG5hSFE5SWpNd01DSWdabWxzYkQwaUl6STFNbU15TkNJdlBqeHdZWFJvSUdROUlrMDBPQ0F4TnpCb01UTXliREk0TFRJMGFESXhPSFl4TkVneU1qRnNMVE15SURNd1NEUTRlaUlnWm1sc2JEMGlJMkU1T0dJMVlpSXZQanh3WVhSb0lHUTlJazB4T1RZZ01UTTBhREl6TUhZNFNERTVObm9pSUdacGJHdzlJaU5pT1dKallqQWlMejQ4Y21WamRDQjRQU0l5TWpRaUlIazlJakV4TWlJZ2QybGtkR2c5SWpjeUlpQm9aV2xuYUhROUlqRTBJaUJtYVd4c1BTSWpZamxpWTJJd0lpOCtQSFJsZUhRZ2VEMGlNalFpSUhrOUlqTTRJaUJtYVd4c1BTSWpaakJrWm1JM0lpQm1iMjUwTFdaaGJXbHNlVDBpYlc5dWIzTndZV05sSWlCbWIyNTBMWE5wZW1VOUlqSXdJajVNUVZOVUlGTkpSMDVCVENCS1QxVlNUa1ZaSUVkVlRsTThMM1JsZUhRK1BIUmxlSFFnZUQwaU1qUWlJSGs5SWpJME5pSWdabWxzYkQwaUkyWXdaR1ppTnlJZ1ptOXVkQzFtWVcxcGJIazlJbTF2Ym05emNHRmpaU0lnWm05dWRDMXphWHBsUFNJeU1DSStUV0Z5YTNOdFlXNGdjbWxtYkdVOEwzUmxlSFErUEhSbGVIUWdlRDBpTWpRaUlIazlJakkzTmlJZ1ptbHNiRDBpSTJNeFl6ZGlOaUlnWm05dWRDMW1ZVzFwYkhrOUltMXZibTl6Y0dGalpTSWdabTl1ZEMxemFYcGxQU0l4TWlJK1RFOURRVXdnUkVWV1JVeFBVRTFGVGxRZ0x5Qk9UeUJOVDA1RlZFRlNXU0JXUVV4VlJUd3ZkR1Y0ZEQ0OEwzTjJaejQ9Iiwia2luZCI6MCwiYnVpbGRIYXNoIjoiMHhiNjhlMGFmNWFlYjIxY2IxZDU2M2IyYzkwZWI3YjI1OWY4NjYzODE3YmIwNWVkMzNhMjk1ZmZiZTlmYjQ2MWRhIiwicHJvdmVuYW5jZSI6IjB4MTJhMWNlMDdmMjhkZDM5MzQ0Y2ZiMDMxOTFiMjlmZGZkZGJhM2IxOTRhN2JmM2NhMjJiM2Y2MGU5ODVkNzBkMCIsInNvdXJjZVJ1biI6IjB4MmNhZjYwNWQ5NDczNWNlZDBjOTFlZDBhNWJhZDY5MTRlODFiZThlZjg4Njc0YTk5YWNhYzlkZDU4M2M5MjQzNiJ9",
+    "immutableBuild": {
+      "id": "journey-weapons-1:marksman-rifle",
+      "hash": "0xb68e0af5aeb21cb1d563b2c90eb7b259f8663817bb05ed33a295ffbe9fb461da",
+      "build": {
+        "id": "marksman-rifle",
+        "name": "Marksman rifle",
+        "damage": 48,
+        "interval": 18,
+        "range": 44,
+        "magazine": 5,
+        "reserve": 25,
+        "reloadTicks": 44,
+        "pellets": 1,
+        "spread": 0
+      }
+    },
+    "kind": 0,
+    "provenance": "0x12a1ce07f28dd39344cfb03191b29fdfddba3b194a7bf3ca22b3f60e985d70d0",
+    "sourceRun": "0x2caf605d94735ced0c91ed0a5bad6914e81be8ef88674a99acac9dd583c92436",
+    "capabilities": {
+      "inspect": true,
+      "equip": false,
+      "list": true,
+      "claim": false,
+      "consume": false,
+      "combatReady": false,
+      "journeyCombatReady": false
+    },
+    "combatMode": null,
+    "progress": null,
+    "observedBlock": "13"
+  },
+  "metadataUnchanged": true,
+  "oldOwnerRejected": true,
+  "wrongEquipmentBuildRejected": true,
+  "replayRejected": true,
+  "limits": "Authored signed claim fixtures, not earned Journey loot. Actual local secondary sale and checked ownership only. Owned Journey equipment admission, complete gun presentation and Step 26 exit remain incomplete. Shop and combat readiness stay disabled. No public deployment, mint price, key or signature export."
+}

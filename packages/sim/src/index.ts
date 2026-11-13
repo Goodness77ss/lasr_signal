@@ -1,8 +1,9 @@
 export * from './rules.ts';
-import { RULES as R, HOMES, RELAYS, MAP, distance, quantize, legal, lineOfSight, path, type Point, type Side } from './rules.ts';
+export * from './survival-rules.ts';
+import { RULES as R, HOMES, RELAYS, MAP, ACTOR, FIELD_SOLIDS, walkable, bodyStep, clearBodyPosition, distance, quantize, legal, lineOfSight, path, type Point, type Side } from './rules.ts';
 export type Aim = { x: number; y: number; z: number };
-export type Weapon = 'rifle' | 'carbine';
-export const WEAPONS = { rifle: {name:'Service rifle',damage:R.rifleDamage,ticks:R.rifleTicks,magazine:R.magazine},carbine:{name:'Field carbine',damage:12,ticks:3,magazine:30} } as const;
+export type Weapon = 'rifle' | 'carbine' | 'shotgun';
+export const WEAPONS = { rifle: {name:'Service rifle',damage:R.rifleDamage,ticks:R.rifleTicks,magazine:R.magazine,reloadTicks:R.reloadTicks},carbine:{name:'Field carbine',damage:12,ticks:3,magazine:30,reloadTicks:R.reloadTicks},shotgun:{name:'Trench shotgun',damage:30,ticks:16,magazine:6,reloadTicks:44} } as const;
 export type Loot = Point & {id:number;weapon:Weapon;ammo:number;tokens:number};
 export type Hero = {squadId:number;alive:boolean;tokens:number;lastDamageAt:number};
 export type Supply = 'ammo' | 'shield' | 'recruit';
@@ -76,8 +77,8 @@ export function command(g: Game, c: Command): { ok: boolean; reason: string } {
   if (g.seen[key]) return g.seen[key];
   const answer = (ok: boolean, reason: string) => g.seen[key] = { ok, reason };
   if (g.result) return answer(false, 'Match ended');
-  if (g.countdown > 0) return answer(false, 'Stand by for deployment countdown');
   if (c.kind === 'surrender') { g.result = { winner: (1 - c.side) as Side, reason: 'Surrender' }; event(g, { kind: 'MatchEnded' }); return answer(true, 'Match conceded'); }
+  if (g.countdown > 0) return answer(false, 'Stand by for deployment countdown');
   const s = 'squadId' in c ? g.squads.find(s => s.id === c.squadId && s.side === c.side) : undefined;
   if (c.kind !== 'deploy' && !s) return answer(false, 'Select a living friendly squad');
   if(g.hero&&c.side===0&&['fire','reload','switchWeapon','loot','drive','supply'].includes(c.kind)&&(!g.hero.alive||s?.id!==g.hero.squadId))return answer(false,'Take control of your main character first');
@@ -101,12 +102,14 @@ export function command(g: Game, c: Command): { ok: boolean; reason: string } {
     if(s!.reloadUntil>g.tick)return answer(false,'Already reloading');
     if(!s!.reserveAmmo)return answer(false,'No spare bullets. Find an enemy gun pickup.');
     if(s!.ammo>=WEAPONS[s!.weapon].magazine)return answer(false,'Magazine already full');
-    s!.reloadUntil=g.tick+R.reloadTicks;delete s!.rifleAim;return answer(true,'Reloading for 1.5 seconds');
+    s!.reloadUntil=g.tick+WEAPONS[s!.weapon].reloadTicks;delete s!.rifleAim;return answer(true,'Reloading for '+WEAPONS[s!.weapon].reloadTicks/R.ticks+' seconds');
   }
   if(c.kind==='switchWeapon'){
     if(s!.reloadUntil>g.tick)return answer(false,'Finish reloading first');
     if(s!.weapons.length<2)return answer(false,'Collect another enemy gun first');
-    s!.weapon=s!.weapons[(s!.weapons.indexOf(s!.weapon)+1)%s!.weapons.length];
+    const next=s!.weapons[(s!.weapons.indexOf(s!.weapon)+1)%s!.weapons.length];
+    if((s!.weapon==='shotgun'||next==='shotgun')&&(s!.rifleAim||g.tick-(s!.rifleAt??-100)<WEAPONS[s!.weapon].ticks))return answer(false,'Finish weapon cycle before switching');
+    s!.weapon=next;
     const excess=Math.max(0,s!.ammo-WEAPONS[s!.weapon].magazine);s!.ammo-=excess;s!.reserveAmmo=Math.min(R.maxReserveAmmo,s!.reserveAmmo+excess);
     return answer(true,`${WEAPONS[s!.weapon].name} equipped`);
   }
@@ -176,7 +179,7 @@ export function command(g: Game, c: Command): { ok: boolean; reason: string } {
   g.budgets[c.side] -= cost; g.spent[c.side] += cost;
   return answer(true, `${c.kind.toUpperCase()} confirmed. ${cost} practice credits spent.`);
 }
-export function step(g: Game) {
+export function step(g: Game, options: { legacyObjectives?: boolean } = {}) {
   if (g.result) return;
   if (g.countdown > 0) { g.countdown--; return; }
   g.tick++;
@@ -187,6 +190,7 @@ export function step(g: Game) {
   for (const p of g.pending.filter(p => p.at <= g.tick)) spawn(g, p.side);
   g.pending = g.pending.filter(p => p.at > g.tick);
   for (const s of g.squads) {
+    const clear=clearBodyPosition(s,s.side);if(clear!==s){s.x=clear.x;s.z=clear.z;s.route=[];}
     if(s.reloadUntil&&s.reloadUntil<=g.tick){const rounds=Math.min(WEAPONS[s.weapon].magazine-s.ammo,s.reserveAmmo);s.ammo+=rounds;s.reserveAmmo-=rounds;s.reloadUntil=0;event(g,{kind:'Reloaded',side:s.side,to:s,text:'Weapon reloaded'});}
     if (s.shieldUntil <= g.tick) s.shield = 0;
     if (g.tick - s.lastHit > R.suppressionDelay) s.suppression = Math.max(0, s.suppression - R.suppressionDecay);
@@ -194,15 +198,15 @@ export function step(g: Game) {
     if(s.drive&&(s.driveUntil??0)>=g.tick){
       for(let i=0;i<4;i++){
         const next={x:quantize(s.x+s.drive.x*remaining/4),z:quantize(s.z+s.drive.z*remaining/4)};
-        if(legal(next,s.side)){s.x=next.x;s.z=next.z;}
-        else {if(legal({x:next.x,z:s.z},s.side))s.x=next.x;if(legal({x:s.x,z:next.z},s.side))s.z=next.z;}
+        if(walkable(next,s.side)){s.x=next.x;s.z=next.z;}
+        else {if(walkable({x:next.x,z:s.z},s.side))s.x=next.x;if(walkable({x:s.x,z:next.z},s.side))s.z=next.z;}
       }
       remaining=0;
     }
     while (remaining > 0 && s.route.length) {
       const next = s.route[0], d = distance(s, next);
-      if (d <= remaining) { s.x = next.x; s.z = next.z; s.route.shift(); remaining -= d; }
-      else { s.x = quantize(s.x + (next.x - s.x) / d * remaining); s.z = quantize(s.z + (next.z - s.z) / d * remaining); remaining = 0; }
+      if (d <= remaining) { const at=bodyStep(s,next,s.side);if(distance(at,next)>.001){s.route=[];remaining=0;}s.x=at.x;s.z=at.z;if(s.route.length){s.route.shift();remaining-=d;} }
+      else { const at=bodyStep(s,{x:s.x+(next.x-s.x)/d*remaining,z:s.z+(next.z-s.z)/d*remaining},s.side);s.x=at.x;s.z=at.z;remaining=0; }
     }
     const cover = MAP.covers.find(c => Math.abs(s.x - c.x) <= 1.25 && Math.abs(s.z - c.z) <= 1.6);
     if ((cover?.id ?? null) !== s.coverId) { s.coverSince = g.tick; s.coverId = cover?.id ?? null; }
@@ -216,6 +220,12 @@ export function step(g: Game) {
   for (const s of g.squads) {
     const aim = s.rifleAim; delete s.rifleAim;
     if (!aim || s.disabledUntil > g.tick) continue;
+    if(s.weapon==='shotgun'){
+      const shot=traceShotgun(g,s,aim);
+      event(g,{kind:'PlayerShot',side:s.side,from:{x:s.x,z:s.z},to:shot.point,height:shot.height,text:'Trench shotgun · five bounded pellets · total damage cap 30'});
+      for(const hit of shot.hits)attacks.push({from:s,to:hit.target,damage:hit.damage,rifle:true});
+      continue;
+    }
     const shot = traceRifle(g, s, aim);
     event(g, { kind: 'PlayerShot', side: s.side, from: { x: s.x, z: s.z }, to: shot.point, height: shot.height });
     if (shot.target) attacks.push({ from: s, to: shot.target, damage: WEAPONS[s.weapon].damage, rifle: true });
@@ -259,7 +269,7 @@ export function step(g: Game) {
     }
     if(g.endless.nextWaveAt!==null&&g.tick>=g.endless.nextWaveAt){g.endless.wave++;startWave(g);}
   }
-  for (const r of g.relays) {
+  if (options.legacyObjectives !== false) for (const r of g.relays) {
 
     const inside = g.squads.filter(s => distance(s, r) <= R.captureRadius);
     const sides = new Set(inside.map(s => s.side)); r.contested = sides.size === 2;
@@ -270,21 +280,21 @@ export function step(g: Game) {
     r.progress++;
     if (r.progress >= R.captureTicks) { r.owner = attacker; r.attacker = null; r.progress = 0; event(g, { kind: 'RelayCaptured', side: attacker, to: r, text: `Relay ${r.id} captured by ${attacker === 0 ? 'you' : 'Bot'}` }); }
   }
-  if (g.tick % R.ticks === 0) for (const r of g.relays) if (r.owner !== null) g.scores[r.owner] += !g.untimed&&g.tick >= R.doubleAt && g.tick <= R.regulation ? 2 : 1;
+  if (options.legacyObjectives !== false && g.tick % R.ticks === 0) for (const r of g.relays) if (r.owner !== null) g.scores[r.owner] += !g.untimed&&g.tick >= R.doubleAt && g.tick <= R.regulation ? 2 : 1;
   const winner = (): Side | null => g.scores[0] === g.scores[1] ? null : g.scores[0] > g.scores[1] ? 0 : 1;
-  if (!g.result&&!g.endless&&(Math.max(...g.scores) >= R.victory || (!g.untimed&&((g.tick >= R.regulation && winner() !== null) || g.tick >= R.regulation + R.overtime)))) {
+  if (options.legacyObjectives !== false&&!g.result&&!g.endless&&(Math.max(...g.scores) >= R.victory || (!g.untimed&&((g.tick >= R.regulation && winner() !== null) || g.tick >= R.regulation + R.overtime)))) {
     g.result = { winner: winner(), reason: Math.max(...g.scores) >= R.victory ? 'Signal threshold reached' : g.tick >= R.regulation + R.overtime ? 'Overtime complete' : 'Signal majority' };
     event(g, { kind: 'MatchEnded', text: g.result.reason });
   }
 }
 // A bounded ray against the same building volumes and aggregate squad bodies.
 // Looking above, below or beside a squad misses; targets behind walls or homes are safe.
-export function traceRifle(g: Pick<Game, 'squads'>, from: Squad, aim: Aim): { point: Point; height: number; target?: Squad } {
-  let limit: number = R.rifleRange;
-  if (aim.y < 0) limit = Math.min(limit, -1.64 / aim.y);
-  for (const o of MAP.obstacles) {
+export function traceRifle(g: Pick<Game, 'squads'>, from: Squad, aim: Aim, range:number=R.rifleRange): { point: Point; height: number; target?: Squad } {
+  let limit: number = range;
+  if (aim.y < 0) limit = Math.min(limit, -ACTOR.eyeHeight / aim.y);
+  for (const o of FIELD_SOLIDS) {
     let near = 0, far = limit;
-    for (const [origin, direction, low, high] of [[from.x, aim.x, o.x, o.x + o.w], [1.64, aim.y, 0, o.h], [from.z, aim.z, o.z, o.z + o.d]]) {
+    for (const [origin, direction, low, high] of [[from.x, aim.x, o.x, o.x + o.w], [ACTOR.eyeHeight, aim.y, 0, o.h], [from.z, aim.z, o.z, o.z + o.d]]) {
       if (Math.abs(direction) < 1e-8) { if (origin < low || origin > high) { far = -1; break; } }
       else { const a = (low - origin) / direction, b = (high - origin) / direction; near = Math.max(near, Math.min(a, b)); far = Math.min(far, Math.max(a, b)); }
     }
@@ -293,14 +303,30 @@ export function traceRifle(g: Pick<Game, 'squads'>, from: Squad, aim: Aim): { po
   let target: Squad | undefined;
   if (!protectedHome(from)) for (const enemy of g.squads) {
     if (enemy.side === from.side || protectedHome(enemy) || !visible(g, from.side, enemy) || !lineOfSight(from, enemy)) continue;
-    const dx = enemy.x - from.x, dy = 1.05 - 1.64, dz = enemy.z - from.z;
+    const dx = enemy.x - from.x, dy = 1.05 - ACTOR.eyeHeight, dz = enemy.z - from.z;
     const along = dx * aim.x + dy * aim.y + dz * aim.z;
     const discriminant = .8 ** 2 - (dx * dx + dy * dy + dz * dz - along * along);
     if (discriminant < 0) continue;
     const hit = along - Math.sqrt(discriminant);
     if (hit >= 0 && hit < limit) { limit = hit; target = enemy; }
   }
-  return { point: { x: from.x + aim.x * limit, z: from.z + aim.z * limit }, height: Math.max(0, 1.64 + aim.y * limit), target };
+  return { point: { x: from.x + aim.x * limit, z: from.z + aim.z * limit }, height: Math.max(0, ACTOR.eyeHeight + aim.y * limit), target };
+}
+// Five deterministic rays share a thirty damage budget. Every ray uses the same
+// authoritative wall, visibility and body test as the rifle, capped at eight units.
+export function traceShotgun(g:Pick<Game,'squads'>,from:Squad,aim:Aim){
+ const hits=new Map<number,{target:Squad;damage:number}>();
+ const length=Math.hypot(aim.x,aim.y,aim.z);
+ if(!Number.isFinite(length)||length<.001)throw Error('Invalid shotgun direction');
+ const unit={x:aim.x/length,y:aim.y/length,z:aim.z/length};
+ for(const degrees of [-15,-7.5,0,7.5,15]){
+  const a=degrees*Math.PI/180,ray={x:unit.x*Math.cos(a)+unit.z*Math.sin(a),y:unit.y,z:unit.z*Math.cos(a)-unit.x*Math.sin(a)},shot=traceRifle(g,from,ray,8);
+  if(!shot.target)continue;
+  const range=Math.hypot(shot.point.x-from.x,shot.point.z-from.z,shot.height-ACTOR.eyeHeight),falloff=Math.max(.25,1-Math.max(0,range-2)/8);
+  const hit=hits.get(shot.target.id)??{target:shot.target,damage:0};hit.damage+=6*falloff;hits.set(hit.target.id,hit);
+ }
+ const center=traceRifle(g,from,unit,8);
+ return {point:center.point,height:center.height,hits:[...hits.values()].map(hit=>({...hit,damage:quantize(hit.damage)}))};
 }
 // Bot receives only its authorized observation. All actions pass through command().
 export function botCommands(o: Observation, side: Side): Command[] {

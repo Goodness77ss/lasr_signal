@@ -1,0 +1,51 @@
+{
+  "observedAt": "2026-11-02T18:03:16.273Z",
+  "mode": "PUBLIC_TESTNET_ACTUAL_BROWSER_CLOSED",
+  "run": "0x6662a39221f46d0666652ca78fa954e7fddaffd5917bec7b6a20c62581b6a51f",
+  "browserTabClosedAndAbsent": true,
+  "runHadNoPreparedSettlementBeforeClosure": true,
+  "samples": [
+    {
+      "at": "2026-11-02T18:02:44.893Z",
+      "phase": "active",
+      "disconnectedAt": 1793642528615,
+      "jobState": "not prepared"
+    },
+    {
+      "at": "2026-11-02T18:02:54.909Z",
+      "phase": "active",
+      "disconnectedAt": 1793642528615,
+      "jobState": "not prepared"
+    },
+    {
+      "at": "2026-11-02T18:03:04.920Z",
+      "phase": "active",
+      "disconnectedAt": 1793642528615,
+      "jobState": "not prepared"
+    },
+    {
+      "at": "2026-11-02T18:03:14.936Z",
+      "phase": "ended",
+      "disconnectedAt": null,
+      "jobState": "settled"
+    }
+  ],
+  "mission": "SUCCEEDED",
+  "deposit": "0",
+  "stationEarned": "8000000000000000000",
+  "bonusEarned": "3000000000000000000",
+  "spent": "0",
+  "failedStake": "0",
+  "outcome": 3,
+  "automaticSubmission": {
+    "hash": "0xb186f6fcf2d1228070a952b2d18cc5d09ace3b7f66477b3a54c02ed79da7bf68",
+    "block": 147194877,
+    "blockHash": "0xed5b4083fc4df45400b3f6c23ea92a4f3be95811b88cd5428e273e8ad6cf1c33",
+    "status": 1,
+    "confirmations": 37,
+    "canonical": true,
+    "blockTimestamp": 1793642590
+  },
+  "playerResultApproval": false,
+  "playerClaimStillSeparate": true
+}

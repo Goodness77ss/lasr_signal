@@ -4,7 +4,7 @@ import { createSoldier, animateSoldier, createViewWeapon, periodRifle } from './
 import { FieldCamera, type ViewMode } from './field-camera.ts';
 import { CombatFX } from './combat-fx.ts';
 import { OldFront } from './old-front.ts';
-import { MAP, HOMES, RULES, distance, isMoving, squadMembers, type Observation, type Point, type Squad, type GameEvent } from '@last-signal/sim';
+import { MAP, ACTOR, walkable, HOMES, RULES, WEAPONS, distance, isMoving, squadMembers, type Observation, type Point, type Squad, type GameEvent } from '@last-signal/sim';
 const CYAN = 0xa7bea0, AMBER = 0xcda471;
 export class Battlefield {
   readonly renderer: T.WebGLRenderer;
@@ -40,7 +40,7 @@ export class Battlefield {
   private contextEvents=new AbortController();
   reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   private materials = new Map<string, T.MeshStandardMaterial>();
-  constructor(readonly container: HTMLElement, private labels: HTMLElement[]) {
+  constructor(readonly container: HTMLElement, private labels: HTMLElement[], private stationMode = false) {
     this.renderer = new T.WebGLRenderer({ antialias: true, alpha: false });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, 1.4));
     this.renderer.shadowMap.enabled = true; this.renderer.shadowMap.type = T.PCFShadowMap;
@@ -48,11 +48,11 @@ export class Battlefield {
     this.renderer.toneMapping = T.ACESFilmicToneMapping; this.renderer.toneMappingExposure = 1.25;
     container.prepend(this.renderer.domElement);
     this.renderer.domElement.setAttribute('aria-label','Rendered battlefield. Use the labeled controls to move, aim and fire.');
-    const recovery=document.createElement('div');recovery.className='graphics-recovery';recovery.setAttribute('role','alert');recovery.innerHTML='<h2>Graphics paused</h2><p>The graphics context was lost. Local practice is paused. Multiplayer continues on the server.</p><button>RESTORE GRAPHICS</button><a href="/">RELOAD PRACTICE</a>';
+    const recovery=document.createElement('div');recovery.className='graphics-recovery';recovery.setAttribute('role','alert');recovery.innerHTML='<h2>Graphics paused</h2><p>'+(this.stationMode?'Graphics were lost. Server practice pause requested. Restore graphics, then choose RESUME. Wall time deadlines continue.':'The graphics context was lost. Local practice is paused. Multiplayer continues on the server.')+'</p><button>RESTORE GRAPHICS</button><a href="'+(this.stationMode?'/survival.html':'/')+'">RELOAD PRACTICE</a>';
     recovery.querySelector('button')!.onclick=()=>this.renderer.forceContextRestore();
     this.renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();this.contextLost=true;container.append(recovery);},{signal:this.contextEvents.signal});
     this.renderer.domElement.addEventListener('webglcontextrestored',()=>{this.contextLost=false;recovery.remove();},{signal:this.contextEvents.signal});
-    this.camera.add(this.viewWeapon);this.scene.add(this.camera);
+    this.scene.scale.set(ACTOR.fieldScale,1,ACTOR.fieldScale);this.camera.scale.set(1/ACTOR.fieldScale,1,1/ACTOR.fieldScale);this.camera.add(this.viewWeapon);this.scene.add(this.camera);
     this.scene.background = new T.Color(0x9a8c70); this.scene.fog = new T.FogExp2(0x9a8c70, .012);
     this.camera.position.set(24, 43, 51); this.camera.lookAt(24, 0, 16);
     this.scene.add(new T.HemisphereLight(0xd1ccb0, 0x493421, 2.3));
@@ -60,6 +60,10 @@ export class Battlefield {
     sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -38, right: 38, top: 35, bottom: -35, far: 100 }); sun.shadow.bias = -.0008; this.scene.add(sun);
     this.front=new OldFront(this.scene);
     for (let i = 0; i < 3; i++) this.relay(i);
+    if(this.stationMode){
+      const bank=this.ring(2,0x9bd6b9,.08);bank.position.set(8,.04,16);this.scene.add(bank);
+      for(const z of [14,18]){this.box(.12,2,.12,8,1,z,0x426d59,this.scene);this.box(.6,.2,.3,8,2,z,0xb7e0c8,this.scene);}
+    }
     this.selection = this.ring(1.25, CYAN, .07); this.selection.visible = false; this.scene.add(this.selection);
     this.destination = this.ring(.45, 0xe9d4a3, .08); this.destination.visible = false; this.scene.add(this.destination);
     this.scene.add(this.paths, this.tactical);
@@ -88,7 +92,7 @@ export class Battlefield {
   }
   private relay(i: number) {
     const r = [{ x: 24, z: 7 }, { x: 24, z: 16 }, { x: 24, z: 25 }][i];
-    const group = new T.Group(); group.position.set(r.x, 0, r.z); this.scene.add(group); this.towers.push(group);
+    const group = new T.Group(); group.position.set(r.x-.45, 0, r.z); this.scene.add(group); this.towers.push(group);
     // A timber wireless table and slim aerial replace the luminous modern tower.
     this.box(1.1,.09,.65,.45,.8,.45,0x655033,group);
     for(const x of [0,.9])for(const z of [.18,.72])this.box(.08,.8,.08,x,.4,z,0x463523,group);
@@ -98,6 +102,12 @@ export class Battlefield {
     for(let j=0;j<4;j++)this.box(.025,.11,.02,.18+j*.05,1.02,.65,0x8c8766,group);
     this.box(.06,2.5,.06,1.05,1.25,.55,0x5c4730,group);
     const wire=new T.Line(new T.BufferGeometry().setFromPoints([new T.Vector3(.7,1.2,.45),new T.Vector3(1.05,2.5,.55),new T.Vector3(-.7,.04,-.5)]),new T.LineBasicMaterial({color:0x514732}));group.add(wire);
+    {
+      // Original procedural station silhouettes: fork aerial, timber frame, twin drums.
+      if(i===0)this.box(2,.1,.12,1.05,2.5,.55,0x5c4730,group);
+      if(i===1){for(const x of [-.8,1.7])this.box(.14,3.2,.14,x,1.6,-.6,0x5c4730,group);this.box(2.65,.2,.2,.45,3.1,-.6,0x5c4730,group);}
+      if(i===2)for(const x of [-.7,1.8]){const drum=new T.Mesh(new T.CylinderGeometry(.42,.42,1.4,12),this.mat(0x66634c));drum.position.set(x,.7,-.5);group.add(drum);}
+    }
     const core = new T.Mesh(new T.SphereGeometry(.055,10,8), new T.MeshStandardMaterial({ color: 0xd5b578, emissive: 0xbca05f, emissiveIntensity: .6 })); core.position.set(.68,1.12,.65); core.name = 'core'; group.add(core);
     const ring = this.ring(3, 0xb9bca2, .055); ring.position.set(r.x, .035, r.z); this.scene.add(ring); this.rings.push(ring);
   }
@@ -116,7 +126,7 @@ export class Battlefield {
     source.userData.fallen=true;source.visible=false;
     source.updateWorldMatrix(true,false);
     const body=createSoldier(side,index);
-    source.getWorldPosition(body.position);
+    source.getWorldPosition(body.position);this.scene.worldToLocal(body.position);
     source.getWorldQuaternion(body.quaternion);
     this.scene.add(body);this.corpses.push({group:body,born:this.time});
   }
@@ -124,10 +134,10 @@ export class Battlefield {
   setView(mode:ViewMode) {this.view.setMode(mode);this.container.dataset.view=mode;}
   setZoom(delta: number) {this.view.zoom(delta);}
   resetCamera() {this.view.reset();}
-  aimDirection() { const d=this.camera.getWorldDirection(new T.Vector3()); return {x:d.x,y:d.y,z:d.z}; }
+  aimDirection() { const d=this.camera.getWorldDirection(new T.Vector3()); d.set(d.x/ACTOR.fieldScale,d.y,d.z/ACTOR.fieldScale).normalize();return {x:d.x,y:d.y,z:d.z}; }
   fireWeapon() { this.ownFireAt=this.time; }
   screenPoint(at:Point,height:number){
-    const p=new T.Vector3(at.x,height,at.z).project(this.camera);
+    const p=new T.Vector3(at.x*ACTOR.fieldScale,height,at.z*ACTOR.fieldScale).project(this.camera);
     return {x:(p.x+1)*.5*this.container.clientWidth,y:(1-p.y)*.5*this.container.clientHeight,visible:p.z>-1&&p.z<1&&Math.abs(p.x)<.96&&Math.abs(p.y)<.94};
   }
   resetMatch() {
@@ -142,7 +152,7 @@ export class Battlefield {
   pick(clientX: number, clientY: number): Point | null {
     const rect = this.renderer.domElement.getBoundingClientRect();
     this.ray.setFromCamera(new T.Vector2((clientX - rect.left) / rect.width * 2 - 1, -(clientY - rect.top) / rect.height * 2 + 1), this.camera);
-    const p = new T.Vector3(); if (!this.ray.ray.intersectPlane(this.plane, p)) return null; return { x: p.x, z: p.z };
+    const p = new T.Vector3(); if (!this.ray.ray.intersectPlane(this.plane, p)) return null; return { x: p.x/ACTOR.fieldScale, z: p.z/ACTOR.fieldScale };
   }
   resize() {
     const { width, height } = this.container.getBoundingClientRect(); this.renderer.setSize(width, height); this.camera.aspect = width / height;
@@ -159,7 +169,7 @@ export class Battlefield {
     }
     for (const s of o.squads) {
       const group = this.units.get(s.id) ?? this.unit(s);
-      group.position.lerp(new T.Vector3(s.x, 0, s.z), this.reducedMotion ? 1 : Math.min(1, dt * 18));
+      group.position.lerp(new T.Vector3(s.x, 0, s.z), this.reducedMotion ? 1 : Math.min(1, dt * 18));if(!walkable({x:group.position.x,z:group.position.z}))group.position.set(s.x,0,s.z);
       const driving=s.drive&&(s.driveUntil??0)>=o.tick&&(s.drive.x!==0||s.drive.z!==0);
       const target=driving?{x:s.x+s.drive!.x,z:s.z+s.drive!.z}:s.route[0], fireAge=this.time-(group.userData.fireAt??-100);
       const face=(fireAge<.7?group.userData.aim as Point|undefined:undefined)??target;
@@ -167,12 +177,12 @@ export class Battlefield {
       const firing=fireAge<.24?Math.max(0,Math.cos(fireAge*65)):0;
       for(const index of [0,2,1].slice(0,3-squadMembers(s)))this.fallen(group.children[index],s.side,index);
       for(const index of [0,2,1].slice(3-squadMembers(s)))group.children[index].userData.fallen=false;
-      group.children.slice(0,3).forEach(soldier=>{if(!soldier.userData.fallen)animateSoldier(soldier,this.time,!!target,s.suppression>=RULES.suppressionThreshold||(s.coverId!==null&&o.tick-s.coverSince>=RULES.coverTicks),firing,this.reducedMotion);});
+      group.children.slice(0,3).forEach((soldier,index)=>{const x=index===1?0:(index-1)*.7,z=index===1?0:-.55;const c=Math.cos(group.rotation.y),sn=Math.sin(group.rotation.y);const clear=walkable({x:s.x+x*c+z*sn,z:s.z-x*sn+z*c});soldier.position.set(clear?x:0,0,clear?z:0);if(!soldier.userData.fallen)animateSoldier(soldier,this.time,!!target,s.suppression>=RULES.suppressionThreshold||(s.coverId!==null&&o.tick-s.coverSince>=RULES.coverTicks),firing,this.reducedMotion);});
       if(!this.effectsEnabled||this.reducedMotion)group.children.slice(0,3).forEach(soldier=>{const flash=soldier.getObjectByName('flash');if(flash)flash.visible=false;});
       const cameraId=o.squads.find(unit=>unit.id===selected)?.id??o.squads.find(unit=>unit.side===0)?.id;
       group.children.slice(0,3).forEach((soldier,index)=>soldier.visible=!soldier.userData.fallen&&!(index===1&&this.viewMode==='eyes'&&s.id===cameraId));
       group.getObjectByName('shield')!.visible = s.shield > 0;
-      group.getObjectByName('hp')!.scale.x = Math.max(.01, s.hp / 100);
+      group.getObjectByName('hp')!.scale.x = Math.max(.01, Math.min(1,s.hp / 100));
     }
     const cameraId=this.viewMode==='eyes'&&o.hero?o.hero.squadId:selected;
     const s = o.squads.find(s => s.id === cameraId)??(o.hero&&this.viewMode==='eyes'?undefined:o.squads.find(s=>s.side===0));
@@ -184,7 +194,7 @@ export class Battlefield {
     this.viewWeapon.getObjectByName('bolt')!.position.z=-.17+kick*.08;
     this.viewWeapon.position.y=(this.view.aiming?-.22:-.34)+(!this.reducedMotion&&s&&isMoving(s,o.tick)?Math.sin(this.time*10)*.012:0);
     const reloading=!!s&&s.reloadUntil>o.tick;
-    const reloadDip=reloading?Math.sin(Math.PI*(1-(s!.reloadUntil-o.tick)/RULES.reloadTicks)):0;
+    const reloadDip=reloading?Math.sin(Math.PI*(1-(s!.reloadUntil-o.tick)/WEAPONS[s!.weapon].reloadTicks)):0;
     this.viewWeapon.rotation.z=this.reducedMotion?0:-reloadDip*.5;
     this.viewWeapon.rotation.x=this.reducedMotion?0:reloadDip*.25;
     this.viewWeapon.position.y-=this.reducedMotion?0:reloadDip*.3;
@@ -193,7 +203,7 @@ export class Battlefield {
     this.viewWeapon.getObjectByName('rightSleeve')!.rotation.x=.9+handMotion*.3;
     this.viewWeapon.getObjectByName('boltHand')!.position.set(.04+handMotion*.08,-.08+handMotion*.04,-.05-handMotion*.18);
     this.viewWeapon.getObjectByName('flash')!.visible=this.effectsEnabled&&!this.reducedMotion&&this.time-this.ownFireAt<.055;
-    this.viewWeapon.getObjectByName('weapon')!.scale.set(.8,.8,s?.weapon==='carbine'?.58:.8);
+    this.viewWeapon.getObjectByName('weapon')!.scale.set(s?.weapon==='shotgun'?1.05:.8,.8,s?.weapon==='carbine'?.58:s?.weapon==='shotgun'?.64:.8);
     for(const [id,mesh] of this.lootMeshes)if(!o.loot.some(l=>l.id===id)){this.scene.remove(mesh);this.disposeObject(mesh);this.lootMeshes.delete(id);}
     for(const drop of o.loot){
       let group=this.lootMeshes.get(drop.id);
@@ -215,7 +225,7 @@ export class Battlefield {
       const color = r.owner === 0 ? CYAN : r.owner === 1 ? AMBER : 0xb9bca2;
       (this.rings[i].material as T.MeshBasicMaterial).color.setHex(color);
       const mat = (this.towers[i].getObjectByName('core') as T.Mesh).material as T.MeshStandardMaterial; mat.emissive.setHex(color); mat.color.setHex(color);
-      const projected = new T.Vector3(r.x+.5, 2.9, r.z).project(this.camera);
+      const projected = new T.Vector3((r.x+.5)*ACTOR.fieldScale, 2.9, r.z*ACTOR.fieldScale).project(this.camera);
       const el = this.labels[i]; el.style.left = `${(projected.x + 1) * .5 * this.container.clientWidth}px`; el.style.top = `${(1 - projected.y) * .5 * this.container.clientHeight}px`;
       el.hidden=projected.z>1||projected.x < -1.1||projected.x>1.1||projected.y < -1||projected.y>1;
       el.className = `relay-label ${r.owner === 0 ? 'friendly' : r.owner === 1 ? 'hostile' : ''}`;

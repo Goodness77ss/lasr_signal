@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-11-02T01:08:45.432Z",
+  "mode": "SERVER_PRACTICE_V2",
+  "automatedCombat": true,
+  "run": "7e4e9da9518c6176600ca62781136da3",
+  "rulesVersion": "survival-2.6.0",
+  "rulesHash": "0x398df438b4714e021dc8193a1d2dfc391f22448bea77192a540358c4c7e8393e",
+  "activeSeconds": 219.8,
+  "result": {
+    "winner": 0,
+    "reason": "EXTRACTED"
+  },
+  "accounting": {
+    "asset": "RUN_TWIF",
+    "mode": "SIMULATED_ONLY",
+    "deposit": 0,
+    "station": 8,
+    "bonus": 3,
+    "spent": 5,
+    "failed": 0,
+    "locked": 0,
+    "available": 6,
+    "walletClaim": null
+  },
+  "fieldCredits": 20,
+  "rewards": [
+    {
+      "run": "7e4e9da9518c6176600ca62781136da3",
+      "cycle": 1,
+      "station": "A",
+      "kind": "CAPTURE",
+      "amountWhole": 5,
+      "tick": 288,
+      "source": "capture:288"
+    },
+    {
+      "run": "7e4e9da9518c6176600ca62781136da3",
+      "cycle": 1,
+      "station": "A",
+      "kind": "DEFENSE",
+      "amountWhole": 3,
+      "tick": 1000,
+      "source": "7e4e9da9518c6176600ca62781136da3:assault:1"
+    }
+  ],
+  "orders": [
+    {
+      "asset": "RUN_TWIF",
+      "item": "AMMO",
+      "quoted": 5,
+      "charged": 5,
+      "applied": 1,
+      "reason": "AMMO applied once for 5 simulated run units",
+      "tick": 3668
+    }
+  ],
+  "mission": {
+    "current": {
+      "id": "7e4e9da9518c6176600ca62781136da3:mission:1",
+      "cycle": 1,
+      "station": "A",
+      "assault": "7e4e9da9518c6176600ca62781136da3:assault:3",
+      "status": "SUCCEEDED",
+      "offered": 2583,
+      "offerUntil": 2983,
+      "accepted": 2584,
+      "until": 3784,
+      "holdFrom": 2642,
+      "stake": 5,
+      "bonus": 3,
+      "reason": "Stake unlocked. Three simulated bonus units earned"
+    },
+    "history": [
+      {
+        "id": "7e4e9da9518c6176600ca62781136da3:mission:1",
+        "cycle": 1,
+        "station": "A",
+        "assault": "7e4e9da9518c6176600ca62781136da3:assault:3",
+        "status": "SUCCEEDED",
+        "offered": 2583,
+        "offerUntil": 2983,
+        "accepted": 2584,
+        "until": 3784,
+        "holdFrom": 2642,
+        "stake": 5,
+        "bonus": 3,
+        "reason": "Stake unlocked. Three simulated bonus units earned"
+      }
+    ]
+  },
+  "lifecycle": {
+    "channel": null,
+    "disconnectedAt": null,
+    "reason": "Extracted. Simulated bank accounting only. No wallet claim or NFT mint.",
+    "loot": [],
+    "terminal": {
+      "outcome": "EXTRACTED",
+      "tick": 4396,
+      "at": 1793581692704,
+      "simulatedBankCreditWhole": 6
+    }
+  },
+  "chain": {
+    "funded": false,
+    "settlementWorker": false,
+    "transactionHash": null,
+    "nftMinted": false
+  }
+}

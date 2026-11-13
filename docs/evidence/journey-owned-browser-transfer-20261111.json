@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "environment": "DISPOSABLE_LOCAL_BLOCKCHAIN",
+  "collection": "0x2a4E7c61A2185069Bd37B2293b28b337629Bf0A2",
+  "originalOwner": "0x330BBf7df06908012f63814649fb12440cb0F237",
+  "uriHash": "0x165d16f292d14b7d10f7887717b58dad395d163c3334d5e81a5b4d019915c6d8",
+  "receipts": [
+    {
+      "label": "transfer authored support fixture away",
+      "hash": "0x691595aeb2b1d48eb287580df6de976cce433692e384aee0e86dc4a5d3dbfecb",
+      "block": 10,
+      "status": 1,
+      "gasUsed": "115269",
+      "logs": [
+        {
+          "address": "0x2a4E7c61A2185069Bd37B2293b28b337629Bf0A2",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x000000000000000000000000330bbf7df06908012f63814649fb12440cb0f237",
+            "0x00000000000000000000000032c6cce452b0814af35df3e46d642dea878f5d66",
+            "0x0000000000000000000000000000000000000000000000000000000000000002"
+          ],
+          "data": "0x"
+        }
+      ]
+    },
+    {
+      "label": "return support fixture with a fresh nonce",
+      "hash": "0xcb59abe90d2ef38d6432104ddd6b40b1ecef09f7edc0bbb2d4a5de744e2696af",
+      "block": 12,
+      "status": 1,
+      "gasUsed": "98169",
+      "logs": [
+        {
+          "address": "0x2a4E7c61A2185069Bd37B2293b28b337629Bf0A2",
+          "topics": [
+            "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+            "0x00000000000000000000000032c6cce452b0814af35df3e46d642dea878f5d66",
+            "0x000000000000000000000000330bbf7df06908012f63814649fb12440cb0f237",
+            "0x0000000000000000000000000000000000000000000000000000000000000002"
+          ],
+          "data": "0x"
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "stage": "before-away",
+      "at": "2026-11-11T01:21:22.788Z",
+      "ownerIsOriginal": true,
+      "nonce": "0",
+      "metadataUnchanged": true,
+      "run": {
+        "tick": 200,
+        "state": "ACTIVE",
+        "paused": true,
+        "sequence": 4,
+        "ammo": 59,
+        "reserve": 120,
+        "reloadAt": 0,
+        "assetNonce": "0"
+      }
+    },
+    {
+      "stage": "after-away",
+      "at": "2026-11-11T01:21:23.125Z",
+      "ownerIsOriginal": false,
+      "nonce": "1",
+      "metadataUnchanged": true,
+      "run": {
+        "tick": 200,
+        "state": "ACTIVE",
+        "paused": true,
+        "sequence": 4,
+        "ammo": 59,
+        "reserve": 120,
+        "reloadAt": 0,
+        "assetNonce": "0"
+      }
+    },
+    {
+      "stage": "after-back",
+      "at": "2026-11-11T01:26:41.338Z",
+      "ownerIsOriginal": true,
+      "nonce": "2",
+      "metadataUnchanged": true,
+      "run": {
+        "tick": 200,
+        "state": "ACTIVE",
+        "paused": true,
+        "sequence": 4,
+        "ammo": 59,
+        "reserve": 120,
+        "reloadAt": 0,
+        "assetNonce": "0"
+      }
+    },
+    {
+      "stage": "after-back-confirmed-adapter-rejection",
+      "at": "2026-11-11T01:26:58.783Z",
+      "ownerIsOriginal": true,
+      "nonce": "2",
+      "metadataUnchanged": true,
+      "run": {
+        "tick": 200,
+        "state": "ACTIVE",
+        "paused": true,
+        "sequence": 4,
+        "ammo": 59,
+        "reserve": 120,
+        "reloadAt": 0,
+        "assetNonce": "0"
+      }
+    }
+  ],
+  "limits": "Actual disposable SDK NFT transfers and read only database observations. Browser actions are recorded separately. No personal wallet, key export, public deployment or earned loot claim.",
+  "returned": true
+}

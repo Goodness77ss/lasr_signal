@@ -3,7 +3,7 @@ import {IDENTIFIERS,type ServerMessage} from '@last-signal/protocol';
 import {WebSocket} from 'ws';
 import {mkdtempSync,rmSync,writeFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
-import {join,resolve} from 'node:path';
+import {join,resolve,sep,basename} from 'node:path';
 import assert from 'node:assert/strict';
 const dir=mkdtempSync(join(tmpdir(),'last-signal-operation-')),database=join(dir,'rooms.sqlite'),origin='http://127.0.0.1:5174';
 let current:Awaited<ReturnType<typeof buildServer>>|null=null;
@@ -31,4 +31,4 @@ try{
  c.send({op:'command',id:'operation-concede',action:{kind:'surrender'}});const ra=await c.wait('snapshot',m=>m.phase==='finished'),rb=await d.wait('snapshot',m=>m.phase==='finished');assert.deepEqual(ra.observation.result,rb.observation.result);assert.equal(ra.observation.result?.winner,1);
  const report={checkedAt:new Date().toISOString(),mode:'LOCAL_UNFUNDED_OPERATIONAL_DRILL',transport:'Actual TCP loopback WebSocket clients',clients:2,closeCodes:codes,tickBeforeShutdown:tickBefore,recoveredTick:recovered.observation.tick,recoveredBudget:80,duplicatePaidCommand:'same acknowledgement, one 20 credit spend',sharedResult:ra.observation.result,public:false,chainTransactions:0,credentialsRecorded:false};
  writeFileSync(resolve(import.meta.dirname,'../docs/evidence/gate6-operation.json'),JSON.stringify(report,null,2)+'\n');console.log('Local network restart, reconnect, duplicate spending and shared result verified.');
-}finally{for(const ws of sockets)ws.terminate();if(current)await current.app.close();rmSync(dir,{recursive:true,force:true});}
+}finally{for(const ws of sockets)ws.terminate();if(current)await current.app.close();const cleanup=resolve(dir);if(!cleanup.startsWith(resolve(tmpdir())+sep)||!basename(cleanup).startsWith('last-signal-operation-'))throw Error('Unsafe operation fixture cleanup');rmSync(cleanup,{recursive:true,force:true});}

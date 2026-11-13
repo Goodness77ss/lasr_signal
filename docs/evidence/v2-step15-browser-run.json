@@ -1,0 +1,39 @@
+{
+  "checkedAt": "2026-11-02T17:41:27.115Z",
+  "mode": "PUBLIC_TESTNET_BROWSER_AUTOMATED_COMBAT_REVIEW",
+  "run": "0xefaac0210ef3494b4703ead2435725a9fb1be394daf23eee567d96ab0f29d226",
+  "allocationHash": "0x66a77f8ff30172b0832ef5afa370f9158af1a6704dd605b284a760f2eb88c9de",
+  "deposit": "40000000000000000000",
+  "station": 5,
+  "activeTicks": 723,
+  "phase": "banked",
+  "job": {
+    "state": "settled",
+    "reason": "Canonical finalization confirmed"
+  },
+  "settlement": {
+    "hash": "0x690182c9086e5f1b2898f47c979d715666fba76c7d040d912c28ed9fc818d70b",
+    "status": 1,
+    "block": 147176050,
+    "canonical": true
+  },
+  "claims": [
+    {
+      "hash": "0x266caef75860cb306ea06e3a677ef4716af88b1f404fb9a34f42f1c479c71ff3",
+      "status": 1,
+      "block": 147181363,
+      "canonical": true,
+      "amount": "45000000000000000000"
+    }
+  ],
+  "walletMock": "105000000000000000000",
+  "playerClaim": "0",
+  "lockedLiability": "0",
+  "claimLiability": "0",
+  "vaultCustody": "0",
+  "limitations": [
+    "This browser run banked at the wall safety checkpoint while its tab was open.",
+    "No funded optional mission was offered in this browser run.",
+    "This automated browser review is not human playtest evidence."
+  ]
+}

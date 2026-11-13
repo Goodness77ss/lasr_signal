@@ -1,0 +1,29 @@
+{
+  "mode": "LOCAL_SERVER_PRACTICE_ONLY",
+  "checks": [
+    {
+      "action": {
+        "kind": "move",
+        "squadId": 1,
+        "target": {
+          "x": 9.085693359375,
+          "z": 9.085710797991071
+        }
+      },
+      "accepted": true,
+      "reason": "Movement confirmed"
+    },
+    {
+      "action": {
+        "kind": "move",
+        "squadId": 1,
+        "target": {
+          "x": 13.657121930803571,
+          "z": 9.371425083705358
+        }
+      },
+      "accepted": false,
+      "reason": "Destination blocked or inside enemy home"
+    }
+  ]
+}

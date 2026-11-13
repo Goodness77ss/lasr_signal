@@ -1,0 +1,63 @@
+{
+  "observedAt": "2026-11-03T01:52:30.3570314Z",
+  "mode": "LOCAL_SERVER_UI_INTEGRATION",
+  "sharedOriginalShell": true,
+  "canonicalSurvivalUrl": "http://127.0.0.1:5174/?mode=survival",
+  "existingAliasVerified": "http://127.0.0.1:5174/survival.html",
+  "browserChecks": {
+    "endFromPausedSettings": "Server confirmed SURRENDER, original result dialog shown, REDEPLOY started a new run",
+    "shooting": {
+      "loadedAfter": 19,
+      "loadedBefore": 20
+    },
+    "operationsNavigation": true,
+    "reconnectAfterModeSwitch": {
+      "fieldCredits": 15,
+      "loaded": 19,
+      "reserve": 100,
+      "activeSeconds": 16,
+      "paused": true
+    },
+    "originalEndlessFrontStarted": true,
+    "consoleErrorsOnFinalAlias": 0,
+    "exactFieldSupply": {
+      "fieldCreditsAfter": 15,
+      "fieldCreditsBefore": 20,
+      "simRunFunds": 0,
+      "reserveAfter": 100,
+      "reserveBefore": 80
+    }
+  },
+  "desktop": {
+    "height": 715,
+    "combatControlsLeft": 266.8,
+    "horizontalOverflow": false,
+    "width": 920,
+    "healthRight": 226.4
+  },
+  "responsivePhone": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "physicalPhoneTest": false,
+    "healthPanelTop": 270,
+    "stationRowBottom": 261
+  },
+  "verification": {
+    "strictBuild": "PASS",
+    "applicationFiles": 21,
+    "dedicatedSecretScan": "PASS",
+    "applicationTests": 173,
+    "privateRuntimeExcludedFromTestDiscovery": true
+  },
+  "limits": [
+    "Local practice UI evidence, not public multiplayer or funded wallet proof.",
+    "Native pointer lock was not established in the embedded browser review. Drag aiming and the original free mouse fallback remain available.",
+    "Human playtest and physical device acceptance remain separate."
+  ],
+  "screenshots": [
+    "ui-integration-briefing.png",
+    "ui-integration-desktop.png",
+    "ui-integration-phone.png"
+  ]
+}

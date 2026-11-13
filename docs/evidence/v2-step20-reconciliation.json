@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-11-02T21:39:06.455Z",
+  "mode": "LOCAL_SERVICE_PUBLIC_TESTNET_RECONCILIATION",
+  "chainId": 46630,
+  "jobs": [
+    {
+      "state": "settled",
+      "count": 3
+    }
+  ],
+  "pendingJobs": 0,
+  "activeRuns": 0,
+  "runCount": 3,
+  "worker": {
+    "fundedEntry": false,
+    "reason": "Insufficient test gas",
+    "checkedAt": 0
+  },
+  "invalidCheckpoints": 0,
+  "codeVerifiedOnTwoProviders": true,
+  "rewardFree": "81000000000000000000",
+  "welcomeRemaining": "0",
+  "vaultCustody": "0",
+  "lockedLiability": "0",
+  "claimLiability": "0",
+  "publicHosting": false,
+  "limits": [
+    "Public worker needs free test gas before new allocations. No purchase or mainnet fallback.",
+    "Receipt confirmation is L2 soft confirmation, not Ethereum finality.",
+    "Private databases, authorizations, raw transactions and roles are excluded."
+  ]
+}

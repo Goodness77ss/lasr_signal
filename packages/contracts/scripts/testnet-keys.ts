@@ -27,3 +27,16 @@ export function loadKeys(create=false):Keys{
  }
  const keys=Object.fromEntries(roles.map(role=>[role,loadRole(role)])) as Keys;if(new Set(Object.values(keys).map(w=>w.address)).size!==4)throw Error('Testnet wallet roles must differ');return keys;
 }
+
+// Additive V2 submission role. Never rotates any existing deployment, signer or participant key.
+export function loadSurvivalGas(create=false):Wallet{
+ const path=resolve(secretFolder,'survival-gas.dpapi');
+ if(!existsSync(path)){
+  if(!create)throw Error('Dedicated survival gas role is not configured');
+  if(existsSync(resolve(secretFolder,'survival-deployment.json')))throw Error('Recover the deployed survival gas role rather than replacing it');
+  mkdirSync(secretFolder,{recursive:true});writeFileSync(path,dpapi(Wallet.createRandom().privateKey,false),{mode:0o600,flag:'wx'});
+ }
+ const key=dpapi(readFileSync(path,'utf8'),true);if(!valid(key))throw Error('Invalid protected survival gas role');const wallet=new Wallet(key);
+ const manifestPath=resolve(secretFolder,'survival-deployment.json');if(existsSync(manifestPath)&&JSON.parse(readFileSync(manifestPath,'utf8')).gasWallet!==wallet.address)throw Error('Protected survival gas role does not match deployed manifest');
+ if(Object.values(loadKeys()).some(w=>w.address===wallet.address))throw Error('Survival gas role must be separate');return wallet;
+}

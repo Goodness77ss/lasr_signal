@@ -1,0 +1,62 @@
+{
+  "crouched": {
+    "engine": "three.js r187",
+    "journeyActors": "6",
+    "journeyCachedSections": "2",
+    "journeyDodgeReadyAt": "0",
+    "journeyDrawCalls": "595",
+    "journeyEyeHeight": "1",
+    "journeyGeometries": "430",
+    "journeyLeaderPosition": "{\"x\":7,\"z\":24}",
+    "journeyPose": "crouched",
+    "journeyRules": "journey-practice-0.8.0",
+    "journeySection": "journey-sections-1:1:0",
+    "journeyTextures": "3",
+    "journeyTick": "39"
+  },
+  "standing": {
+    "engine": "three.js r187",
+    "journeyActors": "6",
+    "journeyCachedSections": "2",
+    "journeyDodgeReadyAt": "0",
+    "journeyDrawCalls": "595",
+    "journeyEyeHeight": "1.8",
+    "journeyGeometries": "430",
+    "journeyLeaderPosition": "{\"x\":7,\"z\":24}",
+    "journeyPose": "standing",
+    "journeyRules": "journey-practice-0.8.0",
+    "journeySection": "journey-sections-1:1:0",
+    "journeyTextures": "3",
+    "journeyTick": "80"
+  },
+  "keyboardDodge": {
+    "engine": "three.js r187",
+    "journeyActors": "6",
+    "journeyCachedSections": "2",
+    "journeyDodgeReadyAt": "140",
+    "journeyDrawCalls": "592",
+    "journeyEyeHeight": "1.8",
+    "journeyGeometries": "430",
+    "journeyLeaderPosition": "{\"x\":10,\"z\":24}",
+    "journeyPose": "standing",
+    "journeyRules": "journey-practice-0.8.0",
+    "journeySection": "journey-sections-1:1:0",
+    "journeyTextures": "3",
+    "journeyTick": "93"
+  },
+  "buttonDodge": {
+    "engine": "three.js r187",
+    "journeyActors": "6",
+    "journeyCachedSections": "2",
+    "journeyDodgeReadyAt": "275",
+    "journeyDrawCalls": "814",
+    "journeyEyeHeight": "64.5",
+    "journeyGeometries": "431",
+    "journeyLeaderPosition": "{\"x\":13,\"z\":24}",
+    "journeyPose": "crouched",
+    "journeyRules": "journey-practice-0.8.0",
+    "journeySection": "journey-sections-1:1:0",
+    "journeyTextures": "3",
+    "journeyTick": "238"
+  }
+}

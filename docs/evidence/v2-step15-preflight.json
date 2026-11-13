@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-11-02T03:20:25.589Z",
+  "mode": "PUBLIC_TESTNET_READS_ONLY",
+  "chainId": "46630",
+  "head": 146834747,
+  "originalCurrency": "0x510414cA08A84473f8c8FCa77a198eaD4d7cE9d9",
+  "name": "LAST SIGNAL Test WIF",
+  "symbol": "tWIF",
+  "codeHash": "0x2f8341822bed33eab839256c19212141c75be04f4f89cca348ba15e9c00a0abf",
+  "roles": {
+    "deployer": {
+      "address": "0x019BF89f9A51b3FdF447df279bb0a493959295bc",
+      "testEth": "0.00083250803",
+      "mockTWIF": "0.0"
+    },
+    "settlement": {
+      "address": "0xC9DfDb8D50aD23B25EAFC63a40B525F372A7495d",
+      "testEth": "0.0",
+      "mockTWIF": "0.0"
+    },
+    "playerA": {
+      "address": "0xD61053d633e39CdcEfFe41A3bfEf6a621B5D70D3",
+      "testEth": "0.00004847013",
+      "mockTWIF": "82.0"
+    },
+    "playerB": {
+      "address": "0x1B55E6639Ad234Ec8B1d62291Ae3EDC8CcB5684f",
+      "testEth": "0.00004365627",
+      "mockTWIF": "79.0"
+    }
+  },
+  "transactionsSent": 0,
+  "v2Deployment": null,
+  "browserWalletProof": false,
+  "sources": [
+    "https://docs.robinhood.com/chain/connecting/"
+  ]
+}
